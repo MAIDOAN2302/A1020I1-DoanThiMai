@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style type="text/css">
+        label{
+            float: left;
+            width: 100px;
+        }
+        input{
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<form>
+    <label>Amount</label>
+    <input type="number" name="amount" id="amount"><br>
+    <label>From Currency</label>
+    <select id="from currency">
+        <option value="VND">Đồng Việt Nam</option>
+        <option value="USD">Đô la Mỹ</option>
+    </select><br>
+    <label>To Currency</label>
+    <select id="to currency">
+        <option value="VND">Đồng Việt Nam</option>
+        <option value="USD">Đô la Mỹ</option>
+    </select><br>
+    <button onclick="getInfo(); return false;">Covert</button>
+</form>
+<script>
+    let amount = prompt("Hãy nhập số tiền muốn đổi : ");
+    let from curency = VND;
+    let to currency = USD;
+    let USD = 23000*VND;
+    document.write("giá trị = " + USD);
+</script>
+
+</body>
+</html>
