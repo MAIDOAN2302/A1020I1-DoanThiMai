@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử 3 ngôi</title>
+</head>
+<body>
+
+<form>
+    <input type="text" id="numbera">
+    <input type="text" id="numberb"><br><br>
+    <input type="button" value="Addition(+)" id="Cong" onclick="Addition()">
+    <input type="button" value="Subtraction(-)" id="tru" onclick="Subtraction()">
+    <input type="button" value="Multiplication(x)" id="nhan" onclick="Multiplication()">
+    <input type="button" value="Divison(/)" id="chia" onclick="Divison()">
+    <p id="ketqua">Result Division :</p>
+
+
+</form>
+
+</body>
+<script>
+function Addition() {
+    let number1 = parseInt(document.getElementById("numbera").value);
+    let number2 = parseInt(document.getElementById("numberb").value);
+    let A = number1 + number2;
+    document.getElementById("ketqua").innerHTML = "Result Division :" + A;
+}
+function Subtraction() {
+    let number1 = parseInt(document.getElementById("numbera").value);
+    let number2 = parseInt(document.getElementById("numberb").value);
+    let B = number1 - number2;
+    document.getElementById("ketqua").innerHTML = "Result Division :" + B;
+}
+function Multiplication() {
+    let number1 = parseInt(document.getElementById("numbera").value);
+    let number2 = parseInt(document.getElementById("numberb").value);
+    let C = number1 * number2;
+    document.getElementById("ketqua").innerHTML = "Result Division :" + C;
+}
+function Divison() {
+    let number1 = parseInt(document.getElementById("numbera").value);
+    let number2 = parseInt(document.getElementById("numberb").value);
+    let D = number1 / number2;
+    document.getElementById("ketqua").innerHTML = "Result Division :" + D;
+}
+
+</script>
+</html>

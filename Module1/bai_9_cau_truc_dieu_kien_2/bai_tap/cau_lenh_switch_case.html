@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh switch - case</title>
+</head>
+<body>
+<form>
+    <input type="text" id="thang"/>
+    <input type="button" onclick="tinhsongay" value="Tính số ngày"/>
+</form>
+<script>
+        function tinhsongay (){
+            let thang = parseInt(document.getElementById("thang").value);
+            let ketqua = 0;
+            switch (thang) {
+                case 1:
+                    ketqua = "Tháng 1 có 31 ngày";
+                    break;
+                case 2:
+                    ketqua = "Tháng 2 có 28 ngày hoặc 29 ngày";
+                    break;
+                case 3:
+                    ketqua ="Tháng 3 có 31 ngày";
+                    break;
+                case 4:
+                    ketqua ="Tháng 4 có 30 ngày";
+                    break;
+                case 5:
+                    ketqua ="Tháng 5 có 31 ngày";
+                    break;
+                case 6:
+                    ketqua ="Tháng 6 có 30 ngày";
+                    break;
+                case 7:
+                    ketqua ="Tháng 7 có 31 ngày";
+                    break;
+                case 8:
+                    ketqua ="Tháng 8 có 31 ngày";
+                    break;
+                case 9:
+                    ketqua ="Tháng 9 có 30 ngày";
+                    break;
+                case 10:
+                    ketqua ="Tháng 10 có 31 ngày";
+                    break;
+                case 11:
+                    ketqua ="Tháng 11 có 30 ngày";
+                    break;
+                case 12:
+                    ketqua ="Tháng 12 có 31 ngày";
+                    break;
+                default:
+                    ketqua = "Không có dữ liệu";
+            }
+            document.getElementById("thang").innerHTML = "ketqua" ;
+
+        }
+
+
+</script>
+</body>
+</html>
