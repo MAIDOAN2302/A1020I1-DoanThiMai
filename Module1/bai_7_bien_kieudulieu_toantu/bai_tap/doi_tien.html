@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr></tr>
+    <th> Amount</th>
+    <th class="width"> </th>
+    <th>From Currency</th>
+    <th class="width"> </th>
+    <th>To Currency</th>    <tr></tr>
+    <td><input type="text" id="tt"; /></td>
+    <td class="width"> </td>
+    <td><select id="fr" name="country">
+        <option value ="vn"> VND</option>
+        <option value ="jp">Yen</option>
+        <option value ="usa"> USD</option></select>
+    <td class="width"> </td>
+    <td><select id="to" name ="value">
+        <option value ="vn"> VND</option>
+        <option value ="jp"> Yen</option>
+        <option value ="usa"> USD</option></select>
+    <td> <input type=button value= "Convert" style="background-color: darkslateblue" onClick= "count()"></td>
+    <tr></tr>
+    <td style="color: blue" id="ketQua">Result:</td>    <script>
+    function count(){
+    let giaTriTien = document.getElementById("tt").value;
+    let tienMuonChuyen = document.getElementById("to").value;
+    let tienHienTai = document.getElementById("fr").value;
+    let ketQua = 0;
+    switch (tienHienTai) {
+        case "vn":
+            switch (tienMuonChuyen) {
+                case "vn":
+                    ketQua = parseInt(giaTriTien) * 1;
+                    break;
+                case "jp":
+                    ketQua = parseInt(giaTriTien) * parseFloat(0.005);
+                    break;
+                case "usa":
+                    ketQua = parseInt(giaTriTien) * parseFloat(0.00005);
+                    break;
+            }
+            break;                case "jp":
+            switch (tienMuonChuyen) {
+                case "vn":
+                    ketQua = parseInt(giaTriTien) * 200;
+                    break;
+                case "jp":
+                    ketQua = parseInt(giaTriTien) * 1;
+                    break;
+                case "usa":
+                    ketQua = parseInt(giaTriTien) * parseFloat(0.01);
+                    break;
+            }
+            break;                case "usa":
+            switch (tienMuonChuyen) {
+                case "vn":
+                    ketQua = parseInt(giaTriTien) * 20000;
+                    break;
+                case "jp":
+                    ketQua = parseInt(giaTriTien) * 100;
+                    break;
+                case "usa":
+                    ketQua = parseInt(giaTriTien) * 1;
+                    break;
+            }
+            break;
+    }                document.getElementById("ketQua").innerHTML="Result:" + ketQua;
+}
+</script>
+</body>
+</html>
