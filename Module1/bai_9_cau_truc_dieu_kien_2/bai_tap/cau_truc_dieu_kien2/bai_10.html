@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập mức điện sử dụng"));
+    let b1 = 1.678;
+    let b2 = 1.734;
+    let b3 = 2.014;
+    let b4 = 2.536;
+    if (a >= 0 && a <= 50) {
+        alert((a * b1) + (a * b1 * 10 / 100));
+    }else if (a >= 51 && a <= 100) {
+        alert(((50 * b1) + ((a - 50) * b2)) + ((50 * b1) + ((a - 50) * b2)) * 10 / 100);
+    }else if (a >= 101 && a <= 200){
+        alert((((50 * b1) + (50 * b2) + ((a - 100) * b3))) + (((50 * b1) + (50 * b2) + ((a - 100) * b3))) * 10 /100);
+    }else  {
+        alert(((50 * b1) + (50 * b2) + (50 * b3) +  ((a - 100) * b4)) + ((50 * b1) + (50 * b2) + (50 * b3) +  ((a - 100) * b4)) * 10 /100)
+    }
+</script>
+</body>
+</html>

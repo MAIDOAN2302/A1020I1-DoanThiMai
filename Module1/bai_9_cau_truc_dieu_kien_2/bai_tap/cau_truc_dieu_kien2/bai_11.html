@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+    <style type="text/css">
+      body {
+          background-color: goldenrod;.
+      }
+
+    </style>
+</head>
+<body>
+<form>
+    <label>Thu Nhập</label>
+    <input type="text" id="ThuNhap"/>
+    <button type="button" onclick="TTNCN()">Thuế Thu Nhập Cá Nhân</button>
+<!--    <input type="text" id="ttnhc"/>-->
+    <p id="demo"></p>
+</form>
+<script>
+    function TTNCN(){
+        let TN = parseFloat(document.getElementById("ThuNhap").value);
+        let TTNCN1 = TN * 5/100;
+        let TTNCN2 = TN * 10/100 - TTNCN1 ;
+        let TTNCN3 = TN * 15/100 - TTNCN2;
+        let TTNCN4 = TN * 20/100 - TTNCN3;
+        if (TN <= 5000000){
+            document.getElementById("demo").innerHTML = TTNCN1 + " " + "VND";
+        } else if (TN > 5000000 && TN <= 10000000){
+            document.getElementById("demo").innerHTML = TTNCN2 + " " + "VND";
+        }else if (TN > 10000000 && TN <= 18000000){
+            document.getElementById("demo").innerHTML = TTNCN3 + " " + "VND";
+    }else {
+            document.getElementById("demo").innerHTML = TTNCN4 + " " + "VND";
+        }
+    }
+
+</script>
+</body>
+</html>

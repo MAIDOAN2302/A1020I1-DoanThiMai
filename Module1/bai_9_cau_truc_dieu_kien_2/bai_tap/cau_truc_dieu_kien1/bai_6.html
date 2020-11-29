@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 6</title>
+</head>
+<body>
+<form>
+    <label>Doanh thu</label>
+    <input type="text" id="doanhthu"/>
+    <button type="button" onclick="hh()">Hoa hồng</button>
+    <p id="hoahong"></p>
+</form>
+<script>
+    function hh () {
+        let x = parseFloat(document.getElementById("doanhthu").value);
+        let y = x * 10/100;
+        if (x >= 5000000){
+            document.getElementById("hoahong").innerHTML = y;
+        }
+    }
+
+</script>
+</body>
+</html>

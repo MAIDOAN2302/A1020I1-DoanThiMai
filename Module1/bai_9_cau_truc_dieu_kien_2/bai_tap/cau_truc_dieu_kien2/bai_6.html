@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt("Hãy nhập hệ số a: "));
+    let b = parseFloat(prompt("Hãy nhập hệ số b: "));
+    let x = -b / a;
+    if ( a !== 0) {
+        alert(x);
+    }else if (a === 0 && b !== 0) {
+        alert("Phương trình vô nghiệm");
+    } else if (a === 0 && b === 0) {
+                alert("Phương trình có vô số nghiệm");
+            } else {
+        alert("Không xác định");
+    }
+</script>
+</body>
+</html>

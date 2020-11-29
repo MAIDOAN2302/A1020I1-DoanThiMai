@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhấp cạnh a: "));
+    let b = parseInt(prompt("Nhấp cạnh b: "));
+    let c = parseInt(prompt("Nhấp cạnh c: "));
+    if (a > 0 && b > 0 && c > 0) {
+        if (a + b > c) {
+            if (b + c > a) {
+                if (a + c > b) {
+                    alert("true");
+                } else {
+                    alert("false");
+                }
+            } else {
+                alert("false");
+            }
+        } else {
+            alert("false");
+        }
+    } else {
+        alert("false")
+    }
+</script>
+</body>
+</html>

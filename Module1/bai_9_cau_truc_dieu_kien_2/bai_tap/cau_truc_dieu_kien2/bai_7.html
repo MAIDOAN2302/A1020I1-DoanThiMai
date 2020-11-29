@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    // ax2 + bx + c = 0
+    let a = parseFloat(prompt("Nhập hệ số a:"));
+    let b = parseFloat(prompt("Nhập hệ số b:"));
+    let c = parseFloat(prompt("Nhập hệ số c:"));
+    let y = b*b - (4 * a * c);
+    let x1 = (-b - Math.sqrt(y)) / ( 2 * a);
+    let x2 = (-b + Math.sqrt(y)) / ( 2 * a);
+    if (y > 0) {
+        document.write(x1 + '<br>');
+        document.write(x2);
+    } else if (y === 0) {
+        document.write(x1);
+    }else if (y < 0) {
+        document.write("Phương trình vô nghiệm");
+    }
+</script>
+</body>
+</html>

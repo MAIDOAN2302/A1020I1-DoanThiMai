@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI 5</title>
+    <style type="text/css">
+        input {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label>Điểm kiểm tra</label>
+    <input type="text" id="diemkt"/><br>
+    <label>Điểm giữa kỳ</label>
+    <input type="text" id="diemgk"/><br>
+    <label>Điểm cuối kỳ</label>
+    <input type="text" id="diemck"/><br>
+    <button type="button" onclick="xeploai()">xeploai</button>
+    <p id="ketqua">Xeploai</p>
+
+</form>
+<script>
+    function xeploai() {
+        let x = parseFloat(document.getElementById("diemkt").value);
+        let y = parseFloat(document.getElementById("diemgk").value);
+        let z = parseFloat(document.getElementById("diemck").value);
+        let a = (x + y + z)/3;
+        if (a >= 8){
+            document.getElementById("ketqua").innerHTML =  "Gioi";
+        }else if (a >= 6.5) {
+            document.getElementById("ketqua").innerHTML =  "Kha";
+        }else if (a >= 5) {
+            document.getElementById("ketqua").innerHTML =  "TB";
+        }else {
+            document.getElementById("ketqua").innerHTML =  "yeu";
+        }
+
+    }
+</script>
+</body>
+</html>
