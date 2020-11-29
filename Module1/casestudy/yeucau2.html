@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yêu cầu 2</title>
+</head>
+<body>
+<script>
+    let name = "Hoa";
+    let cmnd = "201234";
+    let birthday = "1/1/2020";
+    let email = "hoadt@hotmail.com";
+    let address = "Da Nang";
+    let typeService = "villa";
+    let typeRom = "Vip";
+    let typeCustomer = "Diamond";
+    let discount = 10;
+    let quantilyIncluded = 10;
+    let renDays = 7;
+    let totalPay;
+
+    let choose = parseInt(prompt("1. Hiển thị thông tin khách hàng." + "\n" +
+        "2. Chỉnh sửa thông tin khách hàng." + "\n" +
+        "3. Hiển thị giá khi được giảm giá"));
+
+    switch (choose) {
+        case 1 : {
+            alert("Tên: " + name + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "Ngày sinh: " + birthday + "\n" +
+                "Email: " + email + "\n" +
+                "Địa chỉ: " + address + "\n" +
+                "Loại dịch vụ: " + typeService + "\n" +
+                "Loại phòng: " + typeRom + "\n" +
+                "Loại khách hàng: " + typeCustomer + "\n" +
+                "Giảm giá: " + discount + "\n" +
+                "Số lượng đi kèm: " + quantilyIncluded + "\n" +
+                "Số lượng ngày: " + renDays + "\n");
+        }
+        case 2 : {
+            let chooseEdit = parseInt(prompt("1. Tên: " + name + "\n" +
+                "2. cmnd: " + cmnd + "\n" +
+                "3. Ngày sinh: " + birthday + "\n" +
+                "4. Email: " + email + "\n" +
+                "5. Địa chỉ: " + address + "\n" +
+                "6. Loại dịch vụ: " + typeService + "\n" +
+                "7. Loại phòng: " + typeRom + "\n" +
+                "8. Loại khách hàng: " + typeCustomer + "\n" +
+                "9. Giảm giá: " + discount + "\n" +
+                "10. Số lượng đi kèm: " + quantilyIncluded + "\n" +
+                "11. Số lượng ngày: " + renDays + "\n"));
+            switch (chooseEdit) {
+                case 1: {
+                    name = prompt("Enter name");
+                    break;
+                }
+                case 2: {
+                    cmnd = prompt("Enter cmnd");
+                    break;
+                }
+                case 3: {
+                    birthday = prompt("Enter birthday");
+                    break;
+                }
+                case 4: {
+                    email = prompt("Enter email");
+                    break;
+                }
+                case 5:{
+                    address = prompt("Enter address");
+                    break;
+                }
+                case 6 : {
+                    typeService = prompt("Enter typeService");
+                    break;
+                }
+                case 7: {
+                    typeRom = prompt("Enter typeRom");
+                    break;
+                }
+                case 8: {
+                    typeCustomer = prompt("Enter typeCustomer");
+                    break;
+                }
+                case 9: {
+                    discount = prompt("Enter discount");
+                    break;
+                }
+                case 10:{
+                    quantilyIncluded = prompt("Enter quantilyIncluded") ;
+                    break;
+                }
+                case 11: {
+                    renDays = prompt("Enter renDays");
+                    break;
+                }
+                default: {
+                    alert("Failesd");
+                }
+
+            }
+
+            alert("Tên: " + name + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "Ngày sinh: " + birthday + "\n" +
+                "Email: " + email + "\n" +
+                "Địa chỉ: " + address + "\n" +
+                "Loại dịch vụ: " + typeService + "\n" +
+                "Loại phòng: " + typeRom + "\n" +
+                "Loại khách hàng: " + typeCustomer + "\n" +
+                "Giảm giá: " + discount + "\n" +
+                "Số lượng đi kèm: " + quantilyIncluded + "\n" +
+                "Số lượng ngày: " + renDays + "\n");
+            break;
+        }
+        default: {
+            alert("Sự lựa chọn cuả bạn không có trong trình đơn");
+        }
+    }
+
+
+</script>
+</body>
+</html>

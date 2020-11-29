@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRom;
+    let discount;
+    let quantilyIncluded;
+    let renDays;
+    let totalPay;
+
+    name = prompt("Input name: ");
+    cmnd = prompt("Input cmnd: ");
+    birthday = prompt("Input birthday: ");
+    email = prompt("Input email: ");
+    address = prompt("Input address: ");
+    typeService = prompt("Input typeService: ");
+    typeRom = prompt("Input typeRom: ");
+    discount = prompt("Input discount: ");
+    quantilyIncluded = prompt("Input quantilyIncluded: ");
+    renDays = prompt("Input renDays: ");
+    totalPay = 300 * renDays * (1 - discount/100);
+
+    alert("name: " + name +
+    "cmnd" + cmnd + "totalPay: " + totalPay);
+</script>
+
+</body>
+</html>
