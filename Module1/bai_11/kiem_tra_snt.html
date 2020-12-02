@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script type="text/javascript">
+    // số nguyên tố là số chia hết cho 1 và chio chính nó.
+    //Trường hợp đặc biệt : 1 không phải là số ngyên tố và 2 là số nguyên tố chẵn duy nhất.
+    // Tạo 1 hàm xử lý
+    function kiem_tra_snt(n) {
+        // tạo 1 biến
+        let prime = true; // gắn nó bằng true,
+        // nếu số nhập vào nhỏ hơn 2 thì không phải là số nguyên tố
+        if (n < 2) {
+            prime = false;
+        } else {
+            // ngược lại sử dụng vòng lặp for để kiểm tra, cho biến i chạy từ 2 đến n - 1, tăng i++
+            for (let i = 2; i < n - 1; i++) {
+                // nếu n chia hết cho i thì n không phải là số nguyên tố.
+                if (n % i == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+        }
+        if (prime == true) {
+            document.write(n + " là số nguyên tố");
+        } else {
+            document.write(n + " không phải là số nguyên tố");
+        }
+    }
+    kiem_tra_snt(prompt("Nhập số nguyên tố n: "));
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Bảng Cửu Chương</title>
+    <style type="text/css">
+        table tr {
+            border: 0.5px solid black;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<p id="demo"></p>
+<script type="text/javascript">
+    let text = '<table border = "1">';
+    for (let i = 2; i <= 9; i++) {
+        text += "<tr>";
+        for (var j = 1; j <= 10; j++) {
+            text += "<td>" + i + 'x' + j + '=' + (i*j) + "</td>"
+        } text += "</tr>";
+        }
+        text += "</table>";
+        document.getElementById("demo").innerHTML = text;
+
+</script>
+
+</body>
+</html>

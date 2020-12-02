@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hiển thị 20 số trong dãy fibonacci đầu tiên</title>
 </head>
 <body>
 <script>
-       let a = 1;
-       let b = 1;
-       let c = a + b;
-       let count = 0;
-       let d = "";
-       for (let i = 1; true; i++){
-           alert(a + b + c + d );/
-           if (count === 20){
-               break;
-           }
-       }
+let a,b,result;
+a=0;
+b=1;
+result=b;
 
+for (let i = 1; i < 20; i++)
+{
+    document.write(result+"<br/>");
+    result=a+b;
+    a=b;
+    b=result;
+}
 
 </script>
 </body>

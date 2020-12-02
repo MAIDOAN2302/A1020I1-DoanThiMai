@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tam giác</title>
+
+</head>
+<body>
+<script>
+    // cách 1
+    // var i = 0;
+    // while (i <= 5) {
+    //     var j = i;
+    //     while (j <= 5) {
+    //         document.write('*');
+    //         j++;
+    //     }
+    //     document.write('<br>');
+    //     i++;
+    // }
+
+
+    //Cách 2
+    // var i = 0;
+    // do {
+    //     var j = i;
+    //     do {
+    //         document.write('*');
+    //         j++;
+    //     } while (j <= 10);
+    //     document.write('<br>');
+    //     i++;
+    // } while (i <= 10);
+
+
+    // cách 3
+
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+
+    }
+    document.write('<br>');
+
+
+    for (let i = 1; i <= 5; i++) {
+        for (let j = i; j <= 5; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+
+    for (let i = 1; i <= 5; i++) {
+        for (let k = 5; k > i; k--) {
+            document.write("&nbsp;&nbsp");
+        }
+        for (let j = 1; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+
+    for (let i = 1; i <= 5; i++) {
+        for (let j = i; j <= 5; j++) {
+            for (let k = 5; k > j; k--) {
+                document.write("&nbsp;&nbsp");
+            }
+            document.write('*');
+            } document.write('<br>');
+        }
+
+
+
+
+</script>
+</body>
+</html>
