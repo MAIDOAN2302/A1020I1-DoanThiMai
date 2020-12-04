@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    // cách 1
+    let numbers = [1,2,3,5,6,8,9,10];
+    function giatrilonnhat(number) {
+        return Math.max.apply(null,number);
+    }
+    let max = giatrilonnhat(numbers);
+    document.write("Giá trị lớn nhất trong mảng là: " + max + "<br/>");
+    document.write("Vị trí của giá trị lớn nhất trong mảng: " + numbers.indexOf(max));
+</script>
+</body>
+</html>

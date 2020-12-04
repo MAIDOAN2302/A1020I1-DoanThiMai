@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let str = prompt("Enter paragaraph");
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // phải khai biến nguyên bảng chữ cái???
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];// khai báo mảng trả về
+
+    for(let x=0; x<str.length; x++)
+    {
+        if(UPPER.indexOf(str[x]) !== -1) // tại sao không phải lá -1 ???
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(LOWER.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>

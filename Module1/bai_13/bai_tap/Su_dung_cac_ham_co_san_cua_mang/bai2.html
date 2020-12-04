@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let num = window.prompt();// khai biến để user nhập vào
+    let str = num.toString();// khai biến chuyển biến num thành chuỗi
+    let result = [str[0]];// khai biến trả về kết quả
+
+    for (let x = 1; x < str.length; x++) {
+        if ((str[x] % 2 === 0)) {           /// trong bài ví dụ có điều kiên (str[x] % 2 === 0 : chưa hiểu :(((
+            result.push('-', str[x]);
+        } else {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>
