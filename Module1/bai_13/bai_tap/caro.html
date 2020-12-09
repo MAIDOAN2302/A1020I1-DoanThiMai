@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+
+<p id="ketQua"></p>
+
+<script>
+
+    // tạo mảng 2 chiều
+
+    let array = new Array(12);
+
+    for (let i = 0; i < 12; i++) {
+
+        array[i] = new Array(12)
+
+        for (let j = 0; j < 12; j++) {
+
+            array[i][j] = ""
+
+        }
+
+    }
+
+    let flag = true;
+    hienThi();
+
+    // hàm hiện thị bảng và giá trị của array;
+
+    function hienThi() {
+
+        let tableString = '<table border="1">';
+
+        for (let i = 0; i < 10; i++) {
+
+            tableString += ' <tr>';
+
+            for (let j = 0; j < 10; j++) {
+
+                tableString += '<td width="25px" height="25px" onclick="choi(' + i + ',' + j + ')">' + array[i][j] + '</td>'
+
+            }
+
+            tableString += '</tr>';
+
+        }
+
+        tableString += '</table>';
+
+        document.getElementById("ketQua").innerHTML = tableString; // in bảng bằng chuỗi
+
+    }
+
+    // Hàm đánh dấu X hoặc O;
+
+    function choi(i, j) {
+
+        if (flag && !kiemTraDaChoi(i, j)) { // biến flag để đánh dấu người 1 chơi và nghịch đảo lại để đánh dấu người 2 chơi
+
+            array[i][j] = 'X';
+
+            flag = false;
+
+            if (kiemTraCT()) {
+
+                alert("Người chơi 1 chiến thăng")
+
+            }
+
+        } else if (!flag && !kiemTraDaChoi(i, j)) {
+
+            array[i][j] = 'O';
+
+            flag = true;
+
+            if (kiemTraCT()) {
+
+                alert("Người chơi 2 chiến thăng")
+
+            }
+
+        }
+        hienThi();   // Hiện thị lại bảng bàn cờ sau khi thay đổi giá trị trong mảng.
+
+    }
+
+    // Hàm kiểm tra xem ô chọn đã có người chơi chưa?
+
+    function kiemTraDaChoi(i, j) {
+
+        if (array[i][j] === "X" || array[i][j] === "O") {  // Kiểm tra nếu tại vị trí đánh đã có người chọn rồi thì trả về true
+
+            alert("ô này đã có người chơi");
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
+    // Hàm kiểm tra chiến thắng
+
+    function kiemTraCT() {
+
+        for (let i = 0; i < 10; i++) {
+
+            for (let j = 0; j < 10; j++) {
+
+                if (array[i][j] === "X") { // nếu giá trị tìm thấy là X thì đi kiểm tra các ô bên cạnh
+
+                    if (array[i][j + 1] === "X" && array[i][j + 2] === "X") { // Kiểm tra đường ngang
+
+                        return true;
+
+                    } else if (array[i + 1][j] === "X" && array[i + 2][j] === "X") { // Kiểm tra đường dọc
+
+                        return true;
+
+                    } else if (array[i + 1][j + 1] === "X" && array[i + 2][j + 2] === "X") { // Kiểm tra đường chéo
+
+                        return true;
+
+                    } else if (array[i + 1][j - 1] === "X" && array[i + 2][j - 2] === "X") { // Kiểm tra đường chéo
+
+                        return true;
+
+                    }
+
+                } else if (array[i][j] === "O") { // Nếu giá trị tìm thấy là O thì đi kiểm tra các giá trị bên cạnh
+
+                    if (array[i][j + 1] === "O" && array[i][j + 2] === "O") {
+
+                        return true;
+
+                    } else if (array[i + 1][j] === "O" && array[i + 2][j] === "O") {
+
+                        return true;
+
+                    } else if (array[i + 1][j + 1] === "O" && array[i + 2][j + 2] === "O") {
+
+                        return true;
+
+                    } else if (array[i + 1][j - 1] === "O" && array[i + 2][j - 2] === "O") {
+
+                        return true;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>
+

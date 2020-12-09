@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script type="text/javascript">
+    function isPrime(number) {
+        let prime = true;
+        if (number < 2) {
+            prime = false;
+        } else {
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+        }
+        if (prime == true) {
+            document.write(number + " là số nguyên tố");
+        } else {
+            document.write(number + " không phải là số nguyên tố");
+        }
+    }
+    isPrime(prompt("Nhập số nguyên tố n: "));
+
+</script>
+
+</body>
+</html>

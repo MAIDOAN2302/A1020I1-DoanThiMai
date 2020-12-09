@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merry Christmast</title>
+    <style>
+       *{
+           margin: 0; padding: 0;
+       }
+        body{
+            background: url("backgroud.jpg") ;
+            background-size: cover;
+            background-repeat: no-repeat ;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+<canvas id="demo" ></canvas>
+<script>
+    let canvas = document.getElementById("demo");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let ctx = canvas.getContext('2d');
+
+    let imgTree = new Image();
+    imgTree.src = "tree.png";
+    let imgLight = new Image();
+    imgLight.src = "gift.png";
+    let imgSao = new Image();
+    imgSao.src = "tat.png";
+
+
+    window.onload = function(){
+        ctx.drawImage(imgTree,50,60,900,1000);
+        ctx.drawImage(imgLight,3100,1500,800,900);
+        ctx.drawImage(imgSao,2000,0,700,1000);
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

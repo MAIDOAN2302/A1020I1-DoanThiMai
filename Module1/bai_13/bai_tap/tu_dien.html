@@ -21,17 +21,69 @@
 </head>
 <body>
 <h2>Từ Điển Anh - Việt</h2>
-<form method="post">
-    <input type="text" name="search" placeholder="Nhập từ cần tìm"/>
-    <input type="submit" id="submit" value="Tìm"/>
-    <p id="demo"></p>
-</form>
+<!--<form method="post">-->
+<!--    <input type="text" name="search" placeholder="Nhập từ cần tìm"/>-->
+<!--    <input type="submit" id="submit" value="Tìm"/>-->
+<!--    <p id="demo"></p>-->
+<!--</form>-->
+<!--<script>-->
+<!--    let dictionaryEN = ['hello' , 'book' , 'look' , 'speed' , 'student' , 'friend' ,'boss'];-->
+<!--    let dictionaryVN = ['xin chào' , 'sách' , 'nhìn' , 'tốc độ' , 'học sinh' , 'người đứng đầu'];-->
+<!--    let a = dictionaryEN[a];-->
+<!--    let b = dictionaryVN[a];-->
+<!--    for (let i = 0; i< dictionaryEN.length; i++){-->
+<!--        if (a = a){-->
+<!--            document.write(b);-->
+<!--        }-->
+<!--        else{-->
+<!--            document.write('not found');-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<input type="text" id="nhap">
+
+<input type="button" onclick="dichTu()" value="Tra từ">
+
 <script>
-    let dictionaryEL = ["hello,book,look,speed,student,friend,boss"];
-    let dictionaryVN = ["xin chào, sách, nhìn, tốc độ, học sinh, người đứng đầu"];
-    let d =dictionaryEL.find(function (x) {
-        return  x = dictionaryVN;
+
+    let en = ['hello', 'you', 'he'];
+
+    let vn = ['xin chao', 'ban', 'cau ay'];
+
+    function dichTu() {
+
+        let word = document.getElementById("nhap").value;
+
+        let check = false;
+
+        let index;
+
+        for (let i = 0; i < en.length; i++) {
+
+            if (en[i] === word) {
+
+                check = true;
+
+                index = i;
+
+                break;
+
+            }
+
+        }
+
+        if (check) {
+
+            alert(word + ":" + vn[index]);
+
+        } else {
+
+            alert(" not found")
+
+        }
+
     }
+
 </script>
 </body>
 </html>

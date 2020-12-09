@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XÂY DỰNG LƠP HÌNH TRÒN</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+        getArea(){
+            return Math.PI * this.radius* this.radius;
+        }
+    }
+    let circle = new Circle(2);
+    console.log(circle.radius );
+    console.log(circle.getArea());
+
+    let circle1 = new Circle(3);
+    console.log(circle1.radius );
+    console.log(circle1.getArea());
+
+    let circle2 = new Circle(6);
+    console.log(circle2.radius );
+    console.log(circle2.getArea());
+</script>
+</body>
+</html>
