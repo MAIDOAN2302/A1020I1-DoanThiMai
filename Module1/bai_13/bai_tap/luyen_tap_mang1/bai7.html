@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find number V and delete number V</title>
+</head>
+<body>
+<script>
+    let arr = new Array(parseInt(prompt("Enter is size of array")));
+    let v = parseInt(prompt("Enter is number V"));
+    for (let i = 0; i < arr.length; i++){
+        arr[i] = prompt("Element :" + i);
+        for (let j = i; j < arr.length - 1;j++ )
+        if (arr[i] == v){
+               arr[i] =(i + 1);
+            }
+    }
+    arr.push(0);
+    alert(arr);
+</script>
+</body>
+</html>

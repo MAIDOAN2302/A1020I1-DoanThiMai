@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai5</title>
 </head>
-<body>
-<script>
-    let a, b, result;
-    a = 0;
-    b = 1;
-    result = b;
-    sum = a+b+result;
 
-    for (let i = 1; i < 20  ; i++) {
-        document.write(result + "<br/>");
-        result = a + b;
-        a = b;
-        b = result;
-    }document.write(sum);
+<body>
+<p><b>Bài 5:</b>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</p>
+<h1 id="result" style="text-align: center"> </h1>
+<script>
+    function Fibonancci(n) {
+        if (n < 2) {
+            return 1;
+        } else {
+            return Fibonancci(n - 2) + Fibonancci(n - 1);
+        }
+    }
+
+    function display() {
+        let n = 20;
+        let ketqua = document.getElementById("result");
+        let totalOfFibo = 0 ;
+        for (let i = 1; i <= n; i++) {
+           totalOfFibo += Fibonancci(i);
+
+        }
+        ketqua.innerHTML = totalOfFibo;
+    }
+    display();
+
 </script>
 </body>
+
 </html>

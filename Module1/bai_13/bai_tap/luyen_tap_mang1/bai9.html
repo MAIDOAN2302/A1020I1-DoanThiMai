@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>concat array</title>
+</head>
+<body>
+<script>
+    let a = new Array(parseInt(prompt("Enetr is size of array a")));
+    let b = new Array(parseInt(prompt("Enetr is size of array b")));
+    let c = [];
+    for (let i = 0; i < a.length; i++) {
+        a[i] = prompt("Element a: " + i);
+    }
+    for (let i = 0; i < b.length; i++){
+        b[i] = prompt("Element b: " + i);
+    }
+    c = a.concat(b);
+    document.write(c);
+</script>
+</body>
+</html>

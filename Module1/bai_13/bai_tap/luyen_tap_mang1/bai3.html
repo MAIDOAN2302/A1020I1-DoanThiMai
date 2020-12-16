@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3 : In giá trị lớn nhất và hiển thị giá trị TB</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,3,4,5,6,7,8,9,10];
+    let max = arr[0];
+    let sum = 0;
+    let avg = 0;
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+        sum += arr[i];
+    }
+    avg = sum / arr.length;
+    alert(max + '' + avg);
+</script>
+</body>
+</html>
