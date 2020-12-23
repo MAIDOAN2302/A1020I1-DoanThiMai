@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src = "customer.js"></script>
+    <title>Main</title>
+</head>
+<body>
+<script>
+    let regexEmail = /\S+@\S+\.\S+/;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regexCmnd = /^[\d]{8,8}$/;
+    let listCustomer = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add new Customer." + "\n2. Display Information Customer." + "\n3. Display total pays Customer. " + "\n4. Edit Information Customer. " +
+            "\n5. Delete Customer. " + "\n6. Exit"));
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 3: {
+                displayTotalPays();
+            }
+            default: {
+                alert("Failed");
+            }
+
+        }
+
+    }
+    function displayTotalPays() {
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++) {
+            temp += i + ". Name: " + listCustomer[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Total pay cua ban la:" + listCustomer[chooseDisplay].totalPay());
+
+    }
+
+    function addNewCustomer() {
+        let checkValid = false;
+        let cus = new Customer();
+        let name = prompt("Input name: ");
+        let cmnd;
+        let birthday;
+        let email;
+        do {
+             cmnd = prompt("Input cmnd: ");
+            if (regexCmnd.test(cmnd)){
+                checkValid= true;
+            }else {
+                alert("CMND ban nhap khong hop le. Vui long nhap lai");
+            }
+
+        }while (!checkValid);
+        checkValid = false;
+        
+        do {
+             birthday = prompt("Input birthday: ");
+            if (regexBirthday.test(birthday)){
+                checkValid= true;
+            }else {
+                alert("Ngay sinh ban nhap khong hop le. Vui long nhap lai");
+            }
+
+        }while (!checkValid);
+        checkValid = false;
+
+        do {
+             email = prompt("Input email: ");
+            if (regexEmail.test(email)){
+                checkValid= true;
+            }else {
+                alert("Email khong hop le. Vui long nhap lai");
+            }
+
+        }while (!checkValid);
+        checkValid = false;
+
+        let address = prompt("Input address: ");
+        let typeService = prompt("Input typeService: ");
+        let typeRom = prompt("Input typeRom: ");
+        let typeCustomer = prompt("Input typeCustomer");
+        let discount = prompt("Input discount: ");
+        let quantilyIncluded = prompt("Input quantilyIncluded: ");
+        let renDays = prompt("Input renDays: ");
+
+        cus.setName(name);
+        cus.setCMND(cmnd);
+        cus.setBirthday(birthday);
+        cus.setEmail(email);
+        cus.setAdress(address);
+        cus.setTypeService(typeService);
+        cus.setTypeRom(typeRom);
+        cus.setTypeCustomer(typeCustomer);
+        cus.setDiscount(discount);
+        cus.setQuantilyIncluded(quantilyIncluded);
+        cus.setRenDays(renDays);
+
+        listCustomer.push(cus);
+        alert("Ban da them thanh cong");
+        displayMainMenu();
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>
