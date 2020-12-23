@@ -11,19 +11,19 @@
     class Temperature {
         constructor(c){
             this.tempC = c;
-            let tempF = (this.tempC*1.8)+32;
-            let tempK = (this.tempC + 273);
-            this.convertCtoF = function() {
-                document.write ("25 độ C = " + tempF+" " +  "độ F" + "<br/>");
-            }
-            this.convertCtoK = function() {
-                document.write ("25 độ C = " + tempK+" " + "độ K" + "<br/>");
-            }
+        }
+        convertCtoF() {
+             return (this.tempC*1.8)+32;
+        }
+        convertCtoK(){
+            return this.tempC + 273;
         }
     }
     let temp = new Temperature (25);
-    temp.convertCtoF();
-    temp.convertCtoK();
+    let doF = temp.convertCtoF();
+    let doK = temp.convertCtoK();
+    alert(temp.tempC + "=" + doF);
+    alert(temp.tempC + "=" + doK);
 
 
 </script>

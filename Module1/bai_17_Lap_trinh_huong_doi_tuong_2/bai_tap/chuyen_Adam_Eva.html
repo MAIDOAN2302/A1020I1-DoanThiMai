@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        decrease() {
+            return this.weight--;
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender === "male") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        checkApple(apple) {
+            if (apple.weight > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        eat(apple) {
+            if (!apple.isEmpty()) {
+                console.log(this.name + ":"+"an tao");
+                this.weight += 1;
+                apple.decrease();
+            }
+        }
+        say(text) {
+            console.log(this.name + ":" + text);
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+    let adam = new Human("adam",true,50);
+    let eva = new Human("eva",false,45);
+    let apple = new Apple();
+    while (apple.weight > 0){
+        adam.eat(apple);
+        eva.eat(apple);
+    }
+    console.log("Tao da duoc an");
+
+
+
+</script>
+
+</body>
+</html>

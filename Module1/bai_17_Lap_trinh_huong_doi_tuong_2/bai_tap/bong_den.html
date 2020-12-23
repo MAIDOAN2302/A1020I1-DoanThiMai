@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+    class SwitchButton {
+        constructor(status) {
+            this.status = status;
+            this.lamp = null;
+        }
+
+        switchButton() {
+            if (this.status < 10) {
+                this.status++;
+            }
+        }
+
+        connectToLamp(electricLamp) {
+           this.lamp = electricLamp;
+        }
+
+        switchOff() {
+           this.lamp.turnOff();
+        }
+
+        switchOn() {
+            this.lamp.turnOn();
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            if (this.status) {
+                console.log("Lighting")
+            } else {
+                console.log("NotLighting")
+            }
+        }
+
+        turnOff() {
+            this.status = true;
+        }
+
+        turnOn() {
+            this.status = false;
+        }
+    }
+
+    let switchButton = new SwitchButton(10);
+    let electricLamp = new ElectricLamp();
+    switchButton.connectToLamp(electricLamp);
+    let i = 0;
+    while (i < 10) {
+       switchButton.switchOff();
+       electricLamp.getStatus();
+       switchButton.switchOn();
+       electricLamp.getStatus();
+       i++;
+    }
+
+
+
+</script>
+
+</body>
+</html>
