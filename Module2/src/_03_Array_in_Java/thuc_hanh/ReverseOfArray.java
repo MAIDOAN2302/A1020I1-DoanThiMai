@@ -1,4 +1,4 @@
-package _03_Array_in_Java;
+package _03_Array_in_Java.thuc_hanh;
 
 import java.util.Scanner;
 
