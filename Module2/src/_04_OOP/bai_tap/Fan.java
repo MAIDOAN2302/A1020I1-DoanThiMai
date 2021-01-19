@@ -1,14 +1,14 @@
 package _04_OOP.bai_tap;
 
 public class Fan {
-public static final  int SLOW = 1, MEDIUM = 2, FAST = 3;
+    public static final int SLOW = 1, MEDIUM = 2, FAST = 3;
 
-private int speed = SLOW;
-private boolean on = false;
-private double radius = 5;
-private String color = "blue";
+    private int speed = SLOW;
+    private boolean on = false;
+    private double radius = 5;
+    private String color = "blue";
 
-String tempOn = "";
+    String tempOn = "";
 
     public Fan() {
     }
@@ -26,9 +26,9 @@ String tempOn = "";
     }
 
     public void setOn(boolean on) {
-        if (on){
+        if (on) {
             tempOn = "Fan is on";
-        }else {
+        } else {
             tempOn = "Fan is off";
         }
     }
