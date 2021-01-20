@@ -1,7 +1,9 @@
 package _04_OOP.bai_tap;
 
 public class Fan {
-    public static final int SLOW = 1, MEDIUM = 2, FAST = 3;
+    public static final int SLOW = 1;
+    public static final int MEDIUM = 2;
+    public static final int FAST = 3;
 
     private int speed = SLOW;
     private boolean on = false;
