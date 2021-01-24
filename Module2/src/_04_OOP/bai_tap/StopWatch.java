@@ -1,7 +1,8 @@
 package _04_OOP.bai_tap;
 
 public class StopWatch {
-    private long startTime, endTime;
+    private long startTime;
+    private long endTime;
 
     public long getStartTime() {
         return startTime;
