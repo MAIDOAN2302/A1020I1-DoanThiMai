@@ -2,9 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 4</title>
 </head>
 <body>
-$END$
+<script>
+    let listCustomer = [];
+
+    class Customer {
+        constructor(id, name, phone, address, email) {
+            this.id = id;
+            this.name = name;
+            this.phone = phone;
+            this.address = address;
+            this.email = email;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getPhone() {
+            return this.phone;
+        }
+
+        getAddress() {
+            return this.adress;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setId = function (id) {
+            this.id = id;
+        };
+        setName = function (name) {
+            this.name = name;
+        };
+        setPhone = function (phone) {
+            this.phone = phone;
+        };
+        setAddress = function (address) {
+            this.address = address;
+        };
+        setEmail = function (email) {
+            this.email = email;
+        };
+    }
+
+    let cus = new Customer();
+    let id = prompt("Input id: ");
+    let name = prompt("Input name: ");
+    let phone = prompt("Input phone: ");
+    let address = prompt("Input address");
+    let email = prompt("Input email: ");
+
+    cus.setId(id);
+    cus.setName(name);
+    cus.setPhone(phone);
+    cus.setAddress(address);
+    cus.setEmail(email);
+
+    listCustomer.push(cus);
+    alert("Ban da them thanh cong");
+
+
+
+
+</script>
 </body>
 </html>

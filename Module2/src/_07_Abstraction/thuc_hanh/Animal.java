@@ -1,5 +1,7 @@
 package _07_Abstraction.thuc_hanh;
 
-public class Animal {
-
+public abstract class Animal {
+    abstract void makeSound();
 }
+
+

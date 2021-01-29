@@ -3,12 +3,17 @@ package _06_Inheritance.bai_tap;
 public class Cylinder extends Circle {
     private int height;
 
-    public Cylinder() {
+    public Cylinder(double radius, int height) {
+        super(radius);
+        this.height = height;
     }
 
     public Cylinder(double radius, String color, int height) {
         super(radius, color);
         this.height = height;
+    }
+
+    public Cylinder() {
     }
 
     public int getHeight() {

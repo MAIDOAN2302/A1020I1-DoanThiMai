@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 5 : So sánh hai chuỗi có giống nhau không</title>
 </head>
 <body>
-$END$
+<script>
+    let arr1 = ["d", "n", "c", "o", "d", "e",];
+    let arr2 = ["d", "n", "g", "y", "m"];
+    if (arr1.length === arr2.length) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i]) {
+                console.log("arr1 khong giong arr2");
+                break;
+            }
+        }
+        console.log("arr1 giong arr2");
+    } else {
+        console.log("arr1 khong giong arr2");
+    }
+
+
+</script>
+
 </body>
 </html>

@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
 </head>
 <body>
-$END$
+<script>
+    function tinhDienTichHinhTron(r) {
+        return r*r*Math.PI;
+    }
+    alert(tinhDienTichHinhTron(parseInt(prompt("Enter raudis"))));
+    function tinhChuViHinhTron(r) {
+        return 2*r*Math.PI;
+    }
+    alert(tinhChuViHinhTron(parseInt(prompt("Enter raudis"))));
+</script>
 </body>
 </html>

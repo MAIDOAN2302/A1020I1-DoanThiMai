@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 3</title>
 </head>
 <body>
-$END$
+<script>
+    let count = 0;
+    let arr = new Array(parseInt(prompt("Nhập chiều dài phần tử mảng")));
+    let k = parseInt(prompt("Nhập số k vào"));
+    if (arr.length > 50) {
+        alert("Chiều dài phần tử mảng không vượt quá 20 phần tử, nhập lại");
+    }else {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = prompt("Phần tử thứ :" + i);
+        }
+        for (let i = 0; i < arr.length; i++){
+            if (arr[i] + arr[i++] % k === 0 ){
+                alert(arr[i] + arr[i++]);
+            }
+        }
+    }
+
+</script>
+
 </body>
 </html>

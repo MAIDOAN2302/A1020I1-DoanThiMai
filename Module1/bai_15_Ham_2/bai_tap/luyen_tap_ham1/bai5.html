@@ -5,6 +5,24 @@
     <title>Bài 5</title>
 </head>
 <body>
+<script>
 
+    function choose(starName) {
+        let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let iStar = -1;
+        for (let i = 0; i < star.length; i++) {
+            if (star[i] === starName) {
+                iStar = i;
+                break;
+            }
+        }
+        return constellation[iStar];
+    }
+    let name = prompt("Enter is star");
+    console.log(choose(name));
+
+
+</script>
 </body>
 </html>

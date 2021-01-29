@@ -6,15 +6,24 @@
 </head>
 <body>
 <script>
-    let char = ['C','o','d','e','g','y','m'];
-    alert(char.length);
+    let char = ['C',9,'o','d','e',3,4,'g','y','m',1,2];
     let count = 0;
     for (let i = 0; i < char.length; i++){
-        if ( char[i] = Number){
-            count++
+        if (typeof char[i] ==="number"){
+            count ++;
+            console.log(count);
+            //console.log(char[i]);
         }
+        //console.log(char[i] + " " + typeof char[i]);
     }
-    alert(count);
+    // alert(char.length);
+    // let count = 0;
+    // for (let i = 0; i < char.length; i++){
+    //     if ( char[i] = Number){
+    //         count++
+    //     }
+    // }
+    // alert(count);
 </script>
 </body>
 </html>

@@ -21,13 +21,13 @@
 
     let tempName = "";
     name = prompt("Input name: ");
-    name = name.trim(). toLocaleLowerCase();
+    name = name.trim(). toLowerCase();
     for (let i = 0; i < name.length; i++) {
         if (name.charAt(i)===" " && name.charAt(i + 1)===" "){
             continue;
         }
         if (i === 0 || name.charAt(i - 1) === " ") {
-            tempName += name.charAt(i). toLocaleUpperCase();
+            tempName += name.charAt(i). toUpperCase();
             continue;
         }
         tempName += name.charAt(i);
@@ -60,7 +60,7 @@
                 month = Number.parseFloat(month);
                 year = Number.parseFloat(year);
                 if (Number.isInteger(day)&& Number.isInteger(month)&&Number.isInteger(year)){
-                    if (day < 32 && month < 13 && year < 1950){
+                    if (day < 32 && month < 13 && year < 2020){
                         check = true;
                     }
                 }
@@ -73,6 +73,7 @@
     check = false;
     do {
         let countAt = 0;
+        let countDoc = 0;
         email = prompt("Input email");
         for (let i = 0; i < email.length; i++) {
             if (email.charAt(i) === "@") {
@@ -84,19 +85,19 @@
                 }
             }
         }
-        if (countAt1 || countDoc<1){
+        if (countAt !== 1 || countDoc<1){
             alert("Email bạn nhập không đúng");
         }else {
             check = true;
         }
-    } while (!check)
+    } while (!check);
     check = false;
     address = prompt("Input address: ");
     typeService = prompt("Input typeService: ");
     typeRom = prompt("Input typeRom: ");
     discount = prompt("Input discount: ");
     do {
-        quantilyIncluded = prompt("Input quantilyIncluded: ");
+        quantilyIncluded = prompt("Input quantity Included: ");
         if (!isNaN(quantilyIncluded)){
             quantilyIncluded = Number.parseFloat(quantilyIncluded);
             if (Number.isInteger(quantilyIncluded)&& quantilyIncluded>0){
@@ -104,7 +105,7 @@
             }
         }
         if (!check){
-            alert("quantilyIncluded không phải là số nguyên");
+            alert("quantity Included không phải là số nguyên");
         }
     }while (!check);
     check = false;
@@ -120,12 +121,12 @@
             alert("renday không phải là số nguyên dương");
         }
     }while (!check);
-    check = false;
+
 
     totalPay = 300 * renDays * (1 - discount / 100);
 
-    alert("name: " + name +
-        "cmnd" + cmnd + "totalPay: " + totalPay);
+    alert("name: " + name + "\n" +
+        "cmnd" + cmnd + "\n" + "totalPay: " + totalPay);
 </script>
 </body>
 </html>

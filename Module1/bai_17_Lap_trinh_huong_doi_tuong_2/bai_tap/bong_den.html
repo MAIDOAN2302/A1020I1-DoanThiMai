@@ -24,10 +24,12 @@
 
         switchOff() {
            this.lamp.turnOff();
+           this.status = false;
         }
 
         switchOn() {
             this.lamp.turnOn();
+            this.status = true;
         }
     }
 

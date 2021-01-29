@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</title>
 </head>
 <body>
-$END$
+<script>
+    let a = parseInt(prompt("Enter is number a"));
+    let b = parseInt(prompt("Enter is number b"));
+    let temp;
+
+
+    function doiChoHaiSo() {
+        a = temp;
+        temp = b;
+        b = a;
+    }
+
+    doiChoHaiSo(a, b);
+</script>
 </body>
 </html>

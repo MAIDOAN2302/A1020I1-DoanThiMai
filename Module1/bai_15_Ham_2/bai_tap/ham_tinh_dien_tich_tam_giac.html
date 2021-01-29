@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Viết hàm tính diện tích </title>
 </head>
 <body>
-$END$
+<script>
+    // Tính diện tích tam giác
+    function calculateTraiangleSquare(a,h) {
+        return a * h /2;
+    }
+    // Tính diện tích tam giác có chiều cao h = 5, cạnh đáy a = 10;
+    calculateTraiangleSquare(10,5);
+    document.write("Diện tích tam giác : " + calculateTraiangleSquare(10,5) + "</br>");
+     // Tính diện tích hình tròn
+    
+    function calculateDiscSquare(r) {
+        return r * r * 3.14;
+    }
+    document.write("Diện tích hình tròn: " + calculateDiscSquare(10) + "</br>");
+    document.write("Diện tích hình tròn: " + calculateDiscSquare(15) + "</br>");
+    document.write("Diện tích hình tròn: " + calculateDiscSquare(20) + "</br>");
+    document.write("Diện tích hình tròn: " + calculateDiscSquare(25) + "</br>");
+
+    // Tính diện tích hình vuông
+    function calculateAreaSquare(a,b) {
+        return a * b;
+    }
+    document.write("Diện tích hình vuông: " + calculateAreaSquare(5,5) + "</br>");
+    document.write("Diện tích hình vuông: " + calculateAreaSquare(5,6) + "</br>");
+    document.write("Diện tích hình vuông: " + calculateAreaSquare(5,7) + "</br>");
+</script>
 </body>
 </html>

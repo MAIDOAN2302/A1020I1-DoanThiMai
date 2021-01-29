@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>BÀI 1</title>
 </head>
 <body>
-$END$
+<script>
+    let sum = 0;
+    let arr = new Array(parseInt(prompt("Nhập chiều dài phần tử mảng")));
+    if (arr.length > 20) {
+        alert("Chiều dài phần tử mảng không vượt quá 20 phần tử, nhập lại");
+    }else {
+        arr[i] = parseInt(prompt("Phần tử thứ :" + i));
+    }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 === 0 && arr[i] % 5 === 0) {
+                sum = sum + arr[i];
+            }
+    }
+
+    alert(arr);
+    alert(sum);
+
+
+</script>
 </body>
 </html>

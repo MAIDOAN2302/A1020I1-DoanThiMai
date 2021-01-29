@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</title>
 </head>
 <body>
-$END$
+<script>
+    function minNumber(a,b,c) {
+        let min = a;
+        if (a < b ){
+            if (a < c){
+                min = a;
+            }else {
+                min = c;
+            }
+
+        }else {
+            if (b < c){
+                min = b;
+            }else{
+                min = c;
+            }
+        }
+        return min;
+    }
+    let a = parseInt(prompt("Enter a"));
+    let b = parseInt(prompt("Enter b"));
+    let c = parseInt(prompt("Enter c"));
+    alert(minNumber(a,b,c));
+</script>
 </body>
 </html>
