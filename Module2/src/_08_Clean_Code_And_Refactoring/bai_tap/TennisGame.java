@@ -4,32 +4,38 @@ public class TennisGame {
     public static String getScore(String player1Name, String player2Name, int scoreOfPlayer1, int scoreOfPlayer2) {
         String result = "";
         int tempScore = 0;
-        boolean draw_result = scoreOfPlayer1 == scoreOfPlayer2;
-        if (draw_result) {
+        boolean drawResult = scoreOfPlayer1 == scoreOfPlayer2;
+        if (drawResult) {
             result = getDrawResult(scoreOfPlayer1);
         } else if (scoreOfPlayer1 >= 4 || scoreOfPlayer2 >= 4) {
             result = getWonPlayer(scoreOfPlayer1, scoreOfPlayer2);
         } else {
-            for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = scoreOfPlayer1;
-                else {
-                    result += "-";
-                    tempScore = scoreOfPlayer2;
-                }
-                switch (tempScore) {
-                    case 0:
-                        result += "Love";
-                        break;
-                    case 1:
-                        result += "Fifteen";
-                        break;
-                    case 2:
-                        result += "Thirty";
-                        break;
-                    case 3:
-                        result += "Forty";
-                        break;
-                }
+            result = resultScore(scoreOfPlayer1, scoreOfPlayer2, result);
+        }
+        return result;
+    }
+
+    private static String resultScore(int scoreOfPlayer1, int scoreOfPlayer2, String result) {
+        int tempScore;
+        for (int i = 1; i < 3; i++) {
+            if (i == 1) tempScore = scoreOfPlayer1;
+            else {
+                result += "-";
+                tempScore = scoreOfPlayer2;
+            }
+            switch (tempScore) {
+                case 0:
+                    result += "Love";
+                    break;
+                case 1:
+                    result += "Fifteen";
+                    break;
+                case 2:
+                    result += "Thirty";
+                    break;
+                case 3:
+                    result += "Forty";
+                    break;
             }
         }
         return result;
