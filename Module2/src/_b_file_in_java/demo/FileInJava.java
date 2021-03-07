@@ -1,16 +1,15 @@
-package _b_file_in_java;
+package _b_file_in_java.demo;
 
-import javax.annotation.processing.FilerException;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FileInJava {
     public static void main(String[] args) throws IOException {
-        String fileName =   "demo.txt";
+        String fileName = "src/_b_file_in_java/demo/demo.txt";
 
         try {
-           FileWriter fileWriter = new FileWriter(new File(fileName));
+           FileWriter fileWriter = new FileWriter(new File(fileName),true);
            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
            bufferedWriter.write("Xin chao ban !");
            bufferedWriter.close();

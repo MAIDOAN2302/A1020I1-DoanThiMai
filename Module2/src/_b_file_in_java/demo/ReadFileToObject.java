@@ -1,4 +1,4 @@
-package _b_file_in_java;
+package _b_file_in_java.demo;
 
 import java.io.*;
 
@@ -8,7 +8,7 @@ public class ReadFileToObject {
         sinhVien.setTen("Nguyen Van A");
         sinhVien.setTuoi(25);
         sinhVien.setDiem(10);
-        String filename = "Demo1.txt";
+        String filename = "src/_b_file_in_java/demo/Demo1.txt";
         // muon ghi file phai tao ra 1 then FileOutputStream
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(filename);
