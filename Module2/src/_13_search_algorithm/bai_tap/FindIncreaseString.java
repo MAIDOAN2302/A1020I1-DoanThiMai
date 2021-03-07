@@ -12,25 +12,25 @@ public class FindIncreaseString {
 
         LinkedList<Character> stringWantFind = new LinkedList<>();
 
-       for (int i = 0; i < string.length(); i++){
-           LinkedList<Character> list = new LinkedList<>();
-           list.add(string.charAt(i));
-           for (int j = i + 1; j < string.length(); j++){
-               if (string.charAt(j) > list.getLast()){
-                   list.add(string.charAt(j));
-               }
-           }
-           if (list.size() > stringWantFind.size()){
-               stringWantFind.clear();
-               stringWantFind.addAll(list);
-           }
-           list.clear();
+        for (int i = 0; i < string.length(); i++) {
+            LinkedList<Character> list = new LinkedList<>();
+            list.add(string.charAt(i));
+            for (int j = i + 1; j < string.length(); j++) {
+                if (string.charAt(j) > list.getLast()) {
+                    list.add(string.charAt(j));
+                }
+            }
+            if (list.size() > stringWantFind.size()) {
+                stringWantFind.clear();
+                stringWantFind.addAll(list);
+            }
+            list.clear();
         }
-       LinkedList<Character> strings = new LinkedList<>();
-       for (Character ch : stringWantFind){
-           strings.add(ch);
-       }
-        System.out.println(strings);
+
+        for (Character ch : stringWantFind) {
+            System.out.print(ch);
+        }
+
     }
 }
 /* Phan tich su phuc tam

@@ -28,3 +28,6 @@ public class FindIncreaseString1 {
 
     }
 }
+/*Phan tich do phuc tap cua thuat toan
+T(n) = O(n)
+ */
