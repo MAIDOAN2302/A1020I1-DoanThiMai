@@ -26,7 +26,7 @@ public class ReadFileToObject {
             FileInputStream fileInputStream = new FileInputStream(filename);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             SinhVien sinhVien1 = new SinhVien();
-            sinhVien1 =(SinhVien) objectInputStream.readObject();
+            sinhVien1 = (SinhVien) objectInputStream.readObject();
             System.out.println("Ten cua sinh vien la : " + sinhVien1.getTen());
             System.out.println("Tuoi cua sinh vien la : " + sinhVien1.getTuoi());
             System.out.println("Diem cua sinh vien la : " + sinhVien1.getDiem());
@@ -38,34 +38,5 @@ public class ReadFileToObject {
             e.printStackTrace();
         }
     }
-
 }
-class SinhVien implements Serializable{
-    private String ten;
-    private int tuoi;
-    private int diem;
 
-    public String getTen() {
-        return ten;
-    }
-
-    public void setTen(String ten) {
-        this.ten = ten;
-    }
-
-    public int getTuoi() {
-        return tuoi;
-    }
-
-    public void setTuoi(int tuoi) {
-        this.tuoi = tuoi;
-    }
-
-    public int getDiem() {
-        return diem;
-    }
-
-    public void setDiem(int diem) {
-        this.diem = diem;
-    }
-}

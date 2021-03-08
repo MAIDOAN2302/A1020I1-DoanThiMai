@@ -13,6 +13,7 @@ public class FileUtils {
 
             bufferedWriter.write(line);
             bufferedWriter.newLine();
+            bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
