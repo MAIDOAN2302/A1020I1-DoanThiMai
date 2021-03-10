@@ -24,9 +24,7 @@ public class IllegalTriangleException {
 
         try {
             if (triangle( a, b, c)){
-                System.out.println("Dung");
-            }else {
-                System.out.println("Sai");
+                System.out.println("OK");
             }
         } catch (Check check) {
             check.printStackTrace();
