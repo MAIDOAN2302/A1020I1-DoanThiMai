@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class CopyFile {
     public static void main(String[] args) {
         copyFile1();
-        printFile();
+//        printFile();
     }
 
     public static void copyFile1() {
@@ -43,22 +43,22 @@ public class CopyFile {
 
     }
 
-    public static void printFile() {
-        File file = new File("src/_16_io_file/bai_tap/copyfile/file2.csv");
-        try {
-            FileReader fileReader = new FileReader(file);
-            BufferedReader buff = new BufferedReader(fileReader);
-
-            String line = null;
-            while ((line = buff.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
+//    public static void printFile() {
+//        File file = new File("src/_16_io_file/bai_tap/copyfile/file2.csv");
+//        try {
+//            FileReader fileReader = new FileReader(file);
+//            BufferedReader buff = new BufferedReader(fileReader);
+//
+//            String line = null;
+//            while ((line = buff.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
 }
