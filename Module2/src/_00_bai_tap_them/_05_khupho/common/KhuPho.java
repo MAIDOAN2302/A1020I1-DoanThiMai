@@ -19,6 +19,7 @@ public class KhuPho {
         danhSachHoDan.add(hoDan);
     }
 
+
     // ham nhap vao danh sach ho dan
     public void nhapDanhSach(Scanner sc) {
         HoDan hoDan;

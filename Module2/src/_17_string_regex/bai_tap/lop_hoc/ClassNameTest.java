@@ -17,7 +17,6 @@ public class ClassNameTest {
         boolean isValid = className.validate(className1);
         System.out.println("Class name is : " + className1 + " is valid " +isValid);
     }
-
 }
 
 
