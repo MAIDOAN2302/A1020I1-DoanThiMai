@@ -30,7 +30,7 @@ add column email varchar(30);
 
  
 insert into student (email)
-value ('abc@abc')
+value ('abc@abc');
 
 
 
