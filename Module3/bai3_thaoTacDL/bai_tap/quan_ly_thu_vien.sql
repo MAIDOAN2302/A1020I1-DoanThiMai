@@ -1,4 +1,4 @@
-drop database quanLyThuVien;
+drop database if exists quanLyThuVien;
 create database quanLyThuVien;
 use quanLyThuVien;
 
@@ -71,3 +71,4 @@ value
 (03,'03','2021-04-08','2021-04-16',2,'mới'),
 (04,'04','2021-04-07','2021-04-18',2,'mới'),
 (05,'05','2021-04-01','2021-04-11',2,'mới');
+

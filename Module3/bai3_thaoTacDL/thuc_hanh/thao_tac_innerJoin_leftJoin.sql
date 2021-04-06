@@ -1,4 +1,4 @@
-drop database truyVanDLTuNhieuBang;
+drop database if exists truyVanDLTuNhieuBang;
 create database truyVanDLTuNhieuBang;
 use truyVanDLTuNhieuBang;
 
