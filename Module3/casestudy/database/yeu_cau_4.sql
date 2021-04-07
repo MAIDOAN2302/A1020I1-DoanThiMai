@@ -3,4 +3,5 @@ from khachhang KH
 inner join hopdong HD on HD.idKhachHang = KH.idKhachHang
 inner join loaikhach LK on LK.idLoaiKhachHang = KH.idLoaiKhachHang
 where tenLoaiKhachHang = 'Diamond'
-group by KH.idKhachHang;
+group by KH.idKhachHang
+order by KH.idKhachHang;
