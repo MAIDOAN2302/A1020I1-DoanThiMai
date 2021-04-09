@@ -82,6 +82,7 @@ idLoaiKhachHang int not null ,
 hoTenKhachHang varchar(50),
 ngaySinhKhachHang date not null,
 soCMND varchar(9) not null,
+sdtKhachHang varchar(45) not null,
 emailKhachHang varchar (45) not null,
 diaChiKhachHang varchar(45) not null,
 
@@ -90,13 +91,13 @@ foreign key (idLoaiKhachHang) references loaiKhach (idLoaiKhachHang)
 
 insert into khachHang
 values
-(1,1,'Nguyễn Văn Trỗi', '1992-03-31', '12345689','123@123','Quảng Nam'),
-(2,2,'Nguyễn Văn Hoàng', '1992-03-31', '12345689','123@123','Quảng Nam'),
-(3,3,'Võ Văn Tần', '1986-03-31', '12345678','123@abc','Đà Nẵng'),
-(4,1,'Huỳnh Thân', '1965-03-31', '123456784','123@dgh','Hà Nội'),
-(5,2,'Đỗ Hoàng', '2021-03-31', '12345677','123@rty','Quảng Bình'),
-(6,3,'Mai Huyền Trân', '1992-03-31', '12356781','123@hjj','Đà Nẵng'),
-(8,1,'Trần Văn Cường', '1992-03-31', '12356781','123@hjj','Đà Nẵng');
+(1,1,'Nguyễn Văn Trỗi', '1992-03-31', '12345689','091786565','123@123','Quảng Nam'),
+(2,2,'Nguyễn Văn Trỗi', '1992-03-31', '12345689','091056565','123@123','Quảng Nam'),
+(3,3,'Võ Văn Tần', '1986-03-31', '12345678','097896565','123@abc','Đà Nẵng'),
+(4,1,'Võ Văn Tần', '1965-03-31', '123456784','091786123','123@dgh','Vinh'),
+(5,2,'Đỗ Hoàng', '2021-03-31', '12345677','0910598565','123@rty','Quảng Ngãi'),
+(6,3,'Mai Huyền Trân', '1992-03-31', '12356781','0911598565','123@hjj','Đà Nẵng'),
+(8,1,'Trần Văn Cường', '1992-03-31', '12356781','091159565','123@hjj','Đà Nẵng');
 
 create table kieuThue(
 idKieuThue int not null primary key ,
@@ -159,11 +160,11 @@ foreign key (idNhanVien) references nhanvien(idNhanVien)
 );
 insert into hopDong
 values
-(1,1,1,1,'2021-03-31','2021-04-21',500,2000),
+(1,1,1,3,'2021-03-31','2021-04-21',500,2000),
 (2,2,1,2,'2019-03-31','2021-04-21',500,2000),
-(3,3,3,1,'2018-03-15','2021-04-21',500,2000),
-(4,4,4,1,'2019-01-15','2021-04-21',500,2000),
-(5,5,8,3,'2019-02-27','2021-04-21',500,2000);
+(3,3,3,3,'2018-03-15','2021-04-21',500,2000),
+(4,1,1,3,'2019-10-15','2021-04-21',600,2000),
+(5,4,4,2,'2019-12-27','2021-04-21',300,2000);
 
 create table dichVuDiKem(
 idDichVuDiKem int not null primary key,
@@ -192,10 +193,10 @@ idHopDong int not null,
 insert into hopDongChiTiet
 value
 (1,1,1,1),
-(2,2,2,2),
-(3,3,3,3),
-(4,3,2,4),
-(5,3,1,5);
+(2,2,2,1),
+(3,3,3,4),
+(4,3,2,2),
+(5,1,1,5);
 
 
 
