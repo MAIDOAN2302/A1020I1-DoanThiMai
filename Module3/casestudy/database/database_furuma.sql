@@ -74,7 +74,8 @@ insert into loaiKhach
 values
 (1,'Diamond'),
 (2,'VIP'),
-(3,'Normal');
+(3,'Normal'),
+(4,'Platinium');
 
 create table khachHang(
 idKhachHang int not null primary key ,
@@ -95,8 +96,8 @@ values
 (2,2,'Nguyễn Văn Trỗi', '1992-03-31', '12345689','091056565','123@123','Quảng Nam'),
 (3,3,'Võ Văn Tần', '1986-03-31', '12345678','097896565','123@abc','Đà Nẵng'),
 (4,1,'Võ Văn Tần', '1965-03-31', '123456784','091786123','123@dgh','Vinh'),
-(5,2,'Đỗ Hoàng', '2021-03-31', '12345677','0910598565','123@rty','Quảng Ngãi'),
-(6,3,'Mai Huyền Trân', '1992-03-31', '12356781','0911598565','123@hjj','Đà Nẵng'),
+(5,4,'Đỗ Hoàng', '2021-03-31', '12345677','0910598565','123@rty','Quảng Ngãi'),
+(6,4,'Mai Huyền Trân', '1992-03-31', '12356781','0911598565','123@hjj','Đà Nẵng'),
 (8,1,'Trần Văn Cường', '1992-03-31', '12356781','091159565','123@hjj','Đà Nẵng');
 
 create table kieuThue(
@@ -155,16 +156,16 @@ tienDatCoc double,
 tongTien double not null,
 
 foreign key (idDichVu) references dichVu(idDichVu),
-foreign key (idKhachHang) references khachhang(idKhachHang),
+foreign key (idKhachHang) references khachhang(idKhachHang) on delete cascade,
 foreign key (idNhanVien) references nhanvien(idNhanVien)
 );
 insert into hopDong
 values
 (1,2,1,3,'2015-03-31','2021-04-21',500,2000),
 (2,1,1,2,'2019-03-31','2021-04-21',500,2000),
-(3,2,3,3,'2018-03-15','2021-04-21',500,2000),
+(3,2,3,3,'2019-03-15','2021-04-21',500,2000),
 (4,1,1,3,'2019-10-15','2021-04-21',600,2000),
-(5,1,4,2,'2016-12-27','2021-04-21',300,2000);
+(5,1,6,2,'2019-12-27','2021-04-21',300,2000);
 
 create table dichVuDiKem(
 idDichVuDiKem int not null primary key,
@@ -186,7 +187,7 @@ idDichVuDiKem int not null,
 soLuong int not null,
 idHopDong int not null,
 
- foreign key(idHopDong) references hopDong(idHopDong),
+ foreign key(idHopDong) references hopDong(idHopDong) on delete cascade,
  foreign key(idDichVuDiKem) references dichVuDiKem(idDichVuDiKem)
 );
 

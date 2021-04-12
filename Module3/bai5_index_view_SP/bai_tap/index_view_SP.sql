@@ -72,8 +72,7 @@ end;
 call sp_products();
 
 delimiter //
-
-create procedure sp_products1 
+create procedure sp_products1
 (id int,
 productCode varchar(10),
 productName varchar(10),
@@ -83,14 +82,41 @@ productDescription text,
 productStatus varchar(100)
 )
 begin
-	insert into sp_products1
+	insert into products
     values
-    (6, 'F12','Rượu',7000, 100, 'Hàng Nhập', 'Đang giao');
+    (id, productCode,productName,productPrice, productAmount, productDescription,productStatus);
 end;
 // delimiter ;
 
-call sp_products1()
+call sp_products1(6,'T12','Rượu',7000, 100,'Hàng Nhập','Đang giao');
 
+delimiter //
+create procedure sp_products2
+(in p_id int,
+p_productCode varchar(10),
+p_productName varchar(10),
+p_productPrice double,
+p_productAmount int,
+p_productDescription text,
+p_productStatus varchar(100)
+)
+begin
+	update products
+    set productCode = p_productCode, productName = p_productName,productPrice = p_productPrice, 
+    productAmount = p_productAmount, productDescription = p_productDescription,productStatus = p_productStatus
+    where id = p_id;
+end;
+// delimiter ;
+call sp_products2(2,'ABC','Vang Nho', 200000, 50, 'Hang noi dia', 'Het Hang');
+
+delimiter //
+create procedure sp_delete(in p_id int)
+begin
+	delete from products 
+    where id = p_id;
+end;
+// delimiter ;
+call sp_delete(2);
 
 
 
