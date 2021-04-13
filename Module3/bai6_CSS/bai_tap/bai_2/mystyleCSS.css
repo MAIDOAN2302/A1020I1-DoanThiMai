@@ -1,0 +1,36 @@
+body{
+    background-color: white;
+    font-size: 100%;
+}
+h1{
+    text-align: left;
+    font-size: 2.5em;
+}
+p.normal{
+    font-family: "Times New Roman", Times, Serif;
+    text-align: left;
+    font-variant: normal;
+    font-weight: normal;
+    font-style: normal;
+}
+p.small{
+    font-variant: small-caps;
+    font-weight: 900;
+
+}
+div{
+    font-style: normal;
+    padding: 1px;
+    width: 1000px;
+    height: 70px;
+    text-align: justify;
+    text-indent: 50px;
+    direction: ltr;
+
+}
+em{
+    color: blue;
+}
+dfn{
+    color: blue;
+}
