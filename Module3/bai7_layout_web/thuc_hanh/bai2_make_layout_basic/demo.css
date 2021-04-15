@@ -1,0 +1,16 @@
+#parent{
+    background-color: forestgreen;
+    width: 400px;
+    height: 300px;
+    margin-left: 50px;
+    margin-right: 50px;
+    position: relative;
+}
+#child{
+    background-color: darkred;
+    width: 200px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
