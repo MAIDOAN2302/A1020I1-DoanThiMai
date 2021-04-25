@@ -1,0 +1,89 @@
+body{
+    background-color: #CDCDCD;
+}
+
+div.row {
+    background-color: #777777;
+    float: left;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+}
+div div.row1{
+    float: left;
+    margin: 10px;
+}
+div div.row2{
+    float: right;
+    margin: 10px;
+}
+div div.row1 a:link,a:visited{
+    color: red;
+    }
+div.row10 {
+    background-color: #777777;
+    color: white;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+div.row1 {
+    position: relative;
+    display: inline-block;
+}
+div.row11 {
+    display: none;
+    position: absolute;
+    background-color: #777777;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+div.row11 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+div.row11 a:hover {background-color: #f1f1f1}
+div.row1:hover .row11 {
+    display: block;
+}
+div.left{
+    display: block;
+    float: left;
+    color:unset;
+    height: 80%;
+}
+.button{
+    display: block;
+    float: right;
+    width: 20%;
+    height: 30%;
+    clear: both;
+    border: 0;
+    padding: 10px;
+    margin: 10px;
+}
+div.center{
+    display: block;
+    float: left;
+    background-color: white;
+    height: 550px;
+
+}
+
+p,h2{
+    text-align: center;
+}
+.footer{
+    display: block;
+    background-color: #777777;
+    text-align: center;
+    clear: both;
+    color: white;
+    width: 100%;
+    height: 30%;
+}
+

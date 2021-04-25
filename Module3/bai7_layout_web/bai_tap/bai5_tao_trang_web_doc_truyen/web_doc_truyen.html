@@ -2,9 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>ĐỌC TRUYỆN</title>
+    <link rel="stylesheet" href="stylecss.css">
 </head>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 <body>
-$END$
+<div id="header">
+    <div id="logo">
+        <img src="img/logo.jpg" alt="logo" id="img-logo">
+        <h1 id="web-name">ĐỌC TRUYỆN ONLINE</h1>
+    </div>
+    <div id="banner">
+        <input type="search" placeholder="Nhập truyện cần tìm" id="search"/>
+        <input type="button" value="Tìm kiếm truyện" id="search-button">
+        <p>Chúc các bạn đọc truyện vui vẻ!</p>
+    </div>
+</div>
+<div id="nav-bar">
+    <a href="#">TRANG CHỦ</a>
+    <a href="#">THỂ LOẠI</a>
+    <a href="#">NGÔN TÌNH</a>
+    <a href="#">TRUYỆN TEEN</a>
+    <a href="#">TRUYỆN MỚI</a>
+    <a href="#">TRUYỆN TRANH</a>
+    <a href="#">TIỂU THUYẾT</a>
+</div>
+<div id="sidebar">
+    <div id="text-top">
+        <h2>Truyện top</h2>
+    </div>
+    <div id="list-story">
+        <h5><a href="html2.html">NGÔN TÌNH</a></h5>
+        <h5><a href="#">T TEEN</a></h5>
+        <h5><a href="#">X KHÔNG</a></h5>
+        <h5><a href="#">KIẾM HIỆP</a></h5>
+        <h5><a href="#">TIÊN HIỆP</a></h5>
+        <h5><a href="#">SẮC HIỆP</a></h5>
+        <h5><a href="#">LỊCH SỬ</a></h5>
+        <h5><a href="#">QUÂN SỰ</a></h5>
+        <h5><a href="#">ĐỖ THỊ</a></h5>
+        <h5><a href="#">VỌNG DU</a></h5>
+        <h5><a href="#">DI NĂNG</a></h5>
+        <h5><a href="#">KHOA HUYỀN</a></h5>
+        <h5><a href="#">TRINH THÁM</a></h5>
+        <h5><a href="#">TRUYỆN MA</a></h5>
+    </div>
+</div>
+<div id="content">
+    <div class="one-story">
+        <a href="#"><img src="img/1.jpg" alt="img1" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Em của ngày hôm qua</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/2.jpg" alt="img2" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Conan tập 2</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/3.jpg" alt="img3" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Dạo bước phồn hoa</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/4.jpg" alt="img4" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Cổ tích Việt Nam</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/5.jpg" alt="img5" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Nam thần ở phòng bên cạnh</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/6.jpg" alt="img6" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Doaremon người ngoài hình tinh</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/7.jpg" alt="img7" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Mẹ ma</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/8.jpg" alt="img8" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Danh nhân</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/9.jpg" alt="img9" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Vũ Trọng Phụng</h4></a>
+    </div>
+    <div class="one-story">
+        <a href="#"><img src="img/10.jpg" alt="img10" class="thumbnail"></a>
+        <a href="#"><h4 class="title-story">Grimm</h4></a>
+    </div>
+</div>
+<div id="footer"></div>
 </body>
 </html>
