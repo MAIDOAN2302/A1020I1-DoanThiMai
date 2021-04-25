@@ -7,7 +7,117 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+<div class="container" style="height: auto">
+    <header class="row">
+        <div class="col-sm-8 shopping-mall">
+            <h1>Online shopping mall</h1>
+            <h5>The center point of the professional programming</h5>
+        </div>
+        <img class="col-sm-4" src="image/shop-online-1-1024x524-800x409-1.png"/>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="row">
+        <article class="col-sm-9">
+        </article>
+        <aside class="col-sm-3">
+            <div class="poly-cart">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="col-sm-5" src="images/shoppingcart.gif"/>
+                        <ul class="col-sm-7">
+                            <li>100 items</li>
+                            <li>$56.8</li>
+                            <li><a href="#">Xem giỏ hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="card card-default">
+        <div class="card-body">
+            <form>
+                <input placeholder="Keywords" class="form-control" />
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <strong>Chủng Loại</strong>
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item">Điện thoại di động</a>
+            <a href="#" class="list-group-item">Máy tính xách tay</a>
+            <a href="#" class="list-group-item">Máy tính để bàn</a>
+            <a href="#" class="list-group-item">Quạt máy</a>
+            <a href="#" class="list-group-item">Tivi</a>
+            <a href="#" class="list-group-item">Tủ lạnh</a>
+        </div>
+    </div>
+
+
+    <div class="col-sm-3 poly-prod">
+        <div class="card card-default">
+            <div class="card-header">
+                <h4 class="card-title">
+                    Nokia
+                </h4>
+            </div>
+            <div class="card-body">
+                <img src="images/computer.png" height="180" width="200" /></div>
+            <div class="card-footer">
+                $ 100.25
+            </div>
+        </div>
+    </div>
+    
+    <footer class="card">
+        <div class="card-header text-center">
+            <p>CodeGym &copy; 2017</p>
+        </div>
+    </footer>
+    <footer class="card card-default">
+        <div class="card-heading text-center">
+            <p>CodeGym &copy; 2017</p>
+        </div>
+    </footer>
+</div>
+<script src="jquery.html"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
