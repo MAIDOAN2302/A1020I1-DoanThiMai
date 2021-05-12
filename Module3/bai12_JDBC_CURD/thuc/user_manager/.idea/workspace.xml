@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0627e352-434c-4e3f-94b6-70a079a2eb57" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/show_customers_list.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/src/bean/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/src/servlet/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/web/customers-jstl.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/web/image/benttly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/web/image/dehan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/web/image/manse.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/web/image/mingkook.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/show_customers_list/web/image/naeun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/src/controller/ProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/src/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/src/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/src/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/product/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/product/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/product/search.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/product/show-product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/product/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/bai_tap/product_manager/web/show-product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai11_MVC_model/thuc_hanh/customer_manager/customer_manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/.idea/artifacts/calculator_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/.idea/artifacts/calculator_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/out/artifacts/calculator_war_exploded/WEB-INF/classes/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/out/artifacts/calculator_war_exploded/WEB-INF/classes/CalculatorServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/out/artifacts/calculator_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/out/artifacts/calculator_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/out/production/calculator/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/out/production/calculator/CalculatorServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/src/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/src/CalculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/src/servlet/CalculatorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/calculator/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/artifacts/display_list_custumer_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/display_list_custumer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/classes/META-INF/display_list_custumer.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/classes/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/image/benttly.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/image/dehan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/image/manse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/image/mingkook.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/image/naeun.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/artifacts/display_list_custumer_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/production/display_list_custumer/META-INF/display_list_custumer.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/out/production/display_list_custumer/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/src/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/image/benttly.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/image/dehan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/image/manse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/image/mingkook.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/image/naeun.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/bai_tap/display_list_custumer/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/Currency_conversion/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/Currency_conversion/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/.idea/artifacts/bai1_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/.idea/artifacts/bai1_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/.idea/libraries/jstl_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/.idea/libraries/jstl_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/bai1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai10_JSTL/thuc_hanh/demo/bai1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai8_bootstap,/bai_tap/bai2_web_landing_page/landing_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai8_bootstap,/bai_tap/bai2_web_landing_page/landing_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai9_web/bai_tap/price_of_products/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai9_web/bai_tap/price_of_products/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai9_web/bai_tap/price_of_products/src/bai_tap/DiscountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai9_web/bai_tap/price_of_products/src/bai_tap/DiscountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai9_web/thuc_hanh/java-web-currency-converter/java-web-currency-converter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai9_web/thuc_hanh/java-web-currency-converter/java-web-currency-converter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai9_web/thuc_hanh/simple_dictionary/simple_dictionary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai9_web/thuc_hanh/simple_dictionary/simple_dictionary.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../bai9_web/thuc_hanh/simple_login/simple_login.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../bai9_web/thuc_hanh/simple_login/simple_login.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1sR6xWfj6QEQ1agrqtiCsgrKEq7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../thuc_hanh/user_manager" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\hoc_lap_trinh\A1020I1-DoanThiMai\Module3\bai12_JDBC_CURD\thuc\user_manager\web\WEB-INF\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <deployment>
+        <artifact name="user_manager:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_21_user_manager" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50338" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="user_manager:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0627e352-434c-4e3f-94b6-70a079a2eb57" name="Default Changelist" comment="" />
+      <created>1620823301608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620823301608</updated>
+      <workItem from="1620823307415" duration="1218000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620823322953">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1620823322953" />
+    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1620824753964">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1620824753964" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1620823372786">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1620823372786" />
+  </component>
+</project>

@@ -8,21 +8,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "bai_tap.DiscountServlet", urlPatterns = "/Product")
-public class DiscountServlet extends HttpServlet {
+public class DiscountServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String product = request.getParameter("product_description");
         Double price = Double.parseDouble(request.getParameter("list_price"));
-        Double discount_percent = Double.parseDouble(request.getParameter("discount_percent"));
+        Double discountPercent = Double.parseDouble(request.getParameter("discount_percent"));
 
-        Double discount_amount = price * discount_percent * 0.01;
-        Double discount_price = price - discount_amount;
+        Double discountAmount = price * discountPercent * 0.01;
+        Double discountPrice = price - discountAmount;
 
         request.setAttribute("product", product);
         request.setAttribute("price", price);
-        request.setAttribute("discount_percent", discount_percent);
-        request.setAttribute("discount_percent", discount_amount);
-        request.setAttribute("discount_price", discount_price);
+        request.setAttribute("discount_percent", discountPercent);
+        request.setAttribute("discount_percent", discountAmount);
+        request.setAttribute("discount_price", discountPrice);
         request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }

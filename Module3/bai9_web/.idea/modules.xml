@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bai9_web.iml" filepath="$PROJECT_DIR$/.idea/bai9_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bai_tap/bai_tap.iml" filepath="$PROJECT_DIR$/bai_tap/bai_tap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thuc_hanh/java-web-currency-converter/java-web-currency-converter.iml" filepath="$PROJECT_DIR$/thuc_hanh/java-web-currency-converter/java-web-currency-converter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thuc_hanh/sever_time/sever_time.iml" filepath="$PROJECT_DIR$/thuc_hanh/sever_time/sever_time.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thuc_hanh/simple_dictionary/simple_dictionary.iml" filepath="$PROJECT_DIR$/thuc_hanh/simple_dictionary/simple_dictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thuc_hanh/simple_login/simple_login.iml" filepath="$PROJECT_DIR$/thuc_hanh/simple_login/simple_login.iml" />
+    </modules>
+  </component>
+</project>
