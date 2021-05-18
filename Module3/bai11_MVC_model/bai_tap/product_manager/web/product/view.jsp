@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -12,19 +13,19 @@
 <table>
     <tr>
         <td>Product name:</td>
-        <td>${requestScope["product"].getProductName}</td>
+        <td><c:out value="${product.getProductName()}"></c:out></td>
     </tr>
     <tr>
         <td>Product price:</td>
-        <td>${requestScope["product"].getProductPrice}</td>
+        <td><c:out value="${product.getProductPrice()}"></c:out></td>
     </tr>
     <tr>
         <td>Description of product:</td>
-        <td>${requestScope["product"].getProductOfDescription}</td>
+        <td><c:out value="${product.getProductOfDescription()}"></c:out></td>
     </tr>
     <tr>
         <td>Maker:</td>
-        <td>${requestScope["product"].getMaker}</td>
+        <td><c:out value="${product.getMaker()}"></c:out></td>
     </tr>
 </table>
 </body>

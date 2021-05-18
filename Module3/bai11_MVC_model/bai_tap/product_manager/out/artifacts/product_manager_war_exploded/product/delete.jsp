@@ -16,19 +16,19 @@
         <table>
             <tr>
                 <td>Product name:</td>
-                <td>${requestScope["product"].getProductName}</td>
+                <td>${requestScope["products"].getProductName()}</td>
             </tr>
             <tr>
                 <td>Product name:</td>
-                <td>${requestScope["product"].getProductPrice}</td>
+                <td>${requestScope["products"].getProductPrice()}</td>
             </tr>
             <tr>
                 <td>Product name:</td>
-                <td>${requestScope["product"].getProductOfDescription}</td>
+                <td>${requestScope["product"].getProductOfDescription()}</td>
             </tr>
             <tr>
                 <td>Product name:</td>
-                <td>${requestScope["product"].getMaker}</td>
+                <td>${requestScope["products"].getMaker()}</td>
             </tr>
             <tr>
                 <td>

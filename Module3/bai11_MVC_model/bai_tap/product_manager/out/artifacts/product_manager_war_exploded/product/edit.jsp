@@ -23,28 +23,28 @@
                 <td>Product name:</td>
                 <td>
                     <input type="text" name="productName" id="productName"
-                           value="${requestScope["product"].getProductName}"/>
+                           value="${requestScope["products"].getProductName()}"/>
                 </td>
             </tr>
             <tr>
                 <td>Product price:</td>
                 <td>
                     <input type="text" name="productPrice" id="productPrice"
-                           value="${requestScope["product"].getProductPrice}"/>
+                           value="${requestScope["products"].getProductPrice()}"/>
                 </td>
             </tr>
             <tr>
                 <td>Description product:</td>
                 <td>
                     <input type="text" name="productOfDescription" id="productOfDescription"
-                           value="${requestScope["product"].getProductOfDescription}"/>
+                           value="${requestScope["products"].getProductOfDescription()}"/>
                 </td>
             </tr>
             <tr>
                 <td>Maker:</td>
                 <td>
                     <input type="text" name="maker" id="maker"
-                           value="${requestScope["product"].getMaker}"/>
+                           value="${requestScope["products"].getMaker()}"/>
                 </td>
             </tr>
             <tr>

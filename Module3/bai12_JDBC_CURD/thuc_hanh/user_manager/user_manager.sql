@@ -1,0 +1,1 @@
+SELECT * FROM user_manager.user_manager;
