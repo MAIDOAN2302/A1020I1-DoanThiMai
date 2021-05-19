@@ -2,15 +2,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>User Management</title>
+    <title>Users Management</title>
 </head>
 <body>
-<h1>User Management</h1>
+<h1>Users Management</h1>
 <p>
-    <a href="/managerUsers?action=create">Create new User</a>
+    <a href="/users?action=create">Create new user</a>
 </p>
 <p>
-    <c:out value="${message}"/>
+    <c:out value="${message}"></c:out>
 </p>
 <table border="1">
     <tr>
@@ -19,18 +19,19 @@
         <th>Email</th>
         <th>Country</th>
     </tr>
-    <c:forEach items="${requestScope['managerUsers']}" var="user">
+    <c:forEach items="${requestScope['Users']}" var="user">
         <tr>
             <td>${user.getId()}</td>
-            <td><a href="managerUsers?action=view&id=${user.getId()}">${user.getName()}</a></td>
+            <td>${user.getName()}</td>
             <td>${user.getEmail()}</td>
             <td>${user.getCountry()}</td>
-            <td><a href="/managerUsers?action=edit&id=${product.getId()}">Edit</a></td>
-            <td><a href="/managerUsers?action=delete&id=${product.getId()}">Delete</a></td>
-            <td><a href="/managerUsers?action=search&id=${product.getId()}">Search</a></td>
-            <td><a href="/managerUsers?action=sort&id=${product.getId()}">Sort By Name</a></td>
+            <td><a href="/users?action=edit&id = ${user.getId()}">Edit</a> </td>
+            <td><a href="/users?action=delete&id = ${user.getId()}">Delete</a> </td>
+            <td><a href="/users?action=search&id = ${user.getId()}">Search</a> </td>
         </tr>
+
     </c:forEach>
 </table>
+
 </body>
 </html>
