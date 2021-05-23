@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Viet_thu_vien_Java_bang_Gradle:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Viet_thu_vien_Java_bang_Gradle_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Viet_thu_vien_Java_bang_Gradle/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Viet_thu_vien_Java_bang_Gradle" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

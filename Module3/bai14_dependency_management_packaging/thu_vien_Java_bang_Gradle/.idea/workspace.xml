@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3dc57a33-7622-4001-9217-1ec51b95e307" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../SS1.Cơ_so_du_lieu_quan_he/Thuc_thi_cac_cau_lenh_SQL.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS1.Cơ_so_du_lieu_quan_he/mysqlsampledatabase.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/src/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/src/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/src/ListCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Hien_thi_danh_sach_khach_hang/web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Ung_dung_Calculator/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Ung_dung_Calculator/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Ung_dung_Calculator/src/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS10.JSP_va_JSTL/Ung_dung_Calculator/src/CalculatorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/.idea/libraries/WEB_INF.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/src/controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/src/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/src/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/src/service/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/WEB-INF/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/WEB-INF/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/customer/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/customer/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/customer/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/customer/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS11.MVC_Model/Ung_dung_quan_ly_san_pham/web/customer/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/src/DAO/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/src/DAO/impl/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/src/controller/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/src/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/web/lib/mysql-connector-java-8.0.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/web/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/web/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/web/user/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/web/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS12.JDBC_CRUD/Cap_nhat_ung_dung_quan_ly_User/web/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/src/DAO/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/src/DAO/impl/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/src/controller/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/src/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/web/lib/mysql-connector-java-8.0.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/web/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/web/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/web/user/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/web/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_JDBC_Transaction/web/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/artifacts/MySql_Stored_Procedures_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/MySql_Stored_Procedures.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.ejb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.persistence.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.resource.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.servlet.jsp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/lib/javax.transaction.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/src/DAO/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/src/DAO/impl/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/src/controller/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/src/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/lib/mysql-connector-java-8.0.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/user/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS13.JDBC_Querying_Transaction/MySql_Stored_Procedures/web/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Greeter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/HelloWorldTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS2.Thiet_ke_va_tao_CSDL/Phan_tich_va_thiet_ke_CSDL.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS2.Thiet_ke_va_tao_CSDL/Xac_dinh_khoa_chinh_va_khoa_ngoai_cua_bang.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS3.Thao_tac_voi_CSDL/quan_li_thu_vien.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS4.Cac_ham_thong_dung_trong_SQL/Database_luyen_tap_cac_ham_thong_dung_trongSQL.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS4.Cac_ham_thong_dung_trong_SQL/Luyen_tap_cac_ham_thong_dung_trong_sql.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS5.SQL_View_Index_And_Stored_Procedure/View_Index_Store_Procedure.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS5.SQL_View_Index_And_Stored_Procedure/products.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS6._CSS_Cascading_Style_Stylesheet/Dinh_dang_van_ban.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS6._CSS_Cascading_Style_Stylesheet/Nhung_CSS_vao_trang_HTML.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS6._CSS_Cascading_Style_Stylesheet/Nhung_Css_va_trang_HTML.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS6._CSS_Cascading_Style_Stylesheet/Tao_Trang_Truyen/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS6._CSS_Cascading_Style_Stylesheet/Tao_Trang_Truyen/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS7.Thiet_ke_bo_cuc_trang_web/HomeFaceBook/facebook.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS7.Thiet_ke_bo_cuc_trang_web/HomeFaceBook/facebook.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS7.Thiet_ke_bo_cuc_trang_web/Tao_layout_voi_cac_the_HTML5_va_CSS/Tao_layout_voi_cac_the_HTML5_va_CSS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS9.Tong_quan_ung_dung_Web/Product_Discount_Calculator/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS9.Tong_quan_ung_dung_Web/Product_Discount_Calculator/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SS9.Tong_quan_ung_dung_Web/Product_Discount_Calculator/src/DiscountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module2/.idea/sonarlint/issuestore/e/4/e41eee1fe8b3f5a23c9bef8124ba89924010eaba" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module2/.idea/sonarlint/issuestore/e/4/e41eee1fe8b3f5a23c9bef8124ba89924010eaba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module2/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module2/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.sh">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Greeter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/HelloWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+              <folding>
+                <element signature="e#85#86#0" expanded="true" />
+                <element signature="e#112#113#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/HelloWorldTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/Greeter.java" />
+        <option value="$PROJECT_DIR$/src/main/impl/Greeter.java" />
+        <option value="$PROJECT_DIR$/src/main/impl/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/src/main/impl/abc.java" />
+        <option value="$PROJECT_DIR$/src/main/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/src/test/HelloWorldTest.java" />
+        <option value="$PROJECT_DIR$/test.sh" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="150" />
+    <option name="y" value="75" />
+    <option name="width" value="1890" />
+    <option name="height" value="975" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Viet_thu_vien_Java_bang_Gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584499691447" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SS15.CaseStudy" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="impl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dc57a33-7622-4001-9217-1ec51b95e307" name="Default Changelist" comment="" />
+      <created>1584493956443</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584493956443</updated>
+      <workItem from="1584493963720" duration="1739000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1739000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="23" width="1295" height="704" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Web" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32969034" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="SonarLint" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/impl/Greeter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/impl/abc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Greeter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding>
+            <element signature="e#85#86#0" expanded="true" />
+            <element signature="e#112#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/HelloWorldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Viet_thu_vien_Java_bang_Gradle:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Viet_thu_vien_Java_bang_Gradle</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
