@@ -44,6 +44,6 @@ public class HomeServlet extends HttpServlet {
     }
 
     private void homePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("homePage.jsp").forward(request,response);
+        request.getRequestDispatcher("jsp/homePage.jsp").forward(request,response);
     }
 }

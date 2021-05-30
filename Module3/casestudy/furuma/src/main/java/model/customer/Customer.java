@@ -1,10 +1,12 @@
 package model.customer;
 
+import java.util.Date;
+
 public class Customer {
     private int customer_id;
     private int customer_type_id;
     private String customer_name;
-    private String customer_birthday;
+    private Date customer_birthday;
     private String customer_gender;
     private String customer_id_card;
     private String customer_phone;
@@ -14,7 +16,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int customer_id, int customer_type_id, String customer_name, String customer_birthday,
+    public Customer(int customer_id, int customer_type_id, String customer_name, Date customer_birthday,
                     String customer_gender, String customer_id_card, String customer_phone, String customer_email,
                     String customer_address) {
         this.customer_id = customer_id;
@@ -52,11 +54,11 @@ public class Customer {
         this.customer_name = customer_name;
     }
 
-    public String getCustomer_birthday() {
+    public Date getCustomer_birthday() {
         return customer_birthday;
     }
 
-    public void setCustomer_birthday(String customer_birthday) {
+    public void setCustomer_birthday(Date customer_birthday) {
         this.customer_birthday = customer_birthday;
     }
 

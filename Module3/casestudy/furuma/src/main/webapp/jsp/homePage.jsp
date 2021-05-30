@@ -146,7 +146,6 @@
 <script src="../assert/datatables/js/jquery.dataTables.min.js"></script>
 <script src="../assert/datatables/js/dataTables.bootstrap4.min.js"></script>
 <script src="../assert/bootstrap413/js/bootstrap.min.js"></script>
-<%--<script src="assert/js/jquery-3.6.0.js"></script>--%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
 </script>
 
