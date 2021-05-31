@@ -29,6 +29,6 @@ public class CustomerListServlet extends HttpServlet {
             throwables.printStackTrace();
         }
         request.setAttribute("customerList",customerList);
-        request.getRequestDispatcher("jsp/customerList.jsp").forward(request,response);
+        request.getRequestDispatcher("jsp/customer/customerList.jsp").forward(request,response);
     }
 }

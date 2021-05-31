@@ -1,9 +1,7 @@
 package repository.customer.impl;
-
 import model.customer.Customer;
 import repository.BaseRepository;
 import repository.customer.CustomerRepository;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
