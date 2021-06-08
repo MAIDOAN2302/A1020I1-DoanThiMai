@@ -45,7 +45,7 @@
                         <td>${customer.customer_email}</td>
                         <td>${customer.customer_address}</td>
                         <td class="text-center">
-                            <a href="customer-edit?id=${customer.customer_id}">
+                            <a href="action?customer-edit?id=${customer.customer_id}">
                                 <span class="material-icons">edit</span>
                             </a>
                         </td>

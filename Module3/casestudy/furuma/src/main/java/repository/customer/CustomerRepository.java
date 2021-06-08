@@ -12,4 +12,5 @@ public interface CustomerRepository {
     boolean deleteCustomer(int id) throws SQLException;
     boolean updateCustomer(Customer customer) throws SQLException;
     List<Customer> selectCustomerByName(String name) throws SQLException;
+    
 }

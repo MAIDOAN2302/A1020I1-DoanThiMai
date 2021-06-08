@@ -18,10 +18,10 @@ public class CustomerServlet extends HttpServlet {
     CustomerService customerService = new CustomerServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action= request.getParameter("action");
+        String action = request.getParameter("action");
 
         if (action == null) {
-            action= "";
+            action = "";
         }
     }
 
@@ -33,15 +33,10 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action) {
             case "delete":
-                try {
-                    deleteCus(request,response);
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
                 break;
             case "edit":
                 try {
-                    editCus(request,response);
+                    editCus(request, response);
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
@@ -65,14 +60,8 @@ public class CustomerServlet extends HttpServlet {
 
     private void editCus(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        request.setAttribute("listCus",this.customerService.getById(id));
-        request.getRequestDispatcher("jsp/customer/editCus.jsp").forward(request,response);
+        Customer customer = this.customerService.getById(id);
+        request.setAttribute("customer", customer);
+        request.getRequestDispatcher("jsp/customer/editCus.jsp").forward(request, response);
     }
-
-    private void deleteCus(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        request.setAttribute("listCus",this.customerService.remove(id));
-    }
-
-
 }
