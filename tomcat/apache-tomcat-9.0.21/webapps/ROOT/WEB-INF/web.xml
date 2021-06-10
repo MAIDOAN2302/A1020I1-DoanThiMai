@@ -19,19 +19,6 @@
         <load-on-startup>1</load-on-startup>
         <!-- 1 nghia la load tai thoi diem khoi dong server, neu khong cai dat hoac = 0 thhi se load khi co request goi toi severlet-->
     </servlet>
-    <filter>
-        <filter-name>CharsetFilter</filter-name>
-        <filter-class>config.CharsetFilter</filter-class>
-        <init-param>
-            <param-name>requestEncoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>CharsetFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
