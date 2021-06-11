@@ -10,8 +10,8 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--Khai bao vi tri dat class là controller, service.. Nơi chứa controller-->
-    <context:component-scan base-package="controller"/>
+    <!--Khai bao vi tri dat class là example.controller, service.. Nơi chứa example.controller-->
+    <context:component-scan base-package="example"/>
     <mvc:annotation-driven/>
 
     <!--Khai bao vi tri dat view, duoi file cua view-->
