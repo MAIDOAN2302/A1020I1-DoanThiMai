@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout::head}">
+    <meta charset="UTF-8">
+    <title>dslkdjsakldjsakdjsakldjl</title>
+</head>
+<body>
+
+<form th:object="${student}" action="/student/create" method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" th:field="*{id}">
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" th:field="*{name}">
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" th:field="*{gender}" value="0" />Female
+                <input type="radio" th:field="*{gender}" value="1" />Male
+                <input type="radio" th:field="*{gender}" value="2" />LGBT
+            </td>
+        </tr>
+        <tr>
+            <td>Languages:</td>
+            <td>
+                <input type="checkbox" th:each="lang:${languageList}"
+                       th:text="${lang}" th:value="${lang}" th:field="*{language}">
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Create</button>
+</form>
+
+<div th:insert="~{layout::footer}">
+
+</div>
+</body>
+</html>

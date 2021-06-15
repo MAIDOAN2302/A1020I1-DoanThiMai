@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--Khai bao vi tri dat class là controller, service.. Nơi chứa controller-->
-    <context:component-scan base-package="uploadFile.controller"/>
+    <context:component-scan base-package="uploadFile.controller,uploadFile.form"/>
     <mvc:annotation-driven/>
 
     <!--Khai bao vi tri dat view, duoi file cua view-->
