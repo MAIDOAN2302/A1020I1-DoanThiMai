@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/blog" method="get" th:object="${ecommers}">
+<div>
+    <input type="text" name="key_search"> Ecommerce
+</div>
+</form>
+<form action="/blog" method="get">
+    <select onchange="this.form.submit()" th:value ="${ecomId}" th:name="ecomId">
+        <option value="" disabled selected> Choose here</option>
+        <th:block th:each = "ecom : ${ecommers}">
+            <option th:value="${ecom.id}" th:text="${ecom.name}" th:href="@{/blog/ecom/${ecom.getId()}}"> </option>
+        </th:block>
+    </select>
+</form>
+<table class="table" id="blogs" th:object="${blogs}">
+    <thead>
+    <th class="col">ID</th>
+    <th class="col">Type</th>
+    <th class="col">Author</th>
+    <th class="col">Ecommerce</th>
+    <th class="col">Action</th>
+    </thead>
+    <tbody>
+    <tr th:each="blog, blogstart:${blogs}">
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.type}"></td>
+        <td th:text="${blog.author}"></td>
+        <td th:text="${blog.geteCommerce().getName()}"></td>
+        <td>a</td>
+    </tr>
+    </tbody>
+</table>
+<div th:if="${ecomId == null}">
+    <a th:href="@{'/blog/'(page=${blogs.number - 1}, key_search=${key_search})}" th:if="${blogs.hasPrevious()}">Previous</a>
+    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+    <a th:href="@{'/blog/'(page=${blogs.number + 1}, key_search=${key_search})}" th:if="${blogs.hasNext()}">Next</a>
+</div>
+<div th:if="${ecomId != null}">
+    <a th:href="@{'/blog/'(page=${blogs.number - 1},ecomId=${ecomId})}" th:if="${blogs.hasPrevious()}">Previous</a>
+    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+    <a th:href="@{'/blog/'(page=${blogs.number + 1},ecomId=${ecomId})}" th:if="${blogs.hasNext()}">Next</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
