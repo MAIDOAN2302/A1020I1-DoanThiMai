@@ -1,10 +1,10 @@
-package com.codegym;
+package vn.codegym;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ValidationFormApplicationTests {
+class QuanLiKhPhanTrangApplicationTests {
 
     @Test
     void contextLoads() {

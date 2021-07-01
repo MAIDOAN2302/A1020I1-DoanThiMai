@@ -1,13 +1,13 @@
-package com.codegym;
+package vn.codegym;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ValidationFormApplication {
+public class QuanLiKhPhanTrangApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ValidationFormApplication.class, args);
+        SpringApplication.run(QuanLiKhPhanTrangApplication.class, args);
     }
 
 }
