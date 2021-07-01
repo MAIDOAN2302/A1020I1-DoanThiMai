@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:object="${student}" th:action="@{/student/create}" method="post">
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <input type="text" th:field="*{name}" />
+            </td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" th:field="*{gender}" value="0" />Female
+                <input type="radio" th:field="*{gender}" value="1" />Male
+                <input type="radio" th:field="*{gender}" value="2" />LGBT
+            </td>
+        </tr>
+        <tr>
+            <td>Account name: </td>
+            <td>
+                <input type="text" th:field="*{account.accountName}" />
+            </td>
+        </tr>
+        <tr>
+            <td>Class: </td>
+            <td>
+                <select th:field="*{classRoom.id}">
+                    <option th:each="item:${classRoomList}" th:text="${item.name}" th:value="${item.id}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Courses: </td>
+            <td>
+                <input type="checkbox" th:each="item:${courseList}" th:text="${item.name}" th:value="${item.id}" th:field="*{courses}" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create"/>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input User</title>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css">
+    <style>
+        /*div.form-group {*/
+        /*    position: center;*/
+        /*    border: 1px solid #ccc;*/
+        /*    width: 50%;*/
+        /*    height: 70px;*/
+        /*}*/
+        p{
+            color: red;
+            font-size: small;
+            font-style: italic;
+            font-family: Tahoma;
+        }
+    </style>
+</head>
+<body>
+<h2>Form Input User</h2>
+<form th:action="@{/register}" method="post" th:object="${user}">
+
+    <div class="form-group">
+        <label th:for="firstName"> First Name: </label>
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+        <input type="text" class="form-control" id="firstName" name="firstName" th:field="*{firstName}">
+    </div>
+
+    <div class="form-group">
+        <label th:for="lastName"> Last Name: </label>
+        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+        <input type="text" class="form-control" id="lastName" name="lastName" th:field="*{lastName}">
+    </div>
+
+    <div class="form-group">
+        <label th:for="age"> Age: </label>
+        <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+        <input type="text" class="form-control" id="age" name="age" th:field="*{age}">
+    </div>
+
+    <div class="form-group">
+        <label th:for="email"> Email: </label>
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        <input type="text" class="form-control" id="email" name="email" th:field="*{email}">
+    </div>
+
+    <div class="form-group">
+        <label th:for="phoneNumber"> Phone number: </label>
+        <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}">
+    </div>
+    <input type="submit" th:value="Submit"/>
+</form>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="bootstrap413/js/bootstrap.min.js"></script>
+</body>
+</html>
