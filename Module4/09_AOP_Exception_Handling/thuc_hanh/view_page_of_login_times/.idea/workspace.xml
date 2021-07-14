@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="333ff766-e6e3-4e34-aca5-d4e830756c49" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/model/Province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/repositories/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/repositories/ProvinceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/service/ProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/java/com/codegym/service/impl/ProvinceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/bootstrap413/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_list_management/src/main/resources/static/jquery/jquery-3.5.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3/bai13_JDBC _querying_ransaction/bai_tap/quan_ly_user_dung_store_procedure2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3/bai13_JDBC _querying_ransaction/bai_tap/quan_ly_user_dung_store_procedure2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3/casestudy/furuma/db_furuma.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3/casestudy/furuma/db_furuma.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../tomcat/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../tomcat/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/classes/controller/Calculate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../tomcat/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../tomcat/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../tomcat/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../tomcat/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/web.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1vItsLaf2aVPB3s9r7B239kytzf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.33793104" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="333ff766-e6e3-4e34-aca5-d4e830756c49" name="Default Changelist" comment="" />
+      <created>1626261635247</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626261635247</updated>
+      <workItem from="1626261645726" duration="153000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="104" key="FileChooserDialogImpl" timestamp="1626261778088">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1626261778088" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1626261696509">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1626261696509" />
+    <state x="65" y="24" key="new project wizard" timestamp="1626261797479">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="24" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1626261797479" />
+  </component>
+</project>
