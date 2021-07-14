@@ -1,37 +1,32 @@
 package com.codegym.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
+@Table(name = "Provinces")
 public class Province {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @OneToMany(mappedBy = "province", cascade = CascadeType.ALL)
-    private List<Customer> customers;
+    private String name;
 
     public Province() {
     }
 
-    public Province(String name, List<Customer> customers) {
+    public Province(String name) {
         this.name = name;
-        this.customers = customers;
     }
 
-    public Province(int id, String name, List<Customer> customers) {
-        this.id = id;
+    public Province(Long id, String name) {
         this.name = name;
-        this.customers = customers;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,11 +38,11 @@ public class Province {
         this.name = name;
     }
 
-    public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
+    @Override
+    public String toString() {
+        return "Province{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

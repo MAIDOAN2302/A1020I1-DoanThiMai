@@ -1,22 +1,32 @@
 package com.codegym.service;
 
+
 import com.codegym.model.Province;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public interface ProvinceService {
-    List<Province> findALL();
+    List<Province> findAll();
 
-    Optional<Province> findById(int id);
+    Optional<Province> findOne(Long id);
 
-    Province save (Province province);
+    Province save(Province Province);
 
-    boolean exists(int id);
+    List<Province> save(List<Province> Provinces);
 
-    void delete(int id);
+    boolean exists(Long id);
+
+    List<Province> findAll(List<Long> ids);
+
+    long count();
+
+    void delete(Long id);
+
+    void delete(Province Province);
+
+    void delete(List<Province> Provinces);
 
     void deleteAll();
 }
