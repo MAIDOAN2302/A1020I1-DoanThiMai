@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div th:replace="layout::header">
+
+    </div>
+    <div class="row" th:if="${items != null}">
+        <th:block th:each="item : ${items}">
+            <a th:href="@{/view(id=${item.id})}" class="text-decoration-none card col-sm-3">
+                <img th:src="${item.imageUrl}" class="card-img-top mt-2" th:alt="${item.name}">
+                <div class="card-body mb-2">
+                    <h5 class="card-title h-50" style="" th:text="${item.name}"></h5>
+                    <div>
+                        <h6 style="color: red"><span>Giá: </span><span class="card-text h-15" th:text="${#numbers.formatDecimal(item.price, 0, 'POINT', 0, 'COMMA')}"></span></h6>
+                    </div>
+                </div>
+            </a>
+        </th:block>
+    </div>
+</div>
+
+</body>
+</html>
