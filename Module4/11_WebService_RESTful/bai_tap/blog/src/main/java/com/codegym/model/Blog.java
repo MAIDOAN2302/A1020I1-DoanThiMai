@@ -2,6 +2,7 @@ package com.codegym.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class Blog {
@@ -9,11 +10,13 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
+
     private String content;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
     private LocalDate createdTime;
 
     public Blog() {
@@ -57,6 +60,9 @@ public class Blog {
 
     public void setCreatedTime(LocalDate createdTime) {
         this.createdTime = createdTime;
+    }
+
+    public void setDate(Date now) {
     }
 }
 

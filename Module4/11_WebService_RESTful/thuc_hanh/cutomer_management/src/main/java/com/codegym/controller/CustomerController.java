@@ -22,9 +22,9 @@ public class CustomerController {
     public ResponseEntity<List<Customer>> listAllCustomer(){
         List<Customer> customers = customerService.findALL();
         if (customers.isEmpty()){
-            return new ResponseEntity<List<Customer>>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<List<Customer>>(customers, HttpStatus.OK);
+        return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customers/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -33,7 +33,7 @@ public class CustomerController {
         Customer customer = customerService.findById(id);
         if (customer==null){
             System.out.println("Customer with id " + id + "not found");
-            return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<Customer>(customer, HttpStatus.OK);
     }
@@ -63,7 +63,7 @@ public class CustomerController {
         currentCustomer.setId(customer.getId());
 
         customerService.save(currentCustomer);
-        return new ResponseEntity<Customer>(currentCustomer, HttpStatus.OK);
+        return new ResponseEntity<>(currentCustomer, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customers/{id}", method = RequestMethod.DELETE)
@@ -73,10 +73,10 @@ public class CustomerController {
         Customer customer = customerService.findById(id);
         if (customer == null) {
             System.out.println("Unable to delete. Customer with id " + id + " not found");
-            return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
         customerService.remove(id);
-        return new ResponseEntity<Customer>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
