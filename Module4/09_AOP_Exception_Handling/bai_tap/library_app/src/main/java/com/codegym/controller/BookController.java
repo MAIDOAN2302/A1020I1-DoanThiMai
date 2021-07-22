@@ -33,7 +33,7 @@ public class BookController {
     @Autowired
     IStatusService statusService;
 
-    @GetMapping()
+    @GetMapping("")
     public String home() {
         return "index";
     }
