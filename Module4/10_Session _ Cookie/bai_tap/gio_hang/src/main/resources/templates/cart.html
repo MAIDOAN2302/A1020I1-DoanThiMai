@@ -21,41 +21,38 @@
         </tr>
         </thead>
         <tbody th:if="${cart != null}">
-        <tr th:each="item : ${cart}">
-            <td class="w-40"><img style="width: 150px" th:src="${item.key.imageUrl}"></td>
+        <tr th:each="item : ${items}">
+            <td class="w-40"><img style="width: 150px" th:src="${item.imageURL}"></td>
             <td class="w-60">
-                <h4 class="text-success" th:text="${item.key.name}"></h4>
+                <h4 class="text-success" th:text="${item.name}"></h4>
                 <h5 class="text-secondary">Mã sản phẩm:
-                    <th:block th:text="${item.key.id}"></th:block>
+                    <th:block th:text="${item.id}"></th:block>
                 </h5>
                 <h5 class="text-secondary">Đơn giá:
-                    <th:block th:text="${#numbers.formatDecimal(item.key.price, 0, 'POINT', 0, 'COMMA')}"></th:block>
+                    <th:block th:text="${#numbers.formatDecimal(item.price, 0, 'POINT', 0, 'COMMA')}"></th:block>
                 </h5>
 
-                <th:block th:if="${item.key.id != id}">
-                    <h5 class="text-secondary">
-                        Số lượng:
-                        <th:block th:text="${item.getValue()}"></th:block>
-                        <a class="btn btn-outline-success" th:href="@{/cart(id=${item.getKey().getId()})}">Thay đổi</a>
-                    </h5>
-                </th:block>
-                <th:block th:if="${item.getKey().getId() == id}">
-                    <form class="row mr-0 ml-0" method="get" th:action="@{/updateCart}">
-                        <input type="text" name="id" th:value="${id}" hidden>
-                        <h5>Số lượng: </h5>
-                        <input class="form-control col-sm-3" type="number" name="quantity" min="1" th:value="${item.getValue()}"
-                               required>
-                        <input class="btn btn-primary" type="submit" value="Lưu">
-                    </form>
-                </th:block>
+
+                <form class="row mr-0 ml-0" method="get" th:action="@{/updateCart}">
+                    <input type="text" name="id" th:value="${item.id}" hidden>
+                    <h5>Số lượng: </h5>
+                    <input class="form-control col-sm-3" type="number" name="quantity" min="1"
+                           th:value="${item.quantity}" required>
+                    <input class="btn btn-primary" type="submit" value="Lưu">
+                </form>
+
             </td>
             <td>
-                <a class="btn btn-outline-danger" th:href="@{/delete(id=${item.key.id})}">Xóa</a>
+                <a class="btn btn-outline-danger" th:href="@{/delete(id=${item.id})}">Xóa</a>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td><h5 style="color: red">Tổng tiền: <th:block th:text="${#numbers.formatDecimal(amount, 0, 'POINT', 0, 'COMMA')}"></th:block></h5></td>
+            <td>
+                <h5 style="color: red">Tổng tiền:
+                    <th:block th:text="${#numbers.formatDecimal(amount, 0, 'POINT', 0, 'COMMA')}"></th:block>
+                </h5>
+            </td>
             <td></td>
         </tr>
         <tr>

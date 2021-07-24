@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @SessionAttributes("cart")
@@ -21,58 +19,68 @@ public class CartController {
     ItemService itemService;
 
     @ModelAttribute("cart")
-    public Map<Item, Integer> setUpCart(){
+    public Map<Integer, Item> setUpCart(){
         return new LinkedHashMap<>();
     }
 
     @GetMapping("/")
     public String showHomePage(Model model){
-        model.addAttribute("item",itemService.findAll());
+        model.addAttribute("items",itemService.findAll());
         return "index";
     }
 
     @GetMapping("/addCart")
-    public String addCart(@ModelAttribute("cart") Map<Item, Integer> cart, @RequestParam int id,
-                          @RequestParam int quantily){
-        Item item = itemService.findById(id);
-        if (cart.containsKey(item)){
-            cart.replace(item,cart.get(item), cart.get(item) + quantily);
+    public String addCart(@ModelAttribute("cart") Map<Integer, Item> cart, @RequestParam int id,
+                          @RequestParam int quantity){
+        if (cart.containsKey(id)){
+            Item item1 = cart.get(id);
+            item1.setQuantity(item1.getQuantity()+1);
+            cart.put(id,item1);
         }else {
-            cart.put(item,quantily);
+            Item item = itemService.findById(id);
+            if (item != null){
+                item.setQuantity(1);
+                cart.put(id,item);
+            }
         }
         return "redirect:/";
     }
     @GetMapping("/cart")
-    public String showCart(@ModelAttribute("cart") Map<Item, Integer> cart, Model model, @RequestParam(defaultValue = "0") int id){
+    public String showCart(@ModelAttribute("cart") Map<Integer, Item> cart, Model model, @RequestParam(defaultValue = "0") int id){
         int amount = 0;
-        Set<Item> keySet = cart.keySet();
-        for (Item key : keySet){
-            amount += key.getPrice()*cart.get(key);
+        Set<Integer> keySet = cart.keySet();
+        List<Item> items = new ArrayList<>();
+        for (Integer key : keySet){
+            items.add(cart.get(key));
+            amount += cart.get(key).getQuantity()*cart.get(key).getPrice();
         }
-        model.addAttribute("id", id);
+        model.addAttribute("items", items);
         model.addAttribute("amount", amount);
         return "cart";
     }
 
     @GetMapping(value = "/updateCart")
-    public String updateCart(@ModelAttribute("cart") Map<Item, Integer> cart, @RequestParam int id, @RequestParam int quantity){
-        Item item = itemService.findById(id);
-        cart.replace(item, cart.get(item), quantity);
+    public String updateCart(@ModelAttribute("cart") Map<Integer, Item> cart, @RequestParam int id, @RequestParam int quantity){
+        if (cart.containsKey(id)){
+            Item item = cart.get(id);
+            item.setQuantity(quantity);
+            cart.put(id,item);
+        }
         return "redirect:/cart";
     }
 
     @GetMapping("/delete")
-    public String deleteCart(@ModelAttribute("cart") Map<Item, Integer> cart, @RequestParam(defaultValue = "0") int id){
+    public String deleteCart(@ModelAttribute("cart") Map<Integer, Item> cart, @RequestParam(defaultValue = "0") int id){
         if (id == 0){
             cart.clear();
         } else {
-            Item item = itemService.findById(id);
-            if (item != null){
-                cart.remove(item);
+            if (cart.containsKey(id)){
+                cart.remove(id);
             }
         }
         return "redirect:/cart";
     }
+
 
     @GetMapping("/view")
     public String viewItem(@RequestParam int id, Model model){

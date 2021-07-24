@@ -10,6 +10,15 @@ public class Item {
     private String name;
     private double price;
     private String imageURL;
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public Item() {
     }
