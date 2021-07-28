@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Provinces</title>
+    <link rel="stylesheet" href="../../static/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <script src="../../static/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="../../static/jquery/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<a href="/create">Create new province</a>
+<h1>Provinces</h1>
+<table class="table table-striped" border="1">
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+    <th:block th:each="province : ${provinces}">
+        <tr>
+            <td th:text="${province.name}"></td>
+            <td> <a th:href="@{'/updateProvince?id=' + ${province.id}}">Update</a></td>
+            <td> <a th:href="@{'/deleteProvince?id=' + ${province.id}}"
+                   onclick="if (!(confirm('Are you sure you want to delete this province?'))) return false">
+                Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

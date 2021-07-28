@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<p>
+    <button type="button" class="btn btn-primary" id="btnCreate">
+        Create
+    </button>
+</p>
+<h3 th:if="${message}" th:text="${message}" style="color: red"></h3>
+<table class="table" id="tableDelete" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Content</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="blog:${list}">
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.name}"></td>
+        <td th:text="${blog.content}"></td>
+        <td>
+            <button type="button" class="btn btn-primary" id="btnView">
+                View
+            </button>
+            <input type="hidden" th:value="${blog.id}">
+        </td>
+
+        <td>
+            <button type="button" class="btn btn-primary" id="btnEdit"
+                    th:onclick="'javascript:showEdit(\''+${blog.id}+'\')'">
+                Edit
+            </button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary" id="btnDelete"
+                    th:onclick="'javascript:showDelete(\''+${blog.id}+'\')'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal" id="modelId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+<script rel="script" src="jquery/jquery-3.5.1.min.js"></script>
+<script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnView").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal();
+                }
+            })
+        })
+    })
+    $(document).ready(function () {
+        $("#btnCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal();
+
+                }
+            })
+        })
+    })
+
+    function showEdit(id) {
+        $.ajax({
+            type: "GET",
+            url: "/edit/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal();
+            }
+        })
+    }
+
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "/delete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                let message = "Đã xóa thành công"
+                $(".modal-body").html(message);
+                setTimeout(function () {
+                    $("#modelId").modal("show");
+                }, 2000);
+                $("#tableDelete").html(data);
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

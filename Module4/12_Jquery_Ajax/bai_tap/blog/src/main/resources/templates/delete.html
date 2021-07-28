@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table" id="tableDelete" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Content</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="blog:${list}">
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.name}"></td>
+        <td th:text="${blog.content}"></td>
+        <td>
+            <button type="button" class="btn btn-primary" id="btnView">
+                View
+            </button>
+            <input type="hidden" th:value="${blog.id}">
+        </td>
+
+        <td>
+            <button type="button" class="btn btn-primary" id="btnEdit" th:onclick="'javascript:showEdit(\''+${blog.id}+'\')'">
+                Edit
+            </button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary" id="btnDelete" th:onclick="'javascript:showDelete(\''+${blog.id}+'\')'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

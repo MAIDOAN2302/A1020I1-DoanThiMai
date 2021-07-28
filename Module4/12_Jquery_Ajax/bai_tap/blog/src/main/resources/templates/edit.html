@@ -6,21 +6,25 @@
     <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
 </head>
 <body>
-<form method="post" th:action="@{/create}" th:object="${blog}">
+<form th:action="@{/update}" th:object="${blog}"
+      method="POST" novalidate="novalidate">
     <table class="table">
+        <tr>
+            <td><input type="hidden" th:field="*{id}"/></td>
+        </tr>
         <tr>
             <td>User: </td>
             <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td>Content: </td>
-            <td><input type="text" th:field="*{content}"/></td>
+            <td><input type="email" th:field="*{content}"/></td>
         </tr>
     </table>
-    <input type="submit" value="Create"/>
+    <input type="submit" value="Modify">
 </form>
 
-</body>
 <script rel="script" src="jquery/jquery-3.5.1.min.js"></script>
 <script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+</body>
 </html>

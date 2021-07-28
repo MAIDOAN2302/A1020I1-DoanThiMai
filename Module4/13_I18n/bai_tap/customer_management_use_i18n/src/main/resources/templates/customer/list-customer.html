@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Customer</title>
+    <link rel="stylesheet" href="../../static/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<a href="/list?lang=vi">VI</a>
+<a href="/list?lang=en">EN</a>
+<h3 class="text-center" th:text="#{list.title}">Customer Management</h3><hr>
+<input type="button" value="Add Customer" onclick="window.location.href='showForm'; return false" ;
+       class="btn btn-primary"/>
+<br>
+<br>
+<div class="header-panel">
+    <div class="card-title" th:text="#{list.header}">Customer List</div>
+</div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col" th:text="#{list.firstName}">First Name</th>
+        <th scope="col" th:text="#{list.lastName}">Last Name</th>
+        <th scope="col" th:text="#{list.email}">Email</th>
+        <th scope="col" th:text="#{list.province}">Province</th>
+        <th scope="col" th:text="#{list.action}">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cus: ${customers}">
+        <td th:text="${cus.firstName}"></td>
+        <td th:text="${cus.lastName}"></td>
+        <td th:text="${cus.email}"></td>
+        <td th:text="${cus.province.name}"></td>
+        <td>
+            <a th:href="@{'/update?id=' + ${cus.id}}" th:text="#{list.edit}">Update</a>
+            <a th:href="@{'/delete?id=' + ${cus.id}}"
+               onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false"
+               th:text="#{list.delete}">
+                Delete
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript" src="../../static/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/jquery/jquery-3.5.1.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit customer</title>
+    <link rel="stylesheet" href="../../static/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <script src="../../static/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="../../static/jquery/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="#{edit.title}">Edit customer</h1>
+    <p><a href="/" th:text="#{edit.list}">Customer list</a></p>
+
+    <form th:action="@{/update}" th:object="${customer}" method="post" class="form-horizontal">
+        <input th:type="hidden" name="id" th:field="*{id}">
+        <div class="form-group">
+            <label th:for="*{firstName}" class="col-md-3 control-label" th:text="#{edit.firstName}">First Name</label>
+            <div class="col-md-9">
+                <input th:field="*{firstName}" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label th:for="*{lastName}" class="col-md-3 control-label" th:text="#{edit.lastName}">Last
+                Name</label>
+            <div class="col-md-9">
+                <input th:field="*{lastName}" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label th:for="*{email}" class="col-md-3 control-label" th:text="#{edit.email}">Email</label>
+            <div class="col-md-9">
+                <input th:field="*{email}" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label th:for="*{province}" class="col-md-3 control-label" th:text="#{edit.province}">Province</label>
+            <div class="col-md-9">
+                <select th:field="*{province}">
+                    <option th:each="p : ${province}" th:value="${p.id}" th:text="${p.name}"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!-- Button -->
+            <div class="col-md-offset-3 col-md-9">
+                <input type="submit" class="btn btn-primary" value="Update Customer">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
