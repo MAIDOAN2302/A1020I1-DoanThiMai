@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center">DANH SÁCH KHÁCH HÀNG</h3>
+<br>
+<br>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Mã khách hàng</th>
+        <th scope="col">Họ tên</th>
+        <th scope="col">Ngày sinh</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">CMND</th>
+        <th scope="col">Email</th>
+        <th scope="col">Địa chỉ</th>
+        <th scope="col">SĐT</th>
+        <th scope="col">Hạng khách</th>
+        <th scope="col">Chi tiết</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.birthday}"></td>
+        <td th:text="${customer.gender}"></td>
+        <td th:text="${customer.idCard}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.address}"></td>
+        <td th:text="${customer.phone}"></td>
+        <td th:text="${customer.customerType.name}"></td>
+        <td>
+            <a th:href="@{/customer/view/{id}(id=${customer.id})}">Xem</a>
+        </td>
+        <td>
+            <a th:href="@{/customer/edit/{id}(id=${customer.id})}">Sửa</a>
+        </td>
+        <td>
+            <a th:href="@{/customer/delete/{id}(id=${customer.id})}"
+               onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
