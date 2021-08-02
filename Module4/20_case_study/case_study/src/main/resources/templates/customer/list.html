@@ -9,47 +9,70 @@
 <h3 class="text-center">DANH SÁCH KHÁCH HÀNG</h3>
 <br>
 <br>
-
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">Mã khách hàng</th>
-        <th scope="col">Họ tên</th>
-        <th scope="col">Ngày sinh</th>
-        <th scope="col">Giới tính</th>
-        <th scope="col">CMND</th>
-        <th scope="col">Email</th>
-        <th scope="col">Địa chỉ</th>
-        <th scope="col">SĐT</th>
-        <th scope="col">Hạng khách</th>
-        <th scope="col">Chi tiết</th>
-        <th scope="col">Sửa</th>
-        <th scope="col">Xóa</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="customer : ${customers}">
-        <td th:text="${customer.id}"></td>
-        <td th:text="${customer.name}"></td>
-        <td th:text="${customer.birthday}"></td>
-        <td th:text="${customer.gender}"></td>
-        <td th:text="${customer.idCard}"></td>
-        <td th:text="${customer.email}"></td>
-        <td th:text="${customer.address}"></td>
-        <td th:text="${customer.phone}"></td>
-        <td th:text="${customer.customerType.name}"></td>
-        <td>
-            <a th:href="@{/customer/view/{id}(id=${customer.id})}">Xem</a>
-        </td>
-        <td>
-            <a th:href="@{/customer/edit/{id}(id=${customer.id})}">Sửa</a>
-        </td>
-        <td>
-            <a th:href="@{/customer/delete/{id}(id=${customer.id})}"
-               onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline" action="/customer/search" method="get">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+<p th:if="${messageUpdate}">
+    <span style="color: green" th:text="${messageUpdate}"></span>
+</p>
+<p th:if="${messageDelete}">
+    <span style="color: red" th:text="${messageDelete}"></span>
+</p>
+<div class="left-panel">
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link"th:href="@{/customer/create}">Thêm mới khách hàng</a>
+        </li>
+    </ul>
+</div>
+<br>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Mã khách hàng</th>
+            <th scope="col">Họ tên</th>
+            <th scope="col">Ngày sinh</th>
+            <th scope="col">Giới tính</th>
+            <th scope="col">CMND</th>
+            <th scope="col">Email</th>
+            <th scope="col">Địa chỉ</th>
+            <th scope="col">SĐT</th>
+            <th scope="col">Loại khách</th>
+            <th scope="col">Chi tiết</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.birthday}"></td>
+            <td th:text="${customer.gender}"></td>
+            <td th:text="${customer.idCard}"></td>
+            <td th:text="${customer.email}"></td>
+            <td th:text="${customer.address}"></td>
+            <td th:text="${customer.phone}"></td>
+            <td th:text="${customer.customerType.name}"></td>
+            <td><a th:href="@{/customer/view/{id}(id=${customer.id})}">Xem</a></td>
+            <td><a th:href="@{/customer/update/{id}(id=${customer.id})}">Sửa</a></td>
+            <td><a th:href="@{/customer/delete/{id}(id=${customer.id})}"
+                   onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mr-auto ml-auto">
+        <a class="btn btn-secondary btn-sm" th:href="@{/customer/list(page=${customers.number - 1})}"
+           th:if="${customers.hasPrevious()}">Previous</a>
+        <span th:text="${customers.number+1}"></span>/<span th:text="${customers.totalPages}"></span>
+        <a class="btn btn-secondary btn-sm" th:href="@{/customer/list(page=${customers.number + 1})}"
+           th:if="${customers.hasNext()}">Next</a>
+    </div>
+</div>
 </body>
 </html>

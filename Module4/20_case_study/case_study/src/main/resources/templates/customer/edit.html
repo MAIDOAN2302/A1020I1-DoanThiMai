@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Customer</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Update Customer</h3>
+<form th:action="@{/customer/update}" method="post" th:object="${customer}">
+    <input class="form-control" type="text" th:field="*{id}" hidden>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputNameCustomer">Tên khách hàng</label>
+            <input type="text" class="form-control" id="inputNameCustomer" th:field="*{name}">
+            <label class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputDofBCustomer">Ngày sinh</label>
+            <input type="text" class="form-control" id="inputDofBCustomer" th:field="*{birthday}">
+            <label class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></label>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputGender">Giới tính</label>
+            <select id="inputGender" class="form-control" th:field="*{gender}">
+                <option value="">Nam</option>
+                <option value="">Nữ</option>
+            </select>
+            <label class="text-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputIdCard">Số CMND</label>
+            <input type="text" class="form-control" id="inputIdCard" th:field="*{idCard}">
+            <label class="text-danger" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" id="inputEmail" th:field="*{email}">
+            <label class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></label>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Đại chỉ</label>
+            <input type="text" class="form-control" id="inputAddress" th:field="*{address}">
+            <label class="text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputPhone">Số điện thoại</label>
+            <input type="text" class="form-control" id="inputPhone" th:field="*{phone}">
+            <label class="text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></label>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputState">Loại khách</label>
+            <select id="inputState" class="form-control" th:field="*{customerType}">
+                <option value="">Choose...</option>
+                <option th:each="cusType:${listCustomerType}"
+                        th:value="${cusType.id}" th:text="${cusType.name}"></option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
+        <a th:href="@{/customer/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+    </div>
+
+</form>
+</body>
+</html>

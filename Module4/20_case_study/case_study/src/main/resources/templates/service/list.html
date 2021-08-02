@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center">LIST SERVICE</h3>
+<br>
+<br>
+<div class="left-panel">
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link"th:href="@{/service/create}">Create new service</a>
+        </li>
+    </ul>
+</div>
+<br>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID service</th>
+            <th scope="col">Service Name</th>
+            <th scope="col">Area</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Max of People</th>
+            <th scope="col">Rent Type</th>
+            <th scope="col">Service Type</th>
+            <th scope="col">Number floors</th>
+            <th scope="col">Pool Area</th>
+            <th scope="col">Standard room</th>
+            <th scope="col">Description</th>
+            <th scope="col">Chi tiết</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="service : ${services}">
+            <td th:text="${service.id}"></td>
+            <td th:text="${service.name}"></td>
+            <td th:text="${service.area}"></td>
+            <td th:text="${service.cost}"></td>
+            <td th:text="${service.maxPeople}"></td>
+            <td th:text="${service.rentType.name}"></td>
+            <td th:text="${service.serviceType.name}"></td>
+            <td th:text="${service.numberOfFloors}"></td>
+            <td th:text="${service.poolArea}"></td>
+            <td th:text="${service.standardRoom}"></td>
+            <td th:text="${service.descriptionOtherConvenience}"></td>
+            <td><a th:href="@{/service/view/{id}(id=${service.id})}">Xem</a></td>
+            <td><a th:href="@{/service/update/{id}(id=${service.id})}">Sửa</a></td>
+            <td><a th:href="@{/service/delete/{id}(id=${service.id})}"
+                   onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mr-auto ml-auto">
+        <a class="btn btn-secondary btn-sm" th:href="@{/service/list(page=${services.number - 1})}"
+           th:if="${services.hasPrevious()}">Previous</a>
+        <span th:text="${services.number+1}"></span>/<span th:text="${services.totalPages}"></span>
+        <a class="btn btn-secondary btn-sm" th:href="@{/service/list(page=${services.number + 1})}"
+           th:if="${services.hasNext()}">Next</a>
+    </div>
+</div>
+</body>
+</html>

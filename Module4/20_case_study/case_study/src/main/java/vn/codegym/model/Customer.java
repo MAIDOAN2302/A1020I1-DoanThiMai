@@ -21,20 +21,20 @@ public class Customer {
     private String name;
 
     @NotNull(message = "Không được để trống")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Past(message = "Chỉ nhập ngày trong quá khứ")
     private LocalDate birthday;
 
     @NotNull(message = "Không được để trống")
     private String gender;
 
-    @Pattern(regexp = "^(\\d{9})$", message = "CMND gồm 9 số")
+    @Pattern(regexp = "^\\d{9}$", message = "CMND gồm 9 số")
     private String idCard;
 
     @Pattern(regexp = "^090[0-9]{7}$", message = "Phải đúng định dạng 090xxxxxxx ")
     private String phone;
 
-    @Pattern(regexp = "^[a-z][a-z0-9_\\.]{5,32}@[a-z0-9]{2,}(\\.[a-z0-9]{2,4}){1,2}$",
+    @Pattern(regexp = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$",
             message = "Phải đúng định dạng abc@xyz.com")
     private String email;
 
@@ -47,14 +47,6 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     private Set<Contract> contracts;
 
-    public Set<Contract> getContracts() {
-        return contracts;
-    }
-
-    public void setContracts(Set<Contract> contracts) {
-        this.contracts = contracts;
-    }
-
     public Customer() {
     }
 
@@ -64,14 +56,6 @@ public class Customer {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public CustomerType getCustomerType() {
-        return customerType;
-    }
-
-    public void setCustomerType(CustomerType customerType) {
-        this.customerType = customerType;
     }
 
     public String getName() {
@@ -128,5 +112,21 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
+    }
+
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

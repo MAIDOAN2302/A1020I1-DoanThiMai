@@ -1,0 +1,82 @@
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    </head>
+    <body>
+    <h3 class="text-center">LIST EMPLOYEE</h3>
+    <br>
+    <br>
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline" action="/customer/search" method="get">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <p th:if="${messageUpdate}">
+        <span style="color: green" th:text="${messageUpdate}"></span>
+    </p>
+    <p th:if="${messageDelete}">
+        <span style="color: red" th:text="${messageDelete}"></span>
+    </p>
+    <div class="left-panel">
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+                <a class="nav-link"th:href="@{/employee/create}">Thêm mới khách hàng</a>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">IdCard</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Position</th>
+                <th scope="col">Education Degree</th>
+                <th scope="col">Department</th>
+                <th scope="col">Chi tiết</th>
+                <th scope="col">Sửa</th>
+                <th scope="col">Xóa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.birthday}"></td>
+                <td th:text="${employee.idCard}"></td>
+                <td th:text="${employee.salary}"></td>
+                <td th:text="${employee.phone}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.address}"></td>
+                <td th:text="${employee.position.name}"></td>
+                <td th:text="${employee.educationDegree.name}"></td>
+                <td th:text="${employee.department.name}"></td>
+                <td><a th:href="@{/employee/view/{id}(id=${employee.id})}">Xem</a></td>
+                <td><a th:href="@{/employee/update/{id}(id=${employee.id})}">Sửa</a></td>
+                <td><a th:href="@{/employee/delete/{id}(id=${employee.id})}"
+                       onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="mr-auto ml-auto">
+            <a class="btn btn-secondary btn-sm" th:href="@{/employee/list(page=${employees.number - 1})}"
+               th:if="${employees.hasPrevious()}">Previous</a>
+            <span th:text="${employees.number+1}"></span>/<span th:text="${employees.totalPages}"></span>
+            <a class="btn btn-secondary btn-sm" th:href="@{/employee/list(page=${employees.number + 1})}"
+               th:if="${employees.hasNext()}">Next</a>
+        </div>
+    </div>
+    </body>
+    </html>

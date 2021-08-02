@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new Service</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Create New Service</h3>
+<form th:action="@{/service/save}" method="post" th:object="${service}">
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputIdService">ID service</label>
+            <small id="passwordHelpInline" class="text-muted">
+                (Mã DV có định dạng: DV-xxxx)
+            </small>
+            <input type="text" class="form-control" id="inputIdService" th:field="*{id}">
+            <span class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red"></span>
+            <span class="text-danger" th:text="${error}" style="color: red"></span>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputNameService">Service Name</label>
+            <input type="text" class="form-control" id="inputNameService" th:field="*{name}">
+            <label class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></label>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputArea">Area</label>
+            <input type="text" class="form-control" id="inputArea" th:field="*{area}">
+            <label class="text-danger" th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></label>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputCost">Cost</label>
+            <input type="text" class="form-control" id="inputCost" th:field="*{cost}">
+            <label class="text-danger" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></label>
+        </div>
+
+
+        <div class="form-group col-md-4">
+            <label for="inputMaxOfPeople">Max Of People</label>
+            <input type="text" class="form-control" id="inputMaxOfPeople" th:field="*{maxPeople}">
+            <label class="text-danger" th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}"></label>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputRentType">Rent Type</label>
+            <select id="inputRentType" class="form-control" th:field="*{rentType}">
+                <option value="">Choose...</option>
+                <option th:each="rentType:${listRentType}"
+                        th:value="${rentType.id}" th:text="${rentType.name}"></option>
+            </select>
+        </div>
+
+    </div>
+    <div class="form-row">
+
+        <div class="form-group col-md-4">
+            <label for="inputServiceType">Service Type</label>
+            <select id="inputServiceType" class="form-control" th:field="*{serviceType}">
+                <option value="">Choose...</option>
+                <option th:each="serviceType:${listServiceType}"
+                        th:value="${serviceType.id}" th:text="${serviceType.name}"></option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputNumberFloors">Number Floors</label>
+            <input type="text" class="form-control" id="inputNumberFloors" th:field="*{numberOfFloors}">
+            <label class="text-danger" th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}"></label>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputPollArea">Poll of Area</label>
+            <input type="text" class="form-control" id="inputPollArea" th:field="*{poolArea}">
+            <label class="text-danger" th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputStandardRoom">StandardRoom Type</label>
+            <select id="inputStandardRoom" class="form-control" th:field="*{standardRoom}">
+                <option value="">Choose...</option>
+                <option value="">1 sao</option>
+                <option value="">2 sao</option>
+                <option value="">3 sao</option>
+                <option value="">4 sao</option>
+                <option value="">5 sao</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputDescription">Description</label>
+            <select id="inputDescription" class="form-control" th:field="*{descriptionOtherConvenience}">
+                <option value="">Choose...</option>
+                <option value="">Còn Phòng</option>
+                <option value="">Hết Phòng</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
+        <a th:href="@{/service/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+    </div>
+</form>
+</body>
+</html>

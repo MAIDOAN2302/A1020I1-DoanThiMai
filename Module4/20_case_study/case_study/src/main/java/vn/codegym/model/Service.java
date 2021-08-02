@@ -3,6 +3,7 @@ package vn.codegym.model;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.Set;
 
@@ -30,6 +31,17 @@ public class Service {
 
     @ManyToOne
     private ServiceType serviceType;
+
+
+    private String standardRoom;
+
+    @NotNull(message = "Không được để trống")
+    private Double poolArea;
+
+    @NotNull(message = "Không được để trống")
+    private Integer numberOfFloors;
+
+    private String descriptionOtherConvenience;
 
     @OneToMany(mappedBy = "service")
     private Set<Contract> contracts;
@@ -99,5 +111,37 @@ public class Service {
 
     public void setContracts(Set<Contract> contracts) {
         this.contracts = contracts;
+    }
+
+    public String getStandardRoom() {
+        return standardRoom;
+    }
+
+    public void setStandardRoom(String standardRoom) {
+        this.standardRoom = standardRoom;
+    }
+
+    public Double getPoolArea() {
+        return poolArea;
+    }
+
+    public void setPoolArea(Double poolArea) {
+        this.poolArea = poolArea;
+    }
+
+    public Integer getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
+    public void setNumberOfFloors(Integer numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
+    public String getDescriptionOtherConvenience() {
+        return descriptionOtherConvenience;
+    }
+
+    public void setDescriptionOtherConvenience(String descriptionOtherConvenience) {
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
     }
 }

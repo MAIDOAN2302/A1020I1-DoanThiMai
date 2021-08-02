@@ -8,10 +8,17 @@ import vn.codegym.model.ServiceType;
 import vn.codegym.repository.ServiceRepository;
 import vn.codegym.service.ServiceService;
 
+import java.util.List;
+
 @Service
 public class ServiceServiceImpl implements ServiceService {
     @Autowired
     ServiceRepository serviceRepository;
+
+    @Override
+    public List<vn.codegym.model.Service> findAll() {
+        return serviceRepository.findAll();
+    }
 
     @Override
     public Page<vn.codegym.model.Service> findAll(Pageable pageable) {
@@ -36,5 +43,10 @@ public class ServiceServiceImpl implements ServiceService {
     @Override
     public Page<vn.codegym.model.Service> findAllByIdContainsOrNameContains(String id, String name, Pageable pageable) {
         return serviceRepository.findAllByIdContainsOrNameContains(id, name, pageable);
+    }
+
+    @Override
+    public boolean existById(String id) {
+        return serviceRepository.existsById(id);
     }
 }

@@ -13,4 +13,6 @@ public interface CustomerService {
     Customer findById(String id);
     Customer save(Customer customer);
     void delete(String id);
+    boolean existById(String id);
+    Page<Customer> findAllByNameContaining( String key, Pageable pageable);
 }

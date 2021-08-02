@@ -24,7 +24,7 @@ public class Contract {
 
     private double deposit;
 
-    private double amount;
+    private double totalMoney;
 
     @ManyToOne
     @NotNull(message = "Chưa chọn nhân viên làm hợp đồng")
@@ -76,12 +76,12 @@ public class Contract {
         this.deposit = deposit;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getTotalMoney() {
+        return totalMoney;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setTotalMoney(double totalMoney) {
+        this.totalMoney = totalMoney;
     }
 
     public Employee getEmployee() {

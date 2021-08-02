@@ -37,4 +37,9 @@ public class ContractServiceImpl implements ContractService {
     public Page<Contract> findByCustomerName(String search, Pageable pageable) {
         return contractRepository.findAllByCustomer_Name(search,pageable);
     }
+
+    @Override
+    public boolean existById(int id) {
+        return contractRepository.existsById(id);
+    }
 }

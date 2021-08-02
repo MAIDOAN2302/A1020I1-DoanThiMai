@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new Contract</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Create new Contract</h3>
+<form th:action="@{/contract/save}" method="post" th:object="${contract}">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputID">ID</label>
+            <input type="text" class="form-control" id="inputID" th:field="*{id}">
+            <label class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></label>
+            <span class="text-danger" th:text="${error}" style="color: red"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputTotalMoney">TotalMoney</label>
+            <input type="text" class="form-control" id="inputTotalMoney" th:field="*{totalMoney}">
+            <label class="text-danger" th:if="${#fields.hasErrors('totalMoney')}" th:errors="*{totalMoney}"></label>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputDeposit">Deposit</label>
+            <input type="text" class="form-control" id="inputDeposit" th:field="*{deposit}">
+            <label class="text-danger" th:if="${#fields.hasErrors('deposit')}" th:errors="*{deposit}"></label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputStartDay">StartDay</label>
+            <input type="text" class="form-control" id="inputStartDay" th:field="*{startDay}">
+            <label class="text-danger" th:if="${#fields.hasErrors('startDay')}" th:errors="*{startDay}"></label>
+        </div>
+    </div>
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="inputEndDay">EndDay</label>
+            <input type="text" class="form-control" id="inputEndDay" th:field="*{endDay}">
+            <label class="text-danger" th:if="${#fields.hasErrors('endDay')}" th:errors="*{endDay}"></label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputCustomerName">CustomerName</label>
+            <select id="inputCustomerName" class="form-control" th:field="*{customer}">
+                <option value="">Choose...</option>
+                <option th:each="customerName:${listCustomer}"
+                        th:value="${customerName.id}" th:text="${customerName.name}"></option>
+            </select>
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmployeeName">EmployeeName</label>
+            <select id="inputEmployeeName" class="form-control" th:field="*{employee}">
+                <option value="">Choose...</option>
+                <option th:each="employeeName:${listEmployee}"
+                        th:value="${employeeName.id}" th:text="${employeeName.name}"></option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputServiceName">ServiceName</label>
+            <select id="inputServiceName" class="form-control" th:field="*{service}">
+                <option value="">Choose...</option>
+                <option th:each="serviceName:${listService}"
+                        th:value="${serviceName.id}" th:text="${serviceName.name}"></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
+            <a th:href="@{/contract/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

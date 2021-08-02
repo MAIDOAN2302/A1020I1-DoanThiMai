@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new Employee</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Create new employee</h3>
+<form th:action="@{/employee/save}" method="post" th:object="${employee}">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputID">ID</label>
+            <input type="text" class="form-control" id="inputID" th:field="*{id}">
+            <label class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></label>
+            <span class="text-danger" th:text="${error}" style="color: red"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" th:field="*{name}">
+            <label class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></label>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputDofB">Birthday</label>
+            <input type="text" class="form-control" id="inputDofB" th:field="*{birthday}">
+            <label class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></label>
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <label for="inputIdCard">IdCard</label>
+            <input type="text" class="form-control" id="inputIdCard" th:field="*{idCard}">
+            <label class="text-danger" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></label>
+        </div>
+    </div>
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="inputSalary">Salary</label>
+            <input type="text" class="form-control" id="inputSalary" th:field="*{salary}">
+            <label class="text-danger" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputPhone">Phone</label>
+            <input type="text" class="form-control" id="inputPhone" th:field="*{phone}">
+            <label class="text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></label>
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" id="inputEmail" th:field="*{email}">
+            <label class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></label>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" th:field="*{address}">
+            <label class="text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputPosition">Position</label>
+            <select id="inputPosition" class="form-control" th:field="*{position}">
+                <option value="">Choose...</option>
+                <option th:each="position:${listPosition}"
+                        th:value="${position.id}" th:text="${position.name}"></option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEducationDegree">Education Degree</label>
+            <select id="inputEducationDegree" class="form-control" th:field="*{educationDegree}">
+                <option value="">Choose...</option>
+                <option th:each="educationDegree:${listEducationDegree}"
+                        th:value="${educationDegree.id}" th:text="${educationDegree.name}"></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputDepartment">Department</label>
+            <select id="inputDepartment" class="form-control" th:field="*{department}">
+                <option value="">Choose...</option>
+                <option th:each="department:${listDepartment}"
+                        th:value="${department.id}" th:text="${department.name}"></option>
+            </select>
+        </div>
+        <div></div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
+            <a th:href="@{/employee/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

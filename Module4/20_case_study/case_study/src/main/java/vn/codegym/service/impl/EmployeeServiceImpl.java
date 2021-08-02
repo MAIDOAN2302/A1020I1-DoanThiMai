@@ -49,4 +49,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Page<Employee> findByName(String search, Pageable pageable) {
         return employeeRepository.findAllByNameContains(search,pageable);
     }
+
+    @Override
+    public boolean existById(int id) {
+        return employeeRepository.existsById(id);
+    }
 }

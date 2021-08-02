@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Admin dashboard</h3>
+<div sec:authorize="isAuthenticated()">
+    <b>Welcome!
+        <div sec:authentication="principal.username"/>
+    </b>
+</div>
+<br/>
+<div sec:authorize="isAuthenticated()">
+    <a th:href="@{/}">Home</a> | <a th:href="@{/logout}">Logout</a>
+</div>
+
+<form method="post" th:action="@{/create}" th:object="${blog}">
+    <table class="table">
+        <tr>
+            <td>User: </td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Content: </td>
+            <td><input type="text" th:field="*{content}"/></td>
+        </tr>
+    </table>
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+<script rel="script" src="jquery/jquery-3.5.1.min.js"></script>
+<script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+</html>

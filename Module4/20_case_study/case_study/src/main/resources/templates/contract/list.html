@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center">LIST CONTRACT</h3>
+<br>
+<br>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline" action="/customer/search" method="get">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+<p th:if="${messageUpdate}">
+    <span style="color: green" th:text="${messageUpdate}"></span>
+</p>
+<p th:if="${messageDelete}">
+    <span style="color: red" th:text="${messageDelete}"></span>
+</p>
+<div class="left-panel">
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link"th:href="@{/contract/create}">Create new Contract</a>
+        </li>
+    </ul>
+</div>
+<br>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TotalMoney</th>
+            <th scope="col">Deposit</th>
+            <th scope="col">StartDay</th>
+            <th scope="col">EndDay</th>
+            <th scope="col">CustomerName</th>
+            <th scope="col">EmployeeName</th>
+            <th scope="col">ServiceName</th>
+            <th scope="col">Chi tiết</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contract : ${contracts}">
+            <td th:text="${contract.id}"></td>
+            <td th:text="${contract.totalMoney}"></td>
+            <td th:text="${contract.deposit}"></td>
+            <td th:text="${contract.startDay}"></td>
+            <td th:text="${contract.endDay}"></td>
+            <td th:text="${contract.customer.name}"></td>
+            <td th:text="${contract.employee.name}"></td>
+            <td th:text="${contract.service.name}"></td>
+            <td><a th:href="@{/contract/view/{id}(id=${contract.id})}">Xem</a></td>
+            <td><a th:href="@{/contract/update/{id}(id=${contract.id})}">Sửa</a></td>
+            <td><a th:href="@{/contract/delete/{id}(id=${contract.id})}"
+                   onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mr-auto ml-auto">
+        <a class="btn btn-secondary btn-sm" th:href="@{/contract/list(page=${contracts.number - 1})}"
+           th:if="${contracts.hasPrevious()}">Previous</a>
+        <span th:text="${contracts.number+1}"></span>/<span th:text="${contracts.totalPages}"></span>
+        <a class="btn btn-secondary btn-sm" th:href="@{/contract/list(page=${contracts.number + 1})}"
+           th:if="${contracts.hasNext()}">Next</a>
+    </div>
+</div>
+</body>
+</html>

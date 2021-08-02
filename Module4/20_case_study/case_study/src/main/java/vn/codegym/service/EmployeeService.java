@@ -16,4 +16,5 @@ public interface EmployeeService {
     Employee save(Employee employee);
     void delete(int id);
     Page<Employee> findByName(String search, Pageable pageable);
+    boolean existById(int id);
 }

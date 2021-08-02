@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center">Employee Information</h3>
+<br>
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td scope="col">ID</td>
+            <td th:text="${employee.id}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Name/td>
+            <td th:text="${employee.name}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Birthday</td>
+            <td th:text="${employee.birthday}"></td>
+        </tr>
+        <tr>
+            <td scope="col">IdCard</td>
+            <td th:text="${employee.idCard}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Salary</td>
+            <td th:text="${employee.salary}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Phone</td>
+            <td th:text="${employee.phone}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Email</td>
+            <td th:text="${employee.email}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Address</td>
+            <td th:text="${employee.address}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Position</td>
+            <td th:text="${employee.position.name}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Education Degree</td>
+            <td th:text="${employee.educationDegree.name}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Departmet</td>
+            <td th:text="${employee.department.name}"></td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="@{/employee/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+    </div>
+</div>
+</body>
+</html>

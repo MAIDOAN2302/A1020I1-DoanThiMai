@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center">Customer Information</h3>
+<br>
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td scope="col">Mã khách hàng</td>
+            <td th:text="${customer.id}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Họ tên</td>
+            <td th:text="${customer.name}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Ngày sinh</td>
+            <td th:text="${customer.birthday}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Giới tính</td>
+            <td th:text="${customer.gender}"></td>
+        </tr>
+        <tr>
+            <td scope="col">CMND</td>
+            <td th:text="${customer.idCard}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Email</td>
+            <td th:text="${customer.email}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Địa chỉ</td>
+            <td th:text="${customer.address}"></td>
+        </tr>
+        <tr>
+            <td scope="col">SĐT</td>
+            <td th:text="${customer.phone}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Loại khách</td>
+            <td th:text="${customer.customerType.name}"></td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="@{/customer/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+    </div>
+</div>
+</body>
+</html>

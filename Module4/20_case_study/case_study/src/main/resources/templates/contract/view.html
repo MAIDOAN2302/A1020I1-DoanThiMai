@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3 class="text-center">Contract Information</h3>
+<br>
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td scope="col">ID</td>
+            <td th:text="${contract.id}"></td>
+        </tr>
+        <tr>
+            <td scope="col">TotalMoney</td>
+            <td th:text="${contract.totalMoney}"></td>
+        </tr>
+        <tr>
+            <td scope="col">Deposit</td>
+            <td th:text="${contract.deposit}"></td>
+        </tr>
+        <tr>
+            <td scope="col">StartDay</td>
+            <td th:text="${contract.startDay}"></td>
+        </tr>
+        <tr>
+            <td scope="col">EndDay</td>
+            <td th:text="${contract.endDay}"></td>
+        </tr>
+        <tr>
+            <td scope="col">CustomerName</td>
+            <td th:text="${contract.customer.name}"></td>
+        </tr>
+        <tr>
+            <td scope="col">EmployeeName/td>
+            <td th:text="${contract.employee.name}"></td>
+        </tr>
+        <tr>
+            <td scope="col">ServiceName</td>
+            <td th:text="${contract.service.name}"></td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="@{/contract/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+    </div>
+</div>
+</body>
+</html>

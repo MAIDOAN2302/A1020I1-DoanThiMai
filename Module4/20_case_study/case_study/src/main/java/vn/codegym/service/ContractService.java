@@ -12,4 +12,5 @@ public interface ContractService {
     Contract save (Contract contract);
     void delete (int id);
     Page<Contract> findByCustomerName(String search, Pageable pageable);
+    boolean existById(int id);
 }
