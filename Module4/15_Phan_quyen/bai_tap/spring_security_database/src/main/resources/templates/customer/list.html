@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/customer/layout::head}">
+</head>
+<body>
+
+<h3 th:if="${successMsg}" th:text="${successMsg}" style="color: red"></h3>
+
+<a class="btn btn-primary" href="/customer/create" role="button">Create</a>
+<form action="/customer/search">
+    <label>Input Text: </label>
+    <input type="text" th:name="inputSearch">
+</form>
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="customer,status:${customerList}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:switch="${customer.gender}">
+                <span th:case="0">Female</span>
+                <span th:case="1">Male</span>
+                <span th:case="*">LGBT</span>
+            </td>
+            <td>
+                <a th:href="@{/customer/edit/{id}(id=${customer.id})}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div th:insert="~{/customer/layout::footer}"></div>
+
+
+<div>
+    <a th:href="@{'/customer'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:href="@{'/customer'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">Next</a>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

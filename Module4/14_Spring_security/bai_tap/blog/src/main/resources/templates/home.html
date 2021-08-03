@@ -17,15 +17,6 @@
 <div sec:authorize="isAnonymous()">
     Login as <a th:href="@{/user}">User</a> or <a th:href="@{/admin}">Admin</a>
 </div>
-<div sec:authorize="isAuthenticated()">
-    <div sec:authorize="hasRole('USER')">
-        <a th:href="@{/view}">View</a>
-    </div>
-    <div sec:authorize="hasRole('ADMIN')">
-        <a th:href="@{/create}">Create</a>
-    </div>
-    <a th:href="@{/logout}">Logout</a>
-
 <p>
     <button type="button" class="btn btn-primary" id="btnCreate">
         Create
@@ -146,6 +137,5 @@
         })
     }
 </script>
-
 </body>
 </html>

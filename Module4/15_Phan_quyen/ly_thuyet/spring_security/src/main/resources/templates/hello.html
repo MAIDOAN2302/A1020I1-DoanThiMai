@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Hello page.</h1> <!--Noi dung moi nguoi deu thay-->
+
+    <div th:text="${txt_name}"></div>
+
+    <div sec:authorize="isAuthenticated()"> <!--Kiem tra da xac thuc hay chua-->
+        <h1>Dang nhap thanh cong!</h1>
+        <h1>Chao ban  <span sec:authentication="name"></span></h1>
+        <h1>Chao ban  <span sec:authentication="principal.username"></span></h1>
+        <h1>Pass  <span sec:authentication="principal.password"></span></h1>
+        <h1>Status  <span sec:authentication="principal.enabled"></span></h1>
+        <div sec:authorize="hasRole('USER')">Day la thong tin cua role USER</div>
+        <div sec:authorize="hasRole('ADMIN')">Day la thong tin cua role ADMIN</div>
+    </div>
+
+    <a th:href="@{/logout}">Logout</a>
+</body>
+</html>
