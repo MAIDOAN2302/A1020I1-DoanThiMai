@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Update Customer</title>
     <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
 </head>
 <body>
-<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Update Customer</h3>
-<form th:action="@{/customer/update}" method="post" th:object="${customer}">
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">UPDATE CUSTOMER</h3>
+<form th:action="@{/customer/update}" method="post" th:object="${customer}" class="container">
     <input class="form-control" type="text" th:field="*{id}" hidden>
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -18,7 +18,7 @@
 
         <div class="form-group col-md-6">
             <label for="inputDofBCustomer">Ngày sinh</label>
-            <input type="text" class="form-control" id="inputDofBCustomer" th:field="*{birthday}">
+            <input type="date" class="form-control" id="inputDofBCustomer" th:field="*{birthday}">
             <label class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></label>
         </div>
     </div>
@@ -68,9 +68,8 @@
     </div>
     <div>
         <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
-        <a th:href="@{/customer/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+        <a th:href="@{/customer/list}" class="btn btn-primary ml-1 mr-auto">Close</a>
     </div>
-
 </form>
 </body>
 </html>

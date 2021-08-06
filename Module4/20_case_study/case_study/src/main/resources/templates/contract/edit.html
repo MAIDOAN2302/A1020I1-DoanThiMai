@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Update Contract</title>
-    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
 </head>
 <body>
-<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Update Contract</h3>
-<form th:action="@{/contract/update}" method="post" th:object="${contract}">
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">UPDATE CONTRACT</h3>
+<form th:action="@{/contract/update}" method="post" th:object="${contract}" class="container">
     <input class="form-control" type="text" th:field="*{id}" hidden>
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -15,7 +15,7 @@
             <input type="text" class="form-control" id="inputTotalMoney" th:field="*{totalMoney}">
             <label class="text-danger" th:if="${#fields.hasErrors('totalMoney')}" th:errors="*{totalMoney}"></label>
             totalMoney
-
+        </div>
         <div class="form-group col-md-6">
             <label for="inputDeposit">Deposit</label>
             <input type="text" class="form-control" id="inputDeposit" th:field="*{deposit}">
@@ -26,13 +26,13 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputStartDay">StartDay</label>
-            <input type="text" class="form-control" id="inputStartDay"  th:field="*{startDay}">
+            <input type="date" class="form-control" id="inputStartDay" th:field="*{startDay}">
             <label class="text-danger" th:if="${#fields.hasErrors('startDay')}" th:errors="*{startDay}"></label>
         </div>
 
         <div class="form-group col-md-6">
             <label for="inputEndDay">EndDay</label>
-            <input type="text" class="form-control" id="inputEndDay" th:field="*{endDay}">
+            <input type="date" class="form-control" id="inputEndDay" th:field="*{endDay}">
             <label class="text-danger" th:if="${#fields.hasErrors('endDay')}" th:errors="*{endDay}"></label>
         </div>
     </div>
@@ -70,7 +70,6 @@
         <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
         <a th:href="@{/contract/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
     </div>
-
 </form>
 </body>
 </html>

@@ -10,10 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vn.codegym.model.*;
-import vn.codegym.service.ContractService;
-import vn.codegym.service.CustomerService;
-import vn.codegym.service.EmployeeService;
-import vn.codegym.service.ServiceService;
+import vn.codegym.service.contract.ContractService;
+import vn.codegym.service.customer.CustomerService;
+import vn.codegym.service.employee.EmployeeService;
+import vn.codegym.service.furamaService.ServiceService;
 
 import javax.validation.Valid;
 import java.util.List;

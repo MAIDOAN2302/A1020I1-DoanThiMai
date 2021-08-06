@@ -2,25 +2,48 @@ package vn.codegym.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 public class AppUser {
-
     @Id
-    @NotBlank(message = "Không được để trống")
+    @GeneratedValue
+    private Long id;
     private String username;
-
-    @NotBlank(message = "Không được để trống")
     private String password;
+    private boolean isEnabled;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<AppRole> roles;
 
     @OneToOne(mappedBy = "appUser")
     private Employee employee;
 
-    @OneToMany(mappedBy = "appUser",cascade = CascadeType.ALL)
-    Set<UserRole> userRoles;
+//    @OneToMany(mappedBy = "appUser",cascade = CascadeType.ALL)
+//    Set<UserRole> userRoles;
+
 
     public AppUser() {
+    }
+
+    public AppUser(String username, String password, boolean isEnabled, List<AppRole> roles, Employee employee) {
+        this.username = username;
+        this.password = password;
+        this.isEnabled = isEnabled;
+        this.roles = roles;
+        this.employee = employee;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -39,19 +62,27 @@ public class AppUser {
         this.password = password;
     }
 
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
+
+    public List<AppRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<AppRole> roles) {
+        this.roles = roles;
+    }
+
     public Employee getEmployee() {
         return employee;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
-
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<UserRole> userRoles) {
-        this.userRoles = userRoles;
     }
 }

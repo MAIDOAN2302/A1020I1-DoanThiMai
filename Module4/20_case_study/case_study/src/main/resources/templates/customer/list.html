@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <style>
+        th {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h3 class="text-center">DANH SÁCH KHÁCH HÀNG</h3>
+<nav th:replace="~{homePage::navbar}"></nav>
 <br>
-<br>
-<nav class="navbar navbar-light bg-light">
-    <form class="form-inline" action="/customer/search" method="get">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-</nav>
+<h3 class="text-center" style="font-weight: bold;color: green;font-size:40px">CUSTOMER LIST</h3>
 <p th:if="${messageUpdate}">
     <span style="color: green" th:text="${messageUpdate}"></span>
 </p>
 <p th:if="${messageDelete}">
     <span style="color: red" th:text="${messageDelete}"></span>
 </p>
-<div class="left-panel">
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-            <a class="nav-link"th:href="@{/customer/create}">Thêm mới khách hàng</a>
-        </li>
-    </ul>
-</div>
+<a class="nav-link" th:href="@{/customer/create}" style="font-weight: bold;font-size:20px ">Create new customer</a>
 <br>
 <div>
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">Mã khách hàng</th>
+            <th scope="col">Mã KH</th>
             <th scope="col">Họ tên</th>
             <th scope="col">Ngày sinh</th>
             <th scope="col">Giới tính</th>
@@ -58,10 +52,24 @@
             <td th:text="${customer.address}"></td>
             <td th:text="${customer.phone}"></td>
             <td th:text="${customer.customerType.name}"></td>
-            <td><a th:href="@{/customer/view/{id}(id=${customer.id})}">Xem</a></td>
-            <td><a th:href="@{/customer/update/{id}(id=${customer.id})}">Sửa</a></td>
-            <td><a th:href="@{/customer/delete/{id}(id=${customer.id})}"
-                   onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
+            <td>
+                <button type="button" class="btn " style="background-color:#d4edda" id="btnView">
+                    View
+                </button>
+                <input type="hidden" th:value="${customer.id}">
+            </td>
+            <td>
+                <button type="button" class="btn" style="background-color: gainsboro" id="btnEdit">
+                    Edit
+                </button>
+                <input type="hidden" th:value="${customer.id}">
+            </td>
+            <td>
+                <button type="button" class="btn" style="background-color: burlywood" id="btnDelete">
+                    <a th:href="@{/customer/delete/{id}(id=${customer.id})}"
+                       onclick="return confirm('Bạn muốn xóa khách hàng này không?')"> Delete</a>
+                </button>
+
             </td>
         </tr>
         </tbody>
@@ -74,5 +82,51 @@
            th:if="${customers.hasNext()}">Next</a>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal" id="modelId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+<script rel="script" src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnView").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/customer/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal();
+                }
+            })
+        })
+    })
+    $(document).ready(function () {
+        $("#btnEdit").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/customer/update/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal();
+                }
+            })
+        })
+    })
+
+</script>
+<footer th:replace="~{homePage::footer}"></footer>
 </body>
 </html>

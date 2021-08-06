@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
 </head>
 <body>
-<h3 class="text-center">LIST SERVICE</h3>
+<nav th:replace="~{homePage::navbar}"></nav>
 <br>
-<br>
-<div class="left-panel">
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-            <a class="nav-link"th:href="@{/service/create}">Create new service</a>
-        </li>
-    </ul>
+<h3 class="text-center" style="font-size: 20px;font-weight: bold;color: green">LIST SERVICE</h3>
+<div class="left-panel" style="font-weight: bold;font-size:20px ">
+    <a class="nav-link" th:href="@{/service/create}">Create new service</a>
 </div>
 <br>
 <div>
@@ -32,9 +28,6 @@
             <th scope="col">Pool Area</th>
             <th scope="col">Standard room</th>
             <th scope="col">Description</th>
-            <th scope="col">Chi tiết</th>
-            <th scope="col">Sửa</th>
-            <th scope="col">Xóa</th>
         </tr>
         </thead>
         <tbody>
@@ -50,11 +43,6 @@
             <td th:text="${service.poolArea}"></td>
             <td th:text="${service.standardRoom}"></td>
             <td th:text="${service.descriptionOtherConvenience}"></td>
-            <td><a th:href="@{/service/view/{id}(id=${service.id})}">Xem</a></td>
-            <td><a th:href="@{/service/update/{id}(id=${service.id})}">Sửa</a></td>
-            <td><a th:href="@{/service/delete/{id}(id=${service.id})}"
-                   onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
-            </td>
         </tr>
         </tbody>
     </table>
@@ -66,5 +54,6 @@
            th:if="${services.hasNext()}">Next</a>
     </div>
 </div>
+<footer th:replace="~{homePage::footer}"></footer>
 </body>
 </html>

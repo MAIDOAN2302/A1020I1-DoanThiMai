@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Create new Service</title>
-    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
 </head>
 <body>
-<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">Create New Service</h3>
-<form th:action="@{/service/save}" method="post" th:object="${service}">
+<nav th:replace="~{homePage::navbar}"></nav>
+<br>
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">CREATE NEW SERVICE</h3>
+<form th:action="@{/service/save}" method="post" th:object="${service}" class="container">
 
     <div class="form-row">
         <div class="form-group col-md-4">
@@ -82,23 +84,21 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="inputStandardRoom">StandardRoom Type</label>
+            <label for="inputStandardRoom">StandardRoom</label>
             <select id="inputStandardRoom" class="form-control" th:field="*{standardRoom}">
-                <option value="">Choose...</option>
-                <option value="">1 sao</option>
-                <option value="">2 sao</option>
-                <option value="">3 sao</option>
-                <option value="">4 sao</option>
-                <option value="">5 sao</option>
+                <option th:value="1sao" th:utext="1sao">1 sao</option>
+                <option th:value="2sao" th:utext="2sao">2 sao</option>
+                <option th:value="3sao" th:utext="3sao">3 sao</option>
+                <option th:value="4sao" th:utext="4sao">4 sao</option>
+                <option th:value="5sao" th:utext="5sao">5 sao</option>
             </select>
         </div>
 
         <div class="form-group col-md-6">
             <label for="inputDescription">Description</label>
             <select id="inputDescription" class="form-control" th:field="*{descriptionOtherConvenience}">
-                <option value="">Choose...</option>
-                <option value="">Còn Phòng</option>
-                <option value="">Hết Phòng</option>
+                <option th:value="Còn" th:utext="Còn">Còn Phòng</option>
+                <option th:value="Hết" th:utext="Hết">Hết Phòng</option>
             </select>
         </div>
     </div>
@@ -108,5 +108,6 @@
         <a th:href="@{/service/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
     </div>
 </form>
+<footer th:replace="~{homePage::footer}"></footer>
 </body>
 </html>

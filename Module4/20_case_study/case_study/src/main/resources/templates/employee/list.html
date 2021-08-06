@@ -1,82 +1,131 @@
-    <!DOCTYPE html>
-    <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-        <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
-    </head>
-    <body>
-    <h3 class="text-center">LIST EMPLOYEE</h3>
-    <br>
-    <br>
-    <nav class="navbar navbar-light bg-light">
-        <form class="form-inline" action="/customer/search" method="get">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
-    <p th:if="${messageUpdate}">
-        <span style="color: green" th:text="${messageUpdate}"></span>
-    </p>
-    <p th:if="${messageDelete}">
-        <span style="color: red" th:text="${messageDelete}"></span>
-    </p>
-    <div class="left-panel">
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                <a class="nav-link"th:href="@{/employee/create}">Thêm mới khách hàng</a>
-            </li>
-        </ul>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{homePage::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="~{homePage::navbar}"></nav>
+<br>
+<h3 class="text-center" style="font-weight: bold;color: green">LIST EMPLOYEE</h3>
+
+<p th:if="${messageUpdate}">
+    <span style="color: green" th:text="${messageUpdate}"></span>
+</p>
+<p th:if="${messageDelete}">
+    <span style="color: red" th:text="${messageDelete}"></span>
+</p>
+<div class="left-panel" style="font-weight: bold;font-size:20px ">
+    <a class="nav-link" th:href="@{/employee/create}">Create new employee</a>
+</div>
+<br>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">IdCard</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Position</th>
+            <th scope="col">Education Degree</th>
+            <th scope="col">Department</th>
+            <th scope="col">Chi tiết</th>
+            <th scope="col">Sửa</th>
+            <th scope="col">Xóa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.birthday}"></td>
+            <td th:text="${employee.idCard}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.phone}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.position.name}"></td>
+            <td th:text="${employee.educationDegree.name}"></td>
+            <td th:text="${employee.department.name}"></td>
+            <td>
+                <button type="button" class="btn " style="background-color:#d4edda" id="btnView">
+                    View
+                </button>
+                <input type="hidden" th:value="${employee.id}">
+            </td>
+            <td>
+                <button type="button" class="btn" style="background-color: gainsboro" id="btnEdit">
+                    Edit
+                </button>
+                <input type="hidden" th:value="${employee.id}">
+            </td>
+            <td>
+                <button type="button" class="btn" style="background-color: burlywood" id="btnDelete">
+                    <a th:href="@{/employee/delete/{id}(id=${employee.id})}"
+                       onclick="return confirm('Bạn muốn xóa nhân viên này không?')"> Delete</a>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mr-auto ml-auto">
+        <a class="btn btn-secondary btn-sm" th:href="@{/employee/list(page=${employees.number - 1})}"
+           th:if="${employees.hasPrevious()}">Previous</a>
+        <span th:text="${employees.number+1}"></span>/<span th:text="${employees.totalPages}"></span>
+        <a class="btn btn-secondary btn-sm" th:href="@{/employee/list(page=${employees.number + 1})}"
+           th:if="${employees.hasNext()}">Next</a>
     </div>
-    <br>
-    <div>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Birthday</th>
-                <th scope="col">IdCard</th>
-                <th scope="col">Salary</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Email</th>
-                <th scope="col">Address</th>
-                <th scope="col">Position</th>
-                <th scope="col">Education Degree</th>
-                <th scope="col">Department</th>
-                <th scope="col">Chi tiết</th>
-                <th scope="col">Sửa</th>
-                <th scope="col">Xóa</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="employee : ${employees}">
-                <td th:text="${employee.id}"></td>
-                <td th:text="${employee.name}"></td>
-                <td th:text="${employee.birthday}"></td>
-                <td th:text="${employee.idCard}"></td>
-                <td th:text="${employee.salary}"></td>
-                <td th:text="${employee.phone}"></td>
-                <td th:text="${employee.email}"></td>
-                <td th:text="${employee.address}"></td>
-                <td th:text="${employee.position.name}"></td>
-                <td th:text="${employee.educationDegree.name}"></td>
-                <td th:text="${employee.department.name}"></td>
-                <td><a th:href="@{/employee/view/{id}(id=${employee.id})}">Xem</a></td>
-                <td><a th:href="@{/employee/update/{id}(id=${employee.id})}">Sửa</a></td>
-                <td><a th:href="@{/employee/delete/{id}(id=${employee.id})}"
-                       onclick="return confirm('Bạn muốn xóa khách hàng này không?')">Xóa</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <div class="mr-auto ml-auto">
-            <a class="btn btn-secondary btn-sm" th:href="@{/employee/list(page=${employees.number - 1})}"
-               th:if="${employees.hasPrevious()}">Previous</a>
-            <span th:text="${employees.number+1}"></span>/<span th:text="${employees.totalPages}"></span>
-            <a class="btn btn-secondary btn-sm" th:href="@{/employee/list(page=${employees.number + 1})}"
-               th:if="${employees.hasNext()}">Next</a>
+</div>
+<!-- Modal -->
+<div class="modal" id="modelId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
         </div>
     </div>
-    </body>
-    </html>
+</div>
+<script rel="script" src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnView").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/employee/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal();
+                }
+            })
+        })
+    })
+    $(document).ready(function () {
+        $("#btnEdit").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/employee/update/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal();
+                }
+            })
+        })
+    })
+
+</script>
+<footer th:replace="~{homePage::footer}"></footer>
+</body>
+</html>

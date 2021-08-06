@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{homePage::head}">
+    <meta charset="UTF-8">
+    <title>Create new ContractDetail</title>
+
+</head>
+<body>
+<nav th:replace="~{homePage::navbar}"></nav>
+<br>
+<h3 class="text-center font-weight-bold text-success ml-auto mr-auto mb-3 mt-3">CREATE NEW CONTRACT DETAIL</h3>
+<form th:action="@{/contractDetail/save}" method="post" th:object="${contractDetail}" class="container">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputID"> ID </label>
+            <input type="text" class="form-control" id="inputID" th:field="*{id}">
+            <label class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></label>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="inputQuantity">Quantity</label>
+            <input type="text" class="form-control" id="inputQuantity" th:field="*{quantity}">
+            <label class="text-danger" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></label>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="inputContactID">Contact ID</label>
+            <select id="inputContactID" class="form-control" th:field="*{contract}">
+                <option th:each="contractID:${listContract}"
+                        th:value="${contractID.id}" th:text="${contractID.id}"></option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="inputAttachName">AttachService Name</label>
+            <select id="inputAttachName" class="form-control" th:field="*{attachService}">
+                <option th:each="attachServiceName:${listAttachService}"
+                        th:value="${attachServiceName.id}" th:text="${attachServiceName.name}"></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group col-md-3">
+        <button type="submit" class="btn btn-primary ml-1 mr-auto">Save</button>
+        <a th:href="@{/contractDetail/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
+    </div>
+</form>
+<footer th:replace="~{homePage::footer}"></footer>
+</body>
+</html>

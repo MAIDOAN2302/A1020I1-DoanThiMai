@@ -9,9 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import vn.codegym.model.*;
-import vn.codegym.service.RentTypeService;
-import vn.codegym.service.ServiceService;
-import vn.codegym.service.ServiceTypeService;
+import vn.codegym.service.rentType.RentTypeService;
+import vn.codegym.service.furamaService.ServiceService;
+import vn.codegym.service.serviceType.ServiceTypeService;
 
 import javax.validation.Valid;
 import java.util.List;

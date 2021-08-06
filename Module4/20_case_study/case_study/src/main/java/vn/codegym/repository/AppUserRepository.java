@@ -6,4 +6,5 @@ import vn.codegym.model.AppUser;
 
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser,String> {
+    AppUser findByUsername(String userName);
 }

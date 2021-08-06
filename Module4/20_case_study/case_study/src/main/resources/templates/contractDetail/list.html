@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{homePage::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<nav th:replace="~{homePage::navbar}"></nav>
+<br>
+<h3 class="text-center" style="font-size:20px;font-weight: bold;color: green">LIST CONTRACT DETAIL</h3>
+<div class="left-panel" style="font-weight: bold;font-size:20px ">
+    <a class="nav-link" th:href="@{/contractDetail/create}">Create new contractDetail</a>
+</div>
+<br>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">ContractID</th>
+            <th scope="col">AttachServiceName</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contractDetail : ${contractsDetails}">
+            <td th:text="${contractDetail.id}"></td>
+            <td th:text="${contractDetail.quantity}"></td>
+            <td th:text="${contractDetail.contract.id}"></td>
+            <td th:text="${contractDetail.attachService.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mr-auto ml-auto">
+        <a class="btn btn-secondary btn-sm" th:href="@{/contractDetail/list(page=${contractsDetails.number - 1})}"
+           th:if="${contractsDetails.hasPrevious()}">Previous</a>
+        <span th:text="${contractsDetails.number+1}"></span>/<span th:text="${contractsDetails.totalPages}"></span>
+        <a class="btn btn-secondary btn-sm" th:href="@{/contractDetail/list(page=${contractsDetails.number + 1})}"
+           th:if="${contractsDetails.hasNext()}">Next</a>
+    </div>
+</div>
+<footer th:replace="~{homePage::footer}"></footer>
+</body>
+</html>

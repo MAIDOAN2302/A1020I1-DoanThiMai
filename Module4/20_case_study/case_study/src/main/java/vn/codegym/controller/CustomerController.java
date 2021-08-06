@@ -1,6 +1,5 @@
 package vn.codegym.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -8,13 +7,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vn.codegym.model.Customer;
 import vn.codegym.model.CustomerType;
-import vn.codegym.service.CustomerService;
-import vn.codegym.service.CustomerTypeService;
+import vn.codegym.service.customer.CustomerService;
+import vn.codegym.service.customerType.CustomerTypeService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -35,7 +34,7 @@ public class CustomerController {
 
     @GetMapping("/list")
     public String showListCustomer(@RequestParam(defaultValue = "0") int page, Model model) {
-        Pageable pageable = PageRequest.of(page, 3);
+        Pageable pageable = PageRequest.of(page, 5);
         Page<Customer> customers = customerService.findAll(pageable);
         model.addAttribute("customers", customers);
         return "customer/list";
@@ -96,11 +95,18 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 
-    @GetMapping("/search")
-    public String searchCustomer(@Valid @RequestParam String key, int page,Model model){
-        Pageable pageable = PageRequest.of(page, 3);
-        Page<Customer> pageCustomer = customerService.findAllByNameContaining(key,pageable);
-        model.addAttribute("customers", pageCustomer);
-        return "customer/list";
+    @GetMapping(value = {"", "/"})
+    public ModelAndView search(@RequestParam(defaultValue = "") String search, @RequestParam(defaultValue = "0") int page) {
+        search = search.trim();
+        ModelAndView modelAndView = new ModelAndView("customer/list");
+        Pageable pageable = PageRequest.of(page, 5);
+        if (search.equals("")) {
+            modelAndView.addObject("customers", customerService.findAll(pageable));
+            return modelAndView;
+        } else {
+            modelAndView.addObject("search", search);
+            modelAndView.addObject("customers", customerService.findAllByNameContaining(search, pageable));
+            return modelAndView;
+        }
     }
 }

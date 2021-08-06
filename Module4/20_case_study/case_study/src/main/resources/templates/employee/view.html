@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
 </head>
 <body>
-<h3 class="text-center">Employee Information</h3>
+
+<h3 class="text-center" style="color: green;font-weight: bold;font-size: 20px">EMPLOYEE INFOMATION</h3>
 <br>
-<div>
+<div class="container">
     <table class="table table-striped">
         <tr>
             <td scope="col">ID</td>
@@ -59,5 +60,6 @@
         <a th:href="@{/employee/list}" class="btn btn-primary ml-1 mr-auto">Back</a>
     </div>
 </div>
+
 </body>
 </html>
