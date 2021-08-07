@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import vn.codegym.model.Customer;
 import vn.codegym.model.Employee;
 import vn.codegym.repository.EmployeeRepository;
 import vn.codegym.service.employee.EmployeeService;
@@ -26,11 +27,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee findByUsername(String username) {
-        return employeeRepository.findAllByAppUser_Username(username);
-    }
-
-    @Override
     public Employee findById(int id) {
         return employeeRepository.findById(id).orElse(null);
     }
@@ -46,10 +42,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Page<Employee> findByName(String search, Pageable pageable) {
-        return employeeRepository.findAllByNameContains(search,pageable);
+    public Page<Employee> findAllByIdOrName(String search, Pageable pageable) {
+        return employeeRepository.findAllByIdContainsOrNameContains(search,search,pageable);
     }
-
     @Override
     public boolean existById(int id) {
         return employeeRepository.existsById(id);

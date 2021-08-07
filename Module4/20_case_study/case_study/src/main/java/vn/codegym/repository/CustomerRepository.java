@@ -8,5 +8,5 @@ import vn.codegym.model.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, String> {
     Page<Customer>findAll(Pageable pageable);
-    Page<Customer> findAllByNameContaining( String key, Pageable pageable);
+    Page<Customer> findAllByIdContainsOrNameContains(String id, String name, Pageable pageable);
 }

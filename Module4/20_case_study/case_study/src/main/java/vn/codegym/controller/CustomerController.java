@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -95,18 +96,18 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 
-    @GetMapping(value = {"", "/"})
-    public ModelAndView search(@RequestParam(defaultValue = "") String search, @RequestParam(defaultValue = "0") int page) {
-        search = search.trim();
-        ModelAndView modelAndView = new ModelAndView("customer/list");
+    @GetMapping("/search")
+    public String search(@RequestParam String search, @RequestParam(defaultValue = "0") int page, Model model ){
         Pageable pageable = PageRequest.of(page, 5);
-        if (search.equals("")) {
-            modelAndView.addObject("customers", customerService.findAll(pageable));
-            return modelAndView;
-        } else {
-            modelAndView.addObject("search", search);
-            modelAndView.addObject("customers", customerService.findAllByNameContaining(search, pageable));
-            return modelAndView;
-        }
+        Page<Customer> customers = customerService.findAllByIdOrName(search,pageable);
+        model.addAttribute("customerSearch", search);
+        model.addAttribute("customers", customerService.findAllByIdOrName(search, pageable));
+        return "/customer/search";
     }
+
+    @ExceptionHandler(Exception.class)
+    public String viewErrorPage(){
+        return "error-page";
+    }
+
 }

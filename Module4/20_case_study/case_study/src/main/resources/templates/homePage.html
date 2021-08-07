@@ -35,10 +35,22 @@
                     <a class="nav-link" th:href="@{/service/list}" style="color: white">Service</a>
                 </li>
             </ul>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline" th:method="get" th:action="@{/__(${selectNavbar})__/search}"
+            th:if="${selectNavbar == 'employee' || selectNavbar == 'customer'}">
+                <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
             </form>
+            <div class="d-flex flex-row-reverse bd-highlight" style="font-size: small;font-weight: inherit;color: blue">
+                <div class="p-2 bd-highlight">
+                    <div sec:authorize="isAnonymous()">
+                        <a th:href="@{/login}">Login</a>
+                    </div>
+                    <div sec:authorize="isAuthenticated()">
+                        <span th:text="${#request.userPrincipal.name}"></span>
+                        <a th:href="@{/logout}">Logout</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </nav>

@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import vn.codegym.service.security.impl.MyUserDetailServiceImpl;
 
 @Configuration
@@ -30,31 +31,35 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .formLogin()
-//                .loginPage() /*Khai bao URL pattern cua man hinh login*/
-                .defaultSuccessUrl("/").permitAll()
+        http.csrf().disable().cors();
 
-                .and()
-                /* Khai báo URL ai cũng có thể vào mà k cần xác thực */
-                .authorizeRequests().antMatchers("/", "/css/**", "/images/**", "/jquery/**", "/service/list").permitAll()
+        //         Các trang không yêu cầu login
+        http.authorizeRequests().antMatchers("/", "/login", "/logout", "/service/list").permitAll();
 
-                /* nhân viên sẽ được vào tạo, thêm, sửa,xoá khách hàng, tạo hợp đồng, xoá , sửa, xem,
-                 * tạo dịch vụ, xem; tạo-xem hợp đồng chi tiết*/
-                .antMatchers("/employee/list", "/customer/list", "/customer/create", "/customer/view", "/customer/update",
-                        "/contract/list", "/contract/create", "/contractDetail/list", "/contractDetail/create")
-                .hasAnyRole("ROLE_QUANLY", "ROLE_GIAMDOC", "ROLE_NHANVIEN")
+        //         Trang chỉ dành cho giám đốc và quản lý
+        http.authorizeRequests().antMatchers("/employee/create", "/employee/view/**", "/employee/update/**",
+                "/employee/delete/**").access("hasAnyRole('ROLE_QUANLY', 'ROLE_GIAMDOC')");
 
-                /*URL chỉ có quản lý và giám đốc được vào tạo, thêm, xem nhân viên*/
-                .antMatchers("/employee/create", "/employee/update/**", "employee/view/**", "employee/delete/**").
-                hasAnyRole("ROLE_QUANLY", "ROLE_GIAMDOC")
+        //         Trang dành cho nhân viên, quản lý, giám đốc
+        http.authorizeRequests().antMatchers("/employee/list","/customer/list", "/customer/create", "/customer/update",
+                "/customer/view", "/customer/delete", "/service/create", "/contract/list",
+                "/contract/create", "/contractDetail/list", "/contractDetail/create")
+                .access("hasAnyRole('ROLE_QUANLY', 'ROLE_NHANVIEN', 'ROLE_GIAMDOC')");
 
-                /* tất cả request ngoài những URL pattern trên sẽ bắt buộc xác thực - login */
-                .anyRequest().authenticated();
+        // Khi người dùng đăng nhập với username là A,
+        // Nhưng lại muốn đăng nhập vào trang không được phân quyền
+        // Ngoại lệ AccessDeniedException sẽ ném ra.
+        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
-
-        /*URL trả về khi không có quyền truy cập vào URL nào đó*/
-        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/accessDenied");
+        // Cấu hình cho Login Form.
+        http.authorizeRequests().and().formLogin()//
+                .loginProcessingUrl("/j_spring_security_check")
+                .loginPage("/login")
+                .defaultSuccessUrl("/")
+                .failureUrl("/login?error=true")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
 
         /* cấu hình remember me*/
         http.authorizeRequests().and().rememberMe()

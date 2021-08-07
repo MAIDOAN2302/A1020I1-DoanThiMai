@@ -111,4 +111,13 @@ public class EmployeeController {
         redirectAttributes.addFlashAttribute("messageDelete","Successfully delete!!!");
         return "redirect:/employee/list";
     }
+
+    @GetMapping("/search")
+    public String search(@RequestParam String search, @RequestParam(defaultValue = "0") int page, Model model ){
+        Pageable pageable = PageRequest.of(page, 5);
+        Page<Employee> employees = employeeService.findAllByIdOrName(search,pageable);
+        model.addAttribute("customerSearch", search);
+        model.addAttribute("customers", employeeService.findAllByIdOrName(search, pageable));
+        return "/employee/list";
+    }
 }

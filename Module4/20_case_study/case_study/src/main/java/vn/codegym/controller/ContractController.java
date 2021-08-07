@@ -110,4 +110,8 @@ public class ContractController {
         redirectAttributes.addFlashAttribute("messageDelete","Successfully delete!!!");
         return "redirect:/contract/list";
     }
+    @ExceptionHandler(Exception.class)
+    public String viewErrorPage(){
+        return "error-page";
+    }
 }

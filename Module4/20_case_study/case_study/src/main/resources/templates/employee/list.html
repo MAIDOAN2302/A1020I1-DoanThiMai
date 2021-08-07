@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body  class="error">
 <nav th:replace="~{homePage::navbar}"></nav>
 <br>
 <h3 class="text-center" style="font-weight: bold;color: green">LIST EMPLOYEE</h3>
@@ -55,12 +55,14 @@
             <td>
                 <button type="button" class="btn " style="background-color:#d4edda" id="btnView">
                     View
+                    <a th:href="@{/employee/view/{id}(id=${employee.id})}"></a>
                 </button>
                 <input type="hidden" th:value="${employee.id}">
             </td>
             <td>
                 <button type="button" class="btn" style="background-color: gainsboro" id="btnEdit">
                     Edit
+                    <a th:href="@{/employee/update/{id}(id=${employee.id})}"></a>
                 </button>
                 <input type="hidden" th:value="${employee.id}">
             </td>
@@ -107,6 +109,15 @@
                 success: function (data) {
                     $(".modal-body").html(data);
                     $("#modelId").modal();
+                }, error: function (data) {
+                    $.ajax({
+                        type: "GET",
+                        url: "/403",
+                        dataType: "HTML",
+                        success: function (data) {
+                            $(".error").html(data);
+                        }
+                    })
                 }
             })
         })
@@ -120,6 +131,15 @@
                 success: function (data) {
                     $(".modal-body").html(data);
                     $("#modelId").modal();
+                }, error: function (data) {
+                    $.ajax({
+                        type: "GET",
+                        url: "/403",
+                        dataType: "HTML",
+                        success: function (data) {
+                            $(".error").html(data);
+                        }
+                    })
                 }
             })
         })

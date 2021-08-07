@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="homePage::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid px-0">
+    <div th:insert="homePage::navbar">
+        <!--        navbar-->
+    </div>
+    <div class="website-body">
+        <!--        main-->
+        <div class="d-flex flex-column justify-content-start align-items-center mx-auto login-form">
+            <img class="col-3 mt-5" src="/images/access-denied.jpg">
+            <h4 class="text-center text-danger mt-4">Xin lỗi</h4>
+            <h4 class="text-center text-danger mb-4">Bạn không được phép truy cập vào trang này</h4>
+            <a class="btn btn-primary" href="/">Home</a>
+        </div>
+    </div>
+    <div th:replace="~{/homePage::footer}">
+        <!--        footer-->
+    </div>
+</div>
+</body>
+</html>
