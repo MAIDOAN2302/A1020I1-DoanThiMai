@@ -10,6 +10,11 @@ import vn.codegym.model.Contract;
 @Repository
 public interface ContractRepository extends JpaRepository<Contract, Integer> {
     Page<Contract> findAll(Pageable pageable);
-    @Query("select c from Contract c where c.customer.name like?2")
-    Page<Contract> findAllByCustomer_Name(String name,Pageable pageable);
+    @Query("select cus.name, ct.id,cd.id, asv.name\n" +
+            "from Customer cus\n" +
+            "inner join Contract ct on ct.customer.id = cus.id\n" +
+            "inner join ContractDetail cd on cd.contract.id = ct.id\n" +
+            "inner join AttachService asv on asv.id = cd.attachService.id\n" +
+            "group by cus.id")
+    Page<Contract> search(Pageable pageable, String keyword);
 }

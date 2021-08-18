@@ -32,13 +32,21 @@
         </tr>
         </tbody>
     </table>
-    <div class="mr-auto ml-auto">
-        <a class="btn btn-secondary btn-sm" th:href="@{/contractDetail/list(page=${contractsDetails.number - 1})}"
-           th:if="${contractsDetails.hasPrevious()}">Previous</a>
-        <span th:text="${contractsDetails.number+1}"></span>/<span th:text="${contractsDetails.totalPages}"></span>
-        <a class="btn btn-secondary btn-sm" th:href="@{/contractDetail/list(page=${contractsDetails.number + 1})}"
-           th:if="${contractsDetails.hasNext()}">Next</a>
-    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" th:href="@{/contractDetail/list(page=${contractsDetails.number - 1})}"
+                   th:if="${contractsDetails.hasPrevious()}">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" th:href="@{/contractDetail/list(page=0)}">1</a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/contractDetail/list(page=1)}">2</a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/contractDetail/list(page=2)}">3</a></li>
+            <li class="page-item">
+                <a class="page-link" th:href="@{/contractDetail/list(page=${contractsDetails.number + 1})}"
+                   th:if="${contractsDetails.hasNext()}">Next</a>
+            </li>
+        </ul>
+    </nav>
 </div>
 <footer th:replace="~{homePage::footer}"></footer>
 </body>

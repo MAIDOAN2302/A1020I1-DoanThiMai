@@ -10,12 +10,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vn.codegym.model.*;
+import vn.codegym.service.attachService.AttachServiceService;
 import vn.codegym.service.contract.ContractService;
+import vn.codegym.service.contractDetail.ContractDetailService;
 import vn.codegym.service.customer.CustomerService;
 import vn.codegym.service.employee.EmployeeService;
 import vn.codegym.service.furamaService.ServiceService;
 
 import javax.validation.Valid;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 @Controller
@@ -34,6 +37,12 @@ public class ContractController {
     @Autowired
     ServiceService serviceService;
 
+    @Autowired
+    ContractDetailService contractDetailService;
+
+    @Autowired
+    AttachServiceService attachServiceService;
+
     @ModelAttribute("listCustomer")
     public List<Customer> customerList(){
         return customerService.findAll();
@@ -46,6 +55,15 @@ public class ContractController {
     public List<Service> serviceList(){
         return serviceService.findAll();
     }
+    @ModelAttribute("listContractDetail")
+    public List<ContractDetail> contractDetailList(){
+        return contractDetailService.findAll();
+    }
+    @ModelAttribute("listAttachService")
+    public List<AttachService> attachServiceList (){
+        return attachServiceService.findAll();
+    }
+
     @GetMapping("/list")
     public String showListContract(@RequestParam(defaultValue = "0") int page, Model model) {
         Pageable pageable = PageRequest.of(page, 3);
@@ -110,6 +128,24 @@ public class ContractController {
         redirectAttributes.addFlashAttribute("messageDelete","Successfully delete!!!");
         return "redirect:/contract/list";
     }
+
+
+    @GetMapping("/search")
+    public String showResultSearch(@RequestParam(defaultValue = "0") int page,
+                                   @RequestParam("search") String search, Model model) {
+        Pageable pageable = PageRequest.of(page, 3);
+        Page<Contract> contracts = contractService.search(search,pageable);
+        model.addAttribute("contracts", contracts);
+        model.addAttribute("contractsDetails", new ContractDetail());
+        model.addAttribute("attachService", new AttachService());
+        return "contract/search";
+    }
+
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    public String sqlDeleteHandler(){
+        return "sql-error-page";
+    }
+
     @ExceptionHandler(Exception.class)
     public String viewErrorPage(){
         return "error-page";

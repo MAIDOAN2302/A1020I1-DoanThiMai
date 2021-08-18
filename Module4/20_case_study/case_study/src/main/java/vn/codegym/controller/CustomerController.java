@@ -35,7 +35,7 @@ public class CustomerController {
 
     @GetMapping("/list")
     public String showListCustomer(@RequestParam(defaultValue = "0") int page, Model model) {
-        Pageable pageable = PageRequest.of(page, 5);
+        Pageable pageable = PageRequest.of(page, 3);
         Page<Customer> customers = customerService.findAll(pageable);
         model.addAttribute("customers", customers);
         return "customer/list";
@@ -101,7 +101,7 @@ public class CustomerController {
         Pageable pageable = PageRequest.of(page, 5);
         Page<Customer> customers = customerService.findAllByIdOrName(search,pageable);
         model.addAttribute("customerSearch", search);
-        model.addAttribute("customers", customerService.findAllByIdOrName(search, pageable));
+        model.addAttribute("customers", customers);
         return "/customer/search";
     }
 

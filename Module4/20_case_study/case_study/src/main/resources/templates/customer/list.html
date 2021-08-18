@@ -3,13 +3,7 @@
 <head th:replace="~{homePage::head}">
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        th {
-            font-size: 25px;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styleCSS.css">
 </head>
 <body>
 <nav th:replace="~{homePage::navbar}"></nav>
@@ -22,6 +16,10 @@
     <span style="color: red" th:text="${messageDelete}"></span>
 </p>
 <a class="nav-link" th:href="@{/customer/create}" style="font-weight: bold;font-size:20px ">Create new customer</a>
+<form class="form-inline" th:action="@{/customer/search}" method="get">
+    <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
+</form>
 <br>
 <div>
     <table class="table table-striped">
@@ -75,13 +73,21 @@
         </tbody>
     </table>
 
-    <div class="mr-auto ml-auto">
-        <a class="btn btn-secondary btn-sm" th:href="@{/customer/list(page=${customers.number - 1})}"
-           th:if="${customers.hasPrevious()}">Previous</a>
-        <span th:text="${customers.number+1}"></span>/<span th:text="${customers.totalPages}"></span>
-        <a class="btn btn-secondary btn-sm" th:href="@{/customer/list(page=${customers.number + 1})}"
-           th:if="${customers.hasNext()}">Next</a>
-    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" th:href="@{/customer/list(page=${customers.number - 1})}"
+                    th:if="${customers.hasPrevious()}">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" th:href="@{/customer/list(page=0)}">1</a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/customer/list(page=1)}">2</a></li>
+            <li class="page-item"><a class="page-link" th:href="@{/customer/list(page=2)}">3</a></li>
+            <li class="page-item">
+                <a class="page-link" th:href="@{/customer/list(page=${customers.number + 1})}"
+                   th:if="${customers.hasNext()}">Next</a>
+            </li>
+        </ul>
+    </nav>
 </div>
 <!-- Modal -->
 <div class="modal" id="modelId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -129,5 +135,7 @@
 
 </script>
 <footer th:replace="~{homePage::footer}"></footer>
+<script src="./jquery/jquery-3.5.1.min.js"></script>
+<script src="/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

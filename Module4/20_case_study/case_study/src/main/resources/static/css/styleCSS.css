@@ -111,4 +111,12 @@ hr.light {
         font-size: 50px;
         color: green;
     }
+ th {
+     font-size: 25px;
+     font-weight: bold;
+     text-align: center;
+ }
+
+
+
 }

@@ -84,6 +84,7 @@ values
 (04,'Huynh Phuong Thu','1990-10-16','004','1000','035698723','thuhuynh@gmail.com','Ha Noi',2,1,1),
 (05,'Nguyen Tuong Vi','1991-08-21','005','500','0789236496','vituong@gmail.com','Quang Binh',1,3,2);
 
+
 create table customer_type(
 customer_type_id int not null primary key,
 customer_type_name varchar(45) not null

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 class="text-center" style="font-weight: bold;color: green;font-size:40px">THÊM MỚI KHUYẾN MÃI</h3>
+<hr>
+<!--            content-->
+<div id="promotion-list">
+    <form th:object="${promotion}" th:action="@{/create}" method="post">
+        <table class="table table-striped">
+            <tr>
+                <td>Tiêu đề</td>
+                <td class="column"><input type="text" th:field="*{name}"></td>
+                <td><p class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p></td>
+            </tr>
+            <tr>
+                <td>Thời gian bắt đầu</td>
+                <td class="column"><input type="text" th:field="*{startDate}"></td>
+                <td><p class="text-danger" th:if="${#fields.hasErrors('startDate')}"
+                       th:errors="*{startDate}"></p></td>
+            </tr>
+            <tr>
+                <td>Thời gian kết thúc</td>
+                <td class="column"><input type="text" th:field="*{endDate}"></td>
+                <td><p class="text-danger" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></p></td>
+            </tr>
+            <tr>
+                <td>Mức giảm giá</td>
+                <td class="column"><input type="text" th:field="*{discount}"></td>
+                <td><p class="text-danger" th:if="${#fields.hasErrors('discount')}" th:errors="*{discount}"></p></td>
+            </tr>
+            <tr>
+                <td>Chi tiết</td>
+                <td class="column"><textarea th:field="*{detail}" cols="30" rows="10"></textarea></td>
+                <td>
+                    <p class="text-danger" th:if="${#fields.hasErrors('detail')}" th:errors="*{detail}"></p>
+                </td>
+            </tr>
+        </table>
+        <div class="form-group">
+            <div></div>
+            <div>
+                <button type="submit" class="btn btn-primary ml-1 mr-auto">Thêm</button>
+                <a th:href="@{/}" class="btn btn-primary ml-1 mr-auto">Trở lại</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

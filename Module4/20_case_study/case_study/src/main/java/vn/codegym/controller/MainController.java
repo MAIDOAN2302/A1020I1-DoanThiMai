@@ -34,15 +34,4 @@ public class MainController {
         return "403-page";
     }
 
-    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public String sqlDeleteHandler(){
-        return "sql-error-page";
-    }
-//
-//    @ExceptionHandler(Exception.class)
-//    public String viewErrorPage() {
-//        return "error-page";
-//    }
-
-
 }

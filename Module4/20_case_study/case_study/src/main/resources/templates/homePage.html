@@ -5,7 +5,6 @@
     <title>Title</title>
     <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styleCSS.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 </head>
 <body>
 <!-- Navigation -->
@@ -35,8 +34,7 @@
                     <a class="nav-link" th:href="@{/service/list}" style="color: white">Service</a>
                 </li>
             </ul>
-            <form class="form-inline" th:method="get" th:action="@{/__(${selectNavbar})__/search}"
-            th:if="${selectNavbar == 'employee' || selectNavbar == 'customer'}">
+            <form class="form-inline">
                 <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
             </form>

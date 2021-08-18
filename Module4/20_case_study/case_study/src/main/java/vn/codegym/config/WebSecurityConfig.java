@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         //         Trang dành cho nhân viên, quản lý, giám đốc
         http.authorizeRequests().antMatchers("/employee/list","/customer/list", "/customer/create", "/customer/update",
-                "/customer/view", "/customer/delete", "/service/create", "/contract/list",
+                "/customer/view", "/customer/delete","/customer/search", "/service/create", "/contract/list",
                 "/contract/create", "/contractDetail/list", "/contractDetail/create")
                 .access("hasAnyRole('ROLE_QUANLY', 'ROLE_NHANVIEN', 'ROLE_GIAMDOC')");
 

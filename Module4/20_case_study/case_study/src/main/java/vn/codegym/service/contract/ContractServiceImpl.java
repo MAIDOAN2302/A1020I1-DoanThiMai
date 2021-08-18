@@ -40,8 +40,8 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public Page<Contract> findByCustomerName(String search, Pageable pageable) {
-        return contractRepository.findAllByCustomer_Name(search,pageable);
+    public Page<Contract> search(String search, Pageable pageable) {
+        return contractRepository.search(pageable,search);
     }
 
     @Override
