@@ -1,0 +1,8 @@
+<h2>Color Picker</h2>
+<label>
+  Choose color:
+  <input type="color" [(ngModel)]="background" />
+  <br>
+  <label>Result:</label>
+  <div style="height: 200px; width: 200px" [style.background]="background" >Màu đã chọn</div>
+</label>
