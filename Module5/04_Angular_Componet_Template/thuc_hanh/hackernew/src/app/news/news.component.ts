@@ -35,13 +35,13 @@ export class NewsComponent implements OnInit {
   addNewArticle() {
     const newArticleTitle = (document.getElementById('article-title') as HTMLInputElement).value;
     const newArticleUrl = (document.getElementById('article-url') as HTMLInputElement).value;
-    if (newArticleTitle.trim() !== '' && newArticleUrl.trim() !== ''){
-      const newArticle = {
-        title: newArticleTitle,
-        url: newArticleUrl
-      };
-      this.articles.push(newArticle);
-    }
+
+    const newArticle = {
+      title: newArticleTitle,
+      url: newArticleUrl
+    };
+    this.articles.push(newArticle);
+
   }
 
   ngOnInit(): void {
