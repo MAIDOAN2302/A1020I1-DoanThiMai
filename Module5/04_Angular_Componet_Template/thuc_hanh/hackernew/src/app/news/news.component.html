@@ -1,16 +1,24 @@
-<h3>New Article</h3>
-<div class="form-group">
-  <label>Title:</label>
-  <input class="form-control col-4" type="text" id="article-title">
+<h3 class="text-center" style="color: blue; font-style:normal;font-size: 50px">New Article</h3>
+<div class="form-row container">
+  <div class="col-8">
+    <div *ngFor="let iArticle of articles">
+      <p style="font-weight: bold"><a href="{{iArticle.url}}">{{iArticle.title}}</a></p>
+      <app-likes></app-likes>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label>Title:</label>
+      <input class="form-control col-4" type="text" [(ngModel)]="title"/>
+    </div>
+    <div class="form-group">
+      <label>Url:</label>
+      <input class="form-control col-4" type="text" [(ngModel)]="url">
+    </div>
+    <button class="btn btn-secondary" (click)="addNew()">Add</button>
+  </div>
 </div>
-<div class="form-group">
-  <label>Url:</label>
-  <input class="form-control col-4" type="text" id="article-url">
-</div>
-<button class="btn btn-secondary" (click)="addNewArticle()">Add</button>
-<hr>
 
-<div *ngFor="let iArticle of articles">
-  <a href="{{iArticle.url}}">{{iArticle.title}}</a>
-  <app-likes></app-likes>
-</div>
+
+​
+​

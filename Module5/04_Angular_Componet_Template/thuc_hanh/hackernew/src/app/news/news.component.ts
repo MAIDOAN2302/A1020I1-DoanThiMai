@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
+  title = '';
+  url = '';
   articles = [
     {
       title: 'The Evolution of Async JavaScript: From Callbacks, to Promises, to Async/Await',
@@ -32,17 +34,14 @@ export class NewsComponent implements OnInit {
   constructor() {
   }
 
-  addNewArticle() {
-    const newArticleTitle = (document.getElementById('article-title') as HTMLInputElement).value;
-    const newArticleUrl = (document.getElementById('article-url') as HTMLInputElement).value;
-
-    const newArticle = {
-      title: newArticleTitle,
-      url: newArticleUrl
-    };
-    this.articles.push(newArticle);
-
-  }
+  addNew(){
+    this.articles.push(
+      {
+        title: this.title,
+        url: this.url
+      }
+    );
+}
 
   ngOnInit(): void {
   }
