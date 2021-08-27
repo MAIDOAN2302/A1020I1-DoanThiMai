@@ -1,0 +1,9 @@
+<p>child works!</p>
+<h2>Value received from Parent:
+  <span style="color: red">
+    {{valueReceiveFromParent}}
+  </span>
+</h2>
+<button (click)="sendToParent()">Click to send</button>
+<br>
+<input type="text" [(ngModel)]="valueOfChild">
