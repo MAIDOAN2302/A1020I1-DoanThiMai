@@ -1,0 +1,52 @@
+<h3 class="text-center">Form Contact</h3>
+<form class="container" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <p class="form-group">
+    <label for="email">Email </label>
+    <input class="form-control" type="text" id="email" name="email" formControlName="email">
+  </p>
+  <div
+    *ngIf="!contactForm.controls.email?.valid && (contactForm.controls.email?.dirty
+    ||contactForm.controls.email?.touched)">
+    Email is not valid
+  </div>
+
+  <p class="form-group">
+    <label for="password">Password </label>
+    <input class="form-control"type="text" id="password" name="password" formControlName="password">
+  </p>
+
+  <p class="form-group">
+    <label for="confirmPassword">Confirm Password </label>
+    <input class="form-control"type="text" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+  </p>
+
+  <p class="form-group">
+    <label for="country">Country </label>
+    <select class="form-control" id="country" name="country" formControlName="country">
+      <option [ngValue]="c.id" *ngFor="let c of countryList">{{c.name}}</option>
+    </select>
+  </p>
+
+  <p class="form-group">
+    <label for="age">Age </label>
+    <input class="form-control" type="text" id="age" name="age" formControlName="age">
+  </p>
+
+  <p class="form-group">
+    <label for="gender">Gender </label>
+    <input type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+    <input type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+  </p>
+
+  <p class="form-group">
+    <label for="phone">Phone </label>
+    <input type="text" id="phone" name="phone" formControlName="phone">
+  </p>
+
+
+  <p>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </p>
+
+</form>

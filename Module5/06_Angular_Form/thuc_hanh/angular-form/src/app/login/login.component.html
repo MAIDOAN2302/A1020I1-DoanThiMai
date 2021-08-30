@@ -1,0 +1,26 @@
+<h3 class="text-center">Login</h3>
+<form class="container" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <p class="form-group">
+    <label for="email">Email </label>
+    <input class="form-control" type="text" id="email" name="email" formControlName="email">
+  </p>
+  <div
+    *ngIf="!contactForm.controls.email?.valid && (contactForm.controls.email?.dirty
+    ||contactForm.controls.email?.touched)">
+    Email is not valid
+  </div>
+
+  <p class="form-group">
+    <label for="password">Password </label>
+    <input class="form-control" type="text" id="password" name="password" formControlName="password">
+  </p>
+  <div
+    *ngIf="!contactForm.controls.password?.valid && (contactForm.controls.password?.dirty
+    ||contactForm.controls.password?.touched)">
+    Password is not valid
+  </div>
+  <p>
+    <button class="btn-warning" type="submit">Submit</button>
+  </p>
+</form>
