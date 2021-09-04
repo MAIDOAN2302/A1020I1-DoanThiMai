@@ -5,6 +5,7 @@
 <h3>List customer</h3>
 
 <table class="table table-hover table-striped">
+  <thead>
   <tr>
     <th>No</th>
     <th>Customer Id</th>
@@ -16,6 +17,8 @@
     <th>Address</th>
     <th colspan="2">Action</th>
   </tr>
+  </thead>
+  <tbody>
   <ng-container *ngFor="let customer of customerList; let i = index">
     <tr>
       <td>{{i + 1}}</td>
@@ -31,4 +34,5 @@
       <td><a class="btn btn-info" [routerLink]="['/customer-delete', customer.customerId]">Delete</a></td>
     </tr>
   </ng-container>
+  </tbody>
 </table>
