@@ -1,0 +1,34 @@
+{
+  "customerList": [
+    {
+      "id": 1,
+      "customerId" : "KH-0001",
+      "customerName" : "Nguyễn Văn A",
+      "birthday": "02/01/1999",
+      "idCard": "205518767",
+      "phone" : "09056486524",
+      "email" : "Angv@gmail.com",
+      "address" : "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "customerId" : "KH-0002",
+      "customerName" : "Nguyễn Văn B",
+      "birthday": "02/01/1999",
+      "idCard": "205518767",
+      "phone" : "09056486524",
+      "email" : "Bngv@gmail.com",
+      "address" : "Huế"
+    },
+    {
+      "id": 3,
+      "customerId" : "KH-0003",
+      "customerName" : "Nguyễn Văn C",
+      "birthday": "02/01/1999",
+      "idCard": "205518767",
+      "phone" : "09056486524",
+      "email" : "Cngv@gmail.com",
+      "address" : "Huế"
+    }
+  ]
+}

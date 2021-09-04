@@ -3,24 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerComponent } from './customer/customer.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { ServiceComponent } from './service/service.component';
-import { ContractComponent } from './contract/contract.component';
-import { ContractDetailComponent } from './contract-detail/contract-detail.component';
+import {CustomerModule} from "./customer/customer.module";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CustomerComponent,
-    EmployeeComponent,
-    ServiceComponent,
-    ContractComponent,
-    ContractDetailComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CustomerModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
