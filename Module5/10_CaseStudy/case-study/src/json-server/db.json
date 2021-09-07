@@ -1,0 +1,57 @@
+{
+  "employee": [
+    {
+      "id": 3,
+      "fullName": "Nguyễn Văn C",
+      "position": "Nhân viên",
+      "educationDegree": "Đại học",
+      "part": "Kinh doanh",
+      "dateOfBirth": "01/02/1998",
+      "idCard": "20158164",
+      "salary": "8",
+      "email": "anv@gmail.com",
+      "phone": "0165947348",
+      "address": "Thanh Khê - Đà Nẵng"
+    },
+    {
+      "fullName": "Nguyễn thị Hoa",
+      "position": "",
+      "educationDegree": "",
+      "part": "",
+      "dateOfBirth": "",
+      "idCard": "",
+      "salary": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "id": 4
+    },
+    {
+      "id": "KH-0001",
+      "fullName": "Nguyễn Thị Hoa",
+      "position": "Nhân viên",
+      "educationDegree": "Đại học",
+      "part": "Kinh doanh",
+      "dateOfBirth": "2001-02-05",
+      "idCard": "205518152",
+      "salary": "8",
+      "email": "admin@gmail.com",
+      "phone": "0902131246",
+      "address": "Quảng Nam"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "fullName": "Trần Văn A",
+      "email": "Atv@gmail.com",
+      "phone": "09592464786"
+    },
+    {
+      "id": 2,
+      "fullName": "Trần Văn B",
+      "email": "Atv@gmail.com",
+      "phone": "09592464786"
+    }
+  ]
+}
