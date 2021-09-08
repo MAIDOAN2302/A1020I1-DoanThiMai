@@ -29,4 +29,9 @@ export class EmployeeService {
   deleteEmployeeByID(employeeID): Observable<any>{
     return this.http.delete(this.API + '/' + employeeID);
   }
+
+  // @ts-ignore
+  editEmployee(employee,employeeID): Observable<any>{
+  return this.http.put(this.API + '/' + employeeID, employee);
+  }
 }

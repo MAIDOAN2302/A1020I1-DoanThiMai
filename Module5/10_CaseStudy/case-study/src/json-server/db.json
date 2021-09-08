@@ -2,29 +2,16 @@
   "employee": [
     {
       "id": 3,
-      "fullName": "Nguyễn Văn C",
+      "fullName": "Nguyễn Thị Ngọc",
       "position": "Nhân viên",
       "educationDegree": "Đại học",
       "part": "Kinh doanh",
-      "dateOfBirth": "01/02/1998",
-      "idCard": "20158164",
+      "dateOfBirth": "2003-12-01T17:00:00.000Z",
+      "idCard": "123456789",
       "salary": "8",
       "email": "anv@gmail.com",
-      "phone": "0165947348",
+      "phone": "0906123458",
       "address": "Thanh Khê - Đà Nẵng"
-    },
-    {
-      "fullName": "Nguyễn thị Hoa",
-      "position": "",
-      "educationDegree": "",
-      "part": "",
-      "dateOfBirth": "",
-      "idCard": "",
-      "salary": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "id": 4
     },
     {
       "id": "KH-0001",
@@ -38,20 +25,59 @@
       "email": "admin@gmail.com",
       "phone": "0902131246",
       "address": "Quảng Nam"
+    },
+    {
+      "id": "KH-0002",
+      "fullName": "Nguyễn Văn B",
+      "position": "Nhân viên",
+      "educationDegree": "Cao đẳng",
+      "part": "Phục vụ",
+      "dateOfBirth": "2003-12-10T17:00:00.000Z",
+      "idCard": "123456789",
+      "salary": "5",
+      "email": "dnv@gmail.com",
+      "phone": "0901234567",
+      "address": "Huế"
     }
   ],
   "customer": [
-    {
-      "id": 1,
-      "fullName": "Trần Văn A",
-      "email": "Atv@gmail.com",
-      "phone": "09592464786"
-    },
     {
       "id": 2,
       "fullName": "Trần Văn B",
       "email": "Atv@gmail.com",
       "phone": "09592464786"
+    },
+    {
+      "id": "KH-0001",
+      "customerType": "Normal",
+      "fullName": "Đoàn Thị Mai Khuê",
+      "dateOfBirth": "2003-12-09T17:00:00.000Z",
+      "idCard": "123456789",
+      "email": "doanthimai23021992@gmail.com",
+      "phone": "0901234567",
+      "address": "Đà Nẵng"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "idEmployee": "NV-0001",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "startDay": "01/09/2021",
+      "endDay": "01/10/2021",
+      "amount": "500",
+      "total": "2"
+    },
+    {
+      "id": 2,
+      "idEmployee": "NV-0001",
+      "idCustomer": "KH-0001",
+      "idService": "DV-0001",
+      "startDay": "01/09/2021",
+      "endDay": "01/10/2021",
+      "amount": "500",
+      "total": "2"
     }
   ]
 }

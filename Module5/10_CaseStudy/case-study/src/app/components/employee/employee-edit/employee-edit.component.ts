@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {EmployeeService} from "../../../service/employee.service";
-import {Router} from "@angular/router";
-
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-employee-create',
-  templateUrl: './employee-create.component.html',
-  styleUrls: ['./employee-create.component.css']
+  selector: 'app-employee-edit',
+  templateUrl: './employee-edit.component.html',
+  styleUrls: ['./employee-edit.component.css']
 })
-export class EmployeeCreateComponent implements OnInit {
+export class EmployeeEditComponent implements OnInit {
 // @ts-ignore
-  public formCreateNewEmployee: FormGroup;
+  public formEditEmployee: FormGroup;
   public maxDate = new Date(2003,11,31);
   public minDate = new Date(1900,0,1);
-
+  // @ts-ignore
+  public employeeOfId;
   constructor(public formBuilder: FormBuilder,
               public employeeService: EmployeeService,
-              public router: Router) { }
+              public router: Router,
+              public activatedRouter: ActivatedRoute) { }
 
   ngOnInit(){
-    this.formCreateNewEmployee = this.formBuilder.group({
+    this.formEditEmployee = this.formBuilder.group({
       id: ['',[Validators.required]],
       fullName: ['',[Validators.required]],
       position: ['',[Validators.required]],
@@ -33,11 +34,16 @@ export class EmployeeCreateComponent implements OnInit {
       phone:['',[Validators.required,Validators.pattern(
         '^(090|091|([\(]84[\)][\+]90)|([\(]84[\)][\+]91))[0-9]{7}$')]],
       address:['',[Validators.required]],
+    });
+    this.activatedRouter.params.subscribe(data =>{
+      this.employeeOfId = data.id;
+      this.employeeService.getEmployeeById(this.employeeOfId).subscribe(data =>{
+        this.formEditEmployee.patchValue(data);
+      })
     })
   }
-
-  createNewEmployee() {
-    this.employeeService.addNewEmployee(this.formCreateNewEmployee.value).subscribe(data =>{
+  editEmployee() {
+    this.employeeService.editEmployee(this.formEditEmployee.value, this.employeeOfId).subscribe(data=>{
       this.router.navigateByUrl('employee-list');
     })
   }

@@ -25,11 +25,11 @@
     <div class="col-2 px-0 mx-0">
       <div class="list-group border border-primary rounded h-100">
         <a href="#" class="list-group-item list-group-item-action active" [routerLink]="['']">Home</a>
-        <a href="#" class="list-group-item list-group-item-action">Customer Management</a>
+        <a href="#" class="list-group-item list-group-item-action" [routerLink]="['customer-list']">Customer Management</a>
         <a href="#" class="list-group-item list-group-item-action" [routerLink]="['employee-list']">Employee Management</a>
-        <a href="#" class="list-group-item list-group-item-action">Service Management</a>
-        <a href="#" class="list-group-item list-group-item-action">Contract Management</a>
-        <a href="#" class="list-group-item list-group-item-action">Contract Detail Management</a>
+        <a href="#" class="list-group-item list-group-item-action" [routerLink]="['services-list']">Service Management</a>
+        <a href="#" class="list-group-item list-group-item-action" [routerLink]="['contract-list']">Contract Management</a>
+        <a href="#" class="list-group-item list-group-item-action" [routerLink]="['contractDetail-list']">Contract Detail Management</a>
       </div>
     </div>
     <div class="col-10 p-5">

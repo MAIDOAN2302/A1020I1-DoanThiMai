@@ -40,7 +40,7 @@
       <td>{{employee.phone}}</td>
       <td>{{employee.address}}</td>
       <td style="width: 12%">
-        <button class="btn btn-sm btn-warning mr-2">Sửa</button>
+        <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/employee-edit/'+employee.id]">Sửa</button>
         <button class="btn btn-sm btn-danger" (click)="openDialog(employee.id)">Xoá</button>
       </td>
     </tr>

@@ -1,0 +1,86 @@
+<h3 class="text-center">Thêm mới khách hành</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formCreateNewCustomer">
+  <div class="form-group">
+    <p>ID khách hàng</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="id"/>
+    <p *ngIf="formCreateNewCustomer.controls.id.errors?.required &&
+              formCreateNewCustomer.controls.id.touched" class="text-danger">
+      Vui lòng nhập ID theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Loại khách hàng</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="customerType"/>
+    <p *ngIf="formCreateNewCustomer.controls.id.errors?.required &&
+              formCreateNewCustomer.controls.id.touched" class="text-danger">
+      Vui lòng nhập loại khách theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Họ và tên</p>
+    <input class="form-control" type="text" formControlName="fullName"/>
+    <p *ngIf="formCreateNewCustomer.controls.fullName.errors?.required &&
+              formCreateNewCustomer.controls.fullName.touched" class="text-danger">Vui lòng nhập họ tên</p>
+  </div>
+  <div class="form-group">
+    <p>Ngày sinh</p>
+    <mat-form-field appearance="fill">
+      <input [min]="minDate" [max]="maxDate" class="form-control" placeholder="dd/MM/yyyy" formControlName="dateOfBirth"
+             matInput [matDatepicker]="picker"
+             placeholder="Choose a date"
+             formControlName="dateOfBirth"
+             #date>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <p *ngIf="formCreateNewCustomer.controls.dateOfBirth.errors?.required &&
+              formCreateNewCustomer.controls.dateOfBirth.touched" class="text-danger">
+      Vui lòng nhập ngày sinh
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Số CMND</p>
+    <input class="form-control" type="text" placeholder="Đủ 9 số hoặc 12 số" formControlName="idCard"/>
+    <p *ngIf="formCreateNewCustomer.controls.idCard.errors?.required &&
+              formCreateNewCustomer.controls.idCard.touched" class="text-danger">
+      Vui lòng nhập số CMND
+    </p>
+    <p *ngIf="formCreateNewCustomer.controls.idCard.errors?.pattern &&
+              formCreateNewCustomer.controls.idCard.touched" class="text-danger">
+      Vui lòng nhập số CMND theo đúng định dạng
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Email</p>
+    <input class="form-control" type="text" placeholder="abc@abc.com" formControlName="email"/>
+    <p *ngIf="formCreateNewCustomer.controls.email.errors?.required &&
+              formCreateNewCustomer.controls.email.touched" class="text-danger">
+      Vui lòng nhập email
+    </p>
+    <p *ngIf="formCreateNewCustomer.controls.email.errors?.email &&
+              formCreateNewCustomer.controls.email.touched" class="text-danger">
+      Vui lòng nhập đúng định dạng
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Số điện thoại</p>
+    <input class="form-control" type="text" placeholder="Số điện thoại bắt đầu là 090 hoặc 091"
+           formControlName="phone"/>
+    <p *ngIf="formCreateNewCustomer.controls.phone.errors?.required &&
+              formCreateNewCustomer.controls.phone.touched" class="text-danger">
+      Vui lòng nhập số điện thoại
+    </p>
+    <p *ngIf="formCreateNewCustomer.controls.phone.errors?.pattern &&
+              formCreateNewCustomer.controls.phone.touched" class="text-danger">
+      Vui lòng nhập số điện thoại theo đúng định dạng
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Địa chỉ</p>
+    <input class="form-control" type="text" formControlName="address"/>
+    <p *ngIf="formCreateNewCustomer.controls.address.errors?.required &&
+              formCreateNewCustomer.controls.address.touched" class="text-danger">Vui lòng nhập địa chỉ</p>
+  </div>
+</form>
+<div class="mt-3 d-flex justify-content-center">
+  <button [disabled]="formCreateNewCustomer.invalid" class="btn btn-success" (click)="createNewCustomer()">Thêm mới</button>
+</div>
+
