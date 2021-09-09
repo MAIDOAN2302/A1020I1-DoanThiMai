@@ -1,1 +1,38 @@
-<p>contract-detail-list works!</p>
+<div class="row justify-content-between">
+  <h2>DANH SÁCH HỢP ĐỒNG CHI TIẾT</h2>
+  <div class="d-flex">
+    <input class="form-control mr-2" type="text" style="width: 400px;height: 50px"
+           placeholder="Tìm kiếm theo tên nhân viên"  [(ngModel)]="term"/>
+    <button class="btn btn-outline-success">Tìm kiếm</button>
+  </div>
+</div>
+<div class="row mt-3 px-3">
+  <button class="btn btn-success" [routerLink]="['/contractDetail-create']">Thêm mới hợp đồng chi tiết</button>
+  <table class="table table-striped table-hover mt-3" style="font-size: 12px">
+    <thead>
+    <tr>
+      <th>ID HĐCT</th>
+      <th>ID HĐ</th>
+      <th>ID DV</th>
+      <th>Số lượng</th>
+      <th>Lựa chọn</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contractDetail of contractDetails |filter:term
+    |paginate: { itemsPerPage: 2, currentPage: p }">
+      <td>{{contractDetail.id}}</td>
+      <td>{{contractDetail.idContract}}</td>
+      <td>{{contractDetail.idService}}</td>
+      <td>{{contractDetail.quantity}}</td>
+      <td style="width: 12%">
+        <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/contractDetail-edit/'+contractDetail.id]">Sửa</button>
+        <button class="btn btn-sm btn-danger" (click)="openDialog(contractDetail.id)">Xoá</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+

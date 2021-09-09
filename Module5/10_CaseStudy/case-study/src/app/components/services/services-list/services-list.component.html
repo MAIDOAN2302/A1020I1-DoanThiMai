@@ -1,1 +1,44 @@
-<p>services-list works!</p>
+<div class="row justify-content-between">
+  <h2>DANH SÁCH DỊCH VỤ</h2>
+  <div class="d-flex">
+    <input class="form-control mr-2" type="text" style="width: 400px;height: 50px"
+           placeholder="Tìm kiếm theo tên nhân viên"  [(ngModel)]="term"/>
+    <button class="btn btn-outline-success">Tìm kiếm</button>
+  </div>
+</div>
+<div class="row mt-3 px-3">
+  <button class="btn btn-success" [routerLink]="['/services-create']">Thêm mới DV</button>
+  <table class="table table-striped table-hover mt-3" style="font-size: 12px">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên DV</th>
+      <th>Diện tích</th>
+      <th>Số tầng</th>
+      <th>Số người tối đa</th>
+      <th>Kiểu thuê</th>
+      <th>Trạng thái</th>
+      <th>Lựa chọn</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let service of services |filter:term
+    |paginate: { itemsPerPage: 2, currentPage: p }">
+      <td>{{service.id}}</td>
+      <td>{{service.serviceName}}</td>
+      <td>{{service.area}}</td>
+      <td>{{service.floorsNumber}}</td>
+      <td>{{service.maxPeople}}</td>
+      <td>{{service.rentType}}</td>
+      <td>{{service.status}}</td>
+      <td style="width: 12%">
+        <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/services-edit/'+service.id]">Sửa</button>
+        <button class="btn btn-sm btn-danger" (click)="openDialog(service.id)">Xoá</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+

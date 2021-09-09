@@ -42,12 +42,6 @@
   ],
   "customer": [
     {
-      "id": 2,
-      "fullName": "Trần Văn B",
-      "email": "Atv@gmail.com",
-      "phone": "09592464786"
-    },
-    {
       "id": "KH-0001",
       "customerType": "Normal",
       "fullName": "Đoàn Thị Mai Khuê",
@@ -60,16 +54,6 @@
   ],
   "contract": [
     {
-      "id": 1,
-      "idEmployee": "NV-0001",
-      "idCustomer": "KH-0001",
-      "idService": "DV-0001",
-      "startDay": "01/09/2021",
-      "endDay": "01/10/2021",
-      "amount": "500",
-      "total": "2"
-    },
-    {
       "id": 2,
       "idEmployee": "NV-0001",
       "idCustomer": "KH-0001",
@@ -78,6 +62,39 @@
       "endDay": "01/10/2021",
       "amount": "500",
       "total": "2"
+    }
+  ],
+  "contractDetail": [
+    {
+      "id": 1,
+      "idContract": "HĐ-0001",
+      "idService": "DV-0250",
+      "quantity": "2"
+    },
+    {
+      "id": 2,
+      "idContract": "HĐ-0002",
+      "idService": "DV-0002",
+      "quantity": "3"
+    }
+  ],
+  "services": [
+    {
+      "id": 2,
+      "serviceName": "House",
+      "area": "100m2",
+      "floorsNumber": "2",
+      "maxPeople": "2",
+      "status": "full"
+    },
+    {
+      "serviceName": "1",
+      "area": "1",
+      "floorsNumber": "1",
+      "maxPeople": "1",
+      "rentType": "1",
+      "status": "1",
+      "id": 3
     }
   ]
 }

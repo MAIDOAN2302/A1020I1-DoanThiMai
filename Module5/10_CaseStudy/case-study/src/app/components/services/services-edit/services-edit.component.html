@@ -1,1 +1,52 @@
-<p>services-edit works!</p>
+<h3 class="text-center">Chỉnh sửa thông tin DV</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formEditServices">
+  <div class="form-group">
+    <p>Tên dịch vụ</p>
+    <input class="form-control" type="text" placeholder="NV-XXXX" formControlName="serviceName"/>
+    <p *ngIf="formEditServices.controls.serviceName.errors?.required &&
+              formEditServices.controls.serviceName.touched" class="text-danger">
+      Vui lòng nhập ID nhân viên theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Diện tích</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="area"/>
+    <p *ngIf="formEditServices.controls.area.errors?.required &&
+              formEditServices.controls.area.touched" class="text-danger">
+      Vui lòng nhập ID khách hàng theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Số tầng</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="floorsNumber"/>
+    <p *ngIf="formEditServices.controls.floorsNumber.errors?.required &&
+              formEditServices.controls.floorsNumber.touched" class="text-danger">
+      Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Số người tối đa</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="maxPeople"/>
+    <p *ngIf="formEditServices.controls.maxPeople.errors?.required &&
+              formEditServices.controls.maxPeople.touched" class="text-danger">
+      Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Kiểu thuê</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="rentType"/>
+    <p *ngIf="formEditServices.controls.rentType.errors?.required &&
+              formEditServices.controls.rentType.touched" class="text-danger">
+      Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <p>Trạng thái</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="status"/>
+    <p *ngIf="formEditServices.controls.status.errors?.required &&
+              formEditServices.controls.status.touched" class="text-danger">
+      Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
+  </div>
+</form>
+<div class="mt-3 d-flex justify-content-center">
+  <button [disabled]="formEditServices.invalid" class="btn btn-success" (click)="editServices()">
+    Sửa</button>
+</div>
+
+
+

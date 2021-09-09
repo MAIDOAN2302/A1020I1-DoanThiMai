@@ -1,1 +1,31 @@
-<p>contract-detail-create works!</p>
+<h3 class="text-center">Thêm mới hợp đồng chi tiết</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formCreateNewContractDetail">
+  <div class="form-group">
+    <p>ID HĐ</p>
+    <input class="form-control" type="text" placeholder="HĐ-XXXX" formControlName="idContract"/>
+    <p *ngIf="formCreateNewContractDetail.controls.idContract.errors?.required &&
+              formCreateNewContractDetail.controls.idContract.touched" class="text-danger">
+      Vui lòng nhập ID hợp đồng</p>
+  </div>
+  <div class="form-group">
+    <p>ID DV</p>
+    <input class="form-control" type="text" placeholder="DV-XXXX" formControlName="idService"/>
+    <p *ngIf="formCreateNewContractDetail.controls.idService.errors?.required &&
+              formCreateNewContractDetail.controls.idService.touched" class="text-danger">
+      Vui lòng nhập ID DV</p>
+  </div>
+  <div class="form-group">
+    <p>Số lượng</p>
+    <input class="form-control" type="text" formControlName="quantity"/>
+    <p *ngIf="formCreateNewContractDetail.controls.quantity.errors?.required &&
+              formCreateNewContractDetail.controls.quantity.touched" class="text-danger">
+      Vui lòng nhập số lượng</p>
+  </div>
+
+</form>
+<div class="mt-3 d-flex justify-content-center">
+  <button [disabled]="formCreateNewContractDetail.invalid" class="btn btn-success" (click)="createNewContractDetail()">
+    Thêm mới</button>
+</div>
+
+
