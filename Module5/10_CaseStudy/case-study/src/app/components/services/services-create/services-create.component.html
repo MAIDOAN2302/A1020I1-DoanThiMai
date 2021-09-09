@@ -1,51 +1,59 @@
-<h3 class="text-center">Thêm mới DV</h3>
+<h3 class="text-center">THÊM MỚI DỊCH VỤ</h3>
 <form class="w-75 mx-auto mt-3" [formGroup]="formCreateNewServices">
-  <div class="form-group">
+  <div class="form-row">
+  <div class="form-group col-6">
     <p>Tên dịch vụ</p>
     <input class="form-control" type="text" placeholder="NV-XXXX" formControlName="serviceName"/>
     <p *ngIf="formCreateNewServices.controls.serviceName.errors?.required &&
               formCreateNewServices.controls.serviceName.touched" class="text-danger">
       Vui lòng nhập ID nhân viên theo đúng định dạng</p>
   </div>
-  <div class="form-group">
+  <div class="form-group col-6">
     <p>Diện tích</p>
     <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="area"/>
     <p *ngIf="formCreateNewServices.controls.area.errors?.required &&
               formCreateNewServices.controls.area.touched" class="text-danger">
       Vui lòng nhập ID khách hàng theo đúng định dạng</p>
   </div>
-  <div class="form-group">
+  </div>
+  <div class="form-row">
+  <div class="form-group col-6">
     <p>Số tầng</p>
     <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="floorsNumber"/>
     <p *ngIf="formCreateNewServices.controls.floorsNumber.errors?.required &&
               formCreateNewServices.controls.floorsNumber.touched" class="text-danger">
       Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
   </div>
-  <div class="form-group">
+  <div class="form-group col-6">
     <p>Số người tối đa</p>
     <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="maxPeople"/>
     <p *ngIf="formCreateNewServices.controls.maxPeople.errors?.required &&
               formCreateNewServices.controls.maxPeople.touched" class="text-danger">
       Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
   </div>
-  <div class="form-group">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-6">
     <p>Kiểu thuê</p>
     <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="rentType"/>
     <p *ngIf="formCreateNewServices.controls.rentType.errors?.required &&
               formCreateNewServices.controls.rentType.touched" class="text-danger">
       Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
   </div>
-  <div class="form-group">
+  <div class="form-group col-6">
     <p>Trạng thái</p>
     <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="status"/>
     <p *ngIf="formCreateNewServices.controls.status.errors?.required &&
               formCreateNewServices.controls.status.touched" class="text-danger">
       Vui lòng nhập ID dịch vụ theo đúng định dạng</p>
   </div>
+  </div>
 </form>
 <div class="mt-3 d-flex justify-content-center">
-  <button [disabled]="formCreateNewServices.invalid" class="btn btn-success" (click)="createNewServices()">
-    Thêm mới</button>
+  <button [disabled]="formCreateNewServices.invalid" class="btn btn-success" style="width: 100px"
+          (click)="createNewServices()">Thêm mới</button>
+  <button class="btn btn-outline-primary ml-2" style="width: 100px"
+          [routerLink]="['/services-list']">Trở lại</button>
 </div>
 
 

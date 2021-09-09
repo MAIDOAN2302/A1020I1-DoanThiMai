@@ -1,38 +1,43 @@
-<h3 class="text-center">Chỉnh sửa hợp đồng chi tiết</h3>
+<h3 class="text-center">CHỈNH SỬA THÔNG TIN HỢP ĐỒNG CHI TIẾT</h3>
 <form class="w-75 mx-auto mt-3" [formGroup]="formEditContractDetail">
-  <div class="form-group">
+  <div class="form-row">
+  <div class="form-group col-6">
     <p>ID HĐCT</p>
     <input class="form-control" type="text" placeholder="HĐCT-XXXX" formControlName="id"/>
     <p *ngIf="formEditContractDetail.controls.id.errors?.required &&
               formEditContractDetail.controls.id.touched" class="text-danger">
       Vui lòng nhập ID HĐCT</p>
   </div>
-  <div class="form-group">
+  <div class="form-group col-6">
     <p>ID HĐ</p>
     <input class="form-control" type="text" placeholder="HĐ-XXXX" formControlName="idContract"/>
     <p *ngIf="formEditContractDetail.controls.idContract.errors?.required &&
               formEditContractDetail.controls.idContract.touched" class="text-danger">
       Vui lòng nhập ID hợp đồng</p>
   </div>
-  <div class="form-group">
+  </div>
+  <div class="form-row">
+  <div class="form-group col-6">
     <p>ID DV</p>
     <input class="form-control" type="text" placeholder="DV-XXXX" formControlName="idService"/>
     <p *ngIf="formEditContractDetail.controls.idService.errors?.required &&
               formEditContractDetail.controls.idService.touched" class="text-danger">
       Vui lòng nhập ID DV</p>
   </div>
-  <div class="form-group">
+  <div class="form-group col-6">
     <p>Số lượng</p>
     <input class="form-control" type="text" formControlName="quantity"/>
     <p *ngIf="formEditContractDetail.controls.quantity.errors?.required &&
               formEditContractDetail.controls.quantity.touched" class="text-danger">
       Vui lòng nhập số lượng</p>
   </div>
-
+  </div>
 </form>
 <div class="mt-3 d-flex justify-content-center">
-  <button [disabled]="formEditContractDetail.invalid" class="btn btn-success" (click)="editContractDetail()">
-    Sửa</button>
+  <button [disabled]="formEditContractDetail.invalid" class="btn btn-success" style="width: 100px"
+          (click)="editContractDetail()">Chỉnh sửa</button>
+  <button class="btn btn-outline-primary ml-2" style="width: 100px"
+          [routerLink]="['/contractDetail-list']">Trở lại</button>
 </div>
 
 

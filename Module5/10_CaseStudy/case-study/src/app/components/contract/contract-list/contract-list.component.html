@@ -1,9 +1,10 @@
 <div class="row justify-content-between">
   <h2>DANH SÁCH HỢP ĐỒNG</h2>
   <div class="d-flex">
-    <input class="form-control mr-2" type="text" style="width: 400px;height: 50px"
+    <input class="form-control mr-2" type="text" style="width: 400px;height: 40px"
            placeholder="Tìm kiếm theo tên nhân viên"  [(ngModel)]="term"/>
-    <button class="btn btn-outline-success">Tìm kiếm</button>
+    <button class="btn btn-outline-success" style="height: 40px">
+      <mat-icon>find_in_page</mat-icon></button>
   </div>
 </div>
 <div class="row mt-3 px-3">
@@ -34,8 +35,12 @@
       <td>{{contract.amount}}</td>
       <td>{{contract.total}}</td>
       <td style="width: 12%">
-        <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/contract-edit/'+contract.id]">Sửa</button>
-        <button class="btn btn-sm btn-danger" (click)="openDialog(contract.id)">Xoá</button>
+        <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/contract-edit/'+contract.id]">
+          <mat-icon aria-hidden="false" aria-label="Example delete icon">edit</mat-icon>
+        </button>
+        <button class="btn btn-sm btn-danger" (click)="openDialog(contract.id)">
+          <mat-icon aria-hidden="false" aria-label="Example delete icon">delete_sweep</mat-icon>
+        </button>
       </td>
     </tr>
     </tbody>

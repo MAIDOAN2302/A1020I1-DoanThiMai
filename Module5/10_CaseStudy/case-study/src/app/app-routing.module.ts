@@ -28,6 +28,10 @@ import { ContractDetailListComponent } from './components/contractDetail/contrac
 import { ContractDetailCreateComponent } from './components/contractDetail/contract-detail-create/contract-detail-create.component';
 import { ContractDetailEditComponent } from './components/contractDetail/contract-detail-edit/contract-detail-edit.component';
 import { ContractDetailDeleteComponent } from './components/contractDetail/contract-detail-delete/contract-detail-delete.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatIconModule} from "@angular/material/icon";
+import { FooterComponent } from './components/footer/footer.component';
+import {MatListModule} from "@angular/material/list";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -61,8 +65,8 @@ const routes: Routes = [
     Ng2SearchPipeModule,
     FormsModule,
     NgxPaginationModule,
-    MaterialModule, MatDialogModule],
-  exports: [RouterModule],
+    MaterialModule, MatDialogModule, MatIconModule, MatListModule],
+    exports: [RouterModule, NavbarComponent, FooterComponent],
   declarations: [
     HomeComponent,
     PageNotFoundComponent,
@@ -85,7 +89,9 @@ const routes: Routes = [
     ContractDetailListComponent,
     ContractDetailCreateComponent,
     ContractDetailEditComponent,
-    ContractDetailDeleteComponent
+    ContractDetailDeleteComponent,
+    NavbarComponent,
+    FooterComponent
   ]
 })
 export class AppRoutingModule {

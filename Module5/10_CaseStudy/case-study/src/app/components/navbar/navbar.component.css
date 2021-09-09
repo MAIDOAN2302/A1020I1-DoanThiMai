@@ -1,0 +1,11 @@
+a{
+  font-family: "Times New Roman";
+  color: white;
+}
+p,h6{
+  font-family: "Times New Roman";
+  font-weight: bold;
+}
+nav{
+  background-color: rgba(23, 130, 91, 1);
+}

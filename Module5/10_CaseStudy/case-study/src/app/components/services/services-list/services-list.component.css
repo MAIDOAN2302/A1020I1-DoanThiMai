@@ -1,0 +1,28 @@
+.row{
+  font-size: 15px;
+  font-style: normal;
+  font-family: "Times New Roman";
+}
+th{
+  text-align: center;
+  font-size: 15px;
+}
+td{
+  text-align: center;
+  font-size: 12px;
+}
+ul{
+  color: black;
+  font-weight: bold;
+}
+h2{
+  color: darkblue;
+  font-size: 50px;
+}
+thead{
+  background-color: #ecf0b1;
+}
+mat-icon{
+  width: 20px;
+  height: 10px;
+}

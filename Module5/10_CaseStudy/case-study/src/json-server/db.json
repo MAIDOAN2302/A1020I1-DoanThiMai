@@ -1,19 +1,6 @@
 {
   "employee": [
     {
-      "id": 3,
-      "fullName": "Nguyễn Thị Ngọc",
-      "position": "Nhân viên",
-      "educationDegree": "Đại học",
-      "part": "Kinh doanh",
-      "dateOfBirth": "2003-12-01T17:00:00.000Z",
-      "idCard": "123456789",
-      "salary": "8",
-      "email": "anv@gmail.com",
-      "phone": "0906123458",
-      "address": "Thanh Khê - Đà Nẵng"
-    },
-    {
       "id": "KH-0001",
       "fullName": "Nguyễn Thị Hoa",
       "position": "Nhân viên",
@@ -80,12 +67,13 @@
   ],
   "services": [
     {
-      "id": 2,
-      "serviceName": "House",
+      "serviceName": "Villa",
       "area": "100m2",
       "floorsNumber": "2",
       "maxPeople": "2",
-      "status": "full"
+      "rentType": "1",
+      "status": "full",
+      "id": 2
     },
     {
       "serviceName": "1",
