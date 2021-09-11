@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeeService} from "../../../service/employee.service";
 import {MatDialog} from "@angular/material/dialog";
 import {EmployeeDeleteComponent} from "../employee-delete/employee-delete.component";
+import {IEmployee} from "../../../models/employee";
 
 @Component({
   selector: 'app-employee-list',
@@ -9,9 +10,12 @@ import {EmployeeDeleteComponent} from "../employee-delete/employee-delete.compon
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  public employees: any;
+  // @ts-ignore
+  public employees: IEmployee[];
   term: any;
   p: any;
+  // @ts-ignore
+  nameSearch='';
 
   constructor(
     public employeeService: EmployeeService,
@@ -21,7 +25,7 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit(){
     this.employeeService.getAllEmployees().subscribe(data =>{
       this.employees = data;
-      console.log(this.employees);
+      // console.log(this.employees);
     })
   }
 
@@ -37,5 +41,11 @@ export class EmployeeListComponent implements OnInit {
         this.ngOnInit();
       });
     });
+  };
+  search() {
+    this.employeeService.search(this.nameSearch).subscribe(data=>{
+      // @ts-ignore
+      this.employees =data
+    })
   }
 }

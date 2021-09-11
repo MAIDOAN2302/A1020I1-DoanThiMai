@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {ICustomer} from "../models/customer";
 
 @Injectable({
   providedIn: 'root'
@@ -11,27 +12,28 @@ export class CustomerService {
   constructor(
     private http: HttpClient
   ) { }
-  getAllCustomers(): Observable<any>{
-    return this.http.get(this.API);
+  getAllCustomers(): Observable<ICustomer[]>{
+    return this.http.get<ICustomer[]>(this.API);
   }
 
-  // @ts-ignore
-  addNewCustomer(customer): Observable<any>{
+  addNewCustomer(customer:ICustomer): Observable<any>{
     return this.http.post(this.API,customer);
   }
 
-  // @ts-ignore
-  getCustomerById(customerID):Observable<any>{
-    return this.http.get(this.API + '/' + customerID);
+  getCustomerById(idCustomer:string):Observable<ICustomer[]>{
+    return this.http.get<ICustomer[]>(this.API + '/' + idCustomer);
   }
 
-  // @ts-ignore
-  deleteCustomerByID(customerID): Observable<any>{
-    return this.http.delete(this.API + '/' + customerID);
+  deleteCustomerByID(idCustomer:string): Observable<any>{
+    return this.http.delete(this.API + '/' + idCustomer);
   }
 
-  // @ts-ignore
-  editCustomer(customer,customerID): Observable<any>{
-    return this.http.put(this.API + '/' + customerID, customer);
+  editCustomer(customer:ICustomer,idCustomer:string): Observable<any>{
+    return this.http.put(this.API + '/' + idCustomer, customer);
+  }
+
+  search(nameSearch:string){
+    console.log(nameSearch);
+    return this.http.get(this.API + '?fullName_like=' + nameSearch);
   }
 }

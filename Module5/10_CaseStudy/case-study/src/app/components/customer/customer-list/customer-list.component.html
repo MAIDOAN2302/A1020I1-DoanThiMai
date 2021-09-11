@@ -2,9 +2,8 @@
   <h2>DANH SÁCH KHÁCH HÀNG</h2>
   <div class="d-flex">
     <input class="form-control mr-2" type="text" style="width: 400px;height: 40px"
-           placeholder="Tìm kiếm theo tên nhân viên"  [(ngModel)]="term"/>
-    <button class="btn btn-outline-success" style="height: 40px">
-      <mat-icon>find_in_page</mat-icon></button>
+           placeholder="Tìm kiếm theo tên nhân viên" [(ngModel)]="nameSearch"/>
+    <button class="btn btn-outline-success" style="height: 40px" (click)="search()"> Search</button>
   </div>
 </div>
 <div class="row mt-3 px-3">
@@ -12,7 +11,7 @@
   <table class="table table-striped table-hover mt-3" style="font-size: 12px">
     <thead>
     <tr>
-      <th>ID</th>
+      <th>Mã KH</th>
       <th>Loại Khách</th>
       <th>Họ và tên</th>
       <th>Ngày sinh</th>
@@ -26,8 +25,8 @@
     <tbody>
     <tr *ngFor="let customer of customers |filter:term
     |paginate: { itemsPerPage: 2, currentPage: p }">
-      <td>{{customer.id}}</td>
-      <td>{{customer.customerType}}</td>
+      <td>{{customer.idCustomer}}</td>
+      <td>{{customer.customerType.name}}</td>
       <td>{{customer.fullName}}</td>
       <td>{{customer.dateOfBirth}}</td>
       <td>{{customer.idCard}}</td>

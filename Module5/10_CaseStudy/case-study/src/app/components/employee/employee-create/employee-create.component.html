@@ -3,38 +3,61 @@
   <div class="form-row">
     <div class="form-group col-6">
       <p>ID nhân viên</p>
-      <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="id"/>
-      <p *ngIf="formCreateNewEmployee.controls.id.errors?.required &&
-              formCreateNewEmployee.controls.id.touched" class="text-danger">
+      <input class="form-control" type="text" placeholder="NV-XXXX" formControlName="idEmployee"/>
+      <p *ngIf="formCreateNewEmployee.controls.idEmployee.errors?.required &&
+              formCreateNewEmployee.controls.idEmployee.touched" class="text-danger">
         Vui lòng nhập ID theo đúng định dạng</p>
+      <p *ngIf="formCreateNewEmployee.controls.idEmployee.errors?.pattern &&
+              formCreateNewEmployee.controls.idEmployee.touched" class="text-danger">
+        Vui lòng nhập mã số NV theo đúng định dạng
+      </p>
     </div>
     <div class="form-group col-6">
       <p>Họ và tên</p>
       <input class="form-control" type="text" formControlName="fullName"/>
       <p *ngIf="formCreateNewEmployee.controls.fullName.errors?.required &&
-              formCreateNewEmployee.controls.fullName.touched" class="text-danger">Vui lòng nhập họ tên</p>
+              formCreateNewEmployee.controls.fullName.touched" class="text-danger">
+        Vui lòng nhập họ tên</p>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-6">
       <p>Vị trí</p>
-      <input class="form-control" type="text" formControlName="position"/>
+      <select class="form-control"  type="text" id="position"
+              formControlName="position">
+        <option *ngFor="let position of positions" [ngValue]="position">
+          {{position.name}}
+        </option>
+      </select>
       <p *ngIf="formCreateNewEmployee.controls.position.errors?.required &&
-              formCreateNewEmployee.controls.position.touched" class="text-danger">Vui lòng nhập vị trí</p>
+              formCreateNewEmployee.controls.position.touched" class="text-danger">
+        Vui lòng nhập vị trí</p>
     </div>
     <div class="form-group col-6">
       <p>Trình độ</p>
-      <input class="form-control" type="text" formControlName="educationDegree"/>
+      <select class="form-control"  type="text" id="educationDegree"
+              formControlName="educationDegree">
+        <option *ngFor="let educationDegree of educationDegrees" [ngValue]="educationDegree">
+          {{educationDegree.name}}
+        </option>
+      </select>
       <p *ngIf="formCreateNewEmployee.controls.educationDegree.errors?.required &&
-              formCreateNewEmployee.controls.educationDegree.touched" class="text-danger">Vui lòng nhập trình độ</p>
+              formCreateNewEmployee.controls.educationDegree.touched" class="text-danger">
+        Vui lòng nhập trình độ</p>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-6">
-      <p>Bộ phận</p>
-      <input class="form-control" type="text" formControlName="part"/>
+      <p>Bộ phận </p>
+      <select class="form-control"  type="text" id="part"
+              formControlName="part">
+        <option *ngFor="let part of parts" [ngValue]="part">
+          {{part.name}}
+        </option>
+      </select>
       <p *ngIf="formCreateNewEmployee.controls.part.errors?.required &&
-              formCreateNewEmployee.controls.part.touched" class="text-danger">Vui lòng nhập bộ phận</p>
+              formCreateNewEmployee.controls.part.touched" class="text-danger">
+        Vui lòng nhập bộ phận </p>
     </div>
     <div class="form-group col-6">
       <p>Ngày sinh</p>
@@ -112,7 +135,8 @@
       <p>Địa chỉ</p>
       <input class="form-control" type="text" formControlName="address"/>
       <p *ngIf="formCreateNewEmployee.controls.address.errors?.required &&
-              formCreateNewEmployee.controls.address.touched" class="text-danger">Vui lòng nhập địa chỉ</p>
+              formCreateNewEmployee.controls.address.touched" class="text-danger">
+        Vui lòng nhập địa chỉ</p>
     </div>
   </div>
 </form>

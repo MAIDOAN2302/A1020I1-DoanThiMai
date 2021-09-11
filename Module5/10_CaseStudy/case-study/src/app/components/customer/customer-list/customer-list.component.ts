@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {CustomerService} from "../../../service/customer.service";
 import {CustomerDeleteComponent} from "../customer-delete/customer-delete.component";
+import {ICustomer} from "../../../models/customer";
 
 @Component({
   selector: 'app-customer-list',
@@ -9,9 +10,12 @@ import {CustomerDeleteComponent} from "../customer-delete/customer-delete.compon
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  public customers: any;
+  // @ts-ignore
+  public customers: ICustomer[];
   term: any;
   p: any;
+  // @ts-ignore
+  nameSearch='';
 
   constructor(
     public customerService: CustomerService,
@@ -21,13 +25,11 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(){
     this.customerService.getAllCustomers().subscribe(data =>{
       this.customers = data;
-      console.log(this.customers);
     })
   }
-
   // @ts-ignore
-  openDialog(customerID):void {
-    this.customerService.getCustomerById(customerID).subscribe(dataOfCustomer=>{
+  openDialog(idCustomer):void {
+    this.customerService.getCustomerById(idCustomer).subscribe(dataOfCustomer=>{
       const dialogRef = this.dialog.open(CustomerDeleteComponent, {
         width: '500px',
         data: {data1: dataOfCustomer},
@@ -37,5 +39,11 @@ export class CustomerListComponent implements OnInit {
         this.ngOnInit();
       });
     });
+  };
+  search() {
+    this.customerService.search(this.nameSearch).subscribe(data=>{
+      // @ts-ignore
+      this.customers =data
+    })
   }
 }

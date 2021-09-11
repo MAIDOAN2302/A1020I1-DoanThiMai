@@ -1,42 +1,205 @@
 {
+  "part": [
+    {
+      "id": 1,
+      "name": "Sale – Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành Chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    }
+  ],
+  "educationDegree": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học "
+    },
+    {
+      "id": 4,
+      "name": "Sau Đại học"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Lễ tân"
+    },
+    {
+      "id": 2,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 3,
+      "name": "Chuyên viên "
+    },
+    {
+      "id": 4,
+      "name": "Giám sát"
+    },
+    {
+      "id": 5,
+      "name": "Quản lý"
+    },
+    {
+      "id": 6,
+      "name": "Giám đốc"
+    }
+  ],
   "employee": [
     {
-      "id": "KH-0001",
+      "idEmployee": "KH-0001",
       "fullName": "Nguyễn Thị Hoa",
-      "position": "Nhân viên",
-      "educationDegree": "Đại học",
-      "part": "Kinh doanh",
+      "position": 1,
+      "educationDegree": 1,
+      "part": 1,
       "dateOfBirth": "2001-02-05",
       "idCard": "205518152",
       "salary": "8",
       "email": "admin@gmail.com",
       "phone": "0902131246",
-      "address": "Quảng Nam"
+      "address": "Quảng Nam",
+      "id": "01"
     },
     {
-      "id": "KH-0002",
+      "idEmployee": "KH-0002",
       "fullName": "Nguyễn Văn B",
-      "position": "Nhân viên",
-      "educationDegree": "Cao đẳng",
-      "part": "Phục vụ",
+      "position": 2,
+      "educationDegree": 2,
+      "part": 2,
       "dateOfBirth": "2003-12-10T17:00:00.000Z",
       "idCard": "123456789",
       "salary": "5",
       "email": "dnv@gmail.com",
       "phone": "0901234567",
-      "address": "Huế"
+      "address": "Huế",
+      "id": "02"
+    },
+    {
+      "idEmployee": "NV-0001",
+      "fullName": "Nguyễn Văn A",
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "educationDegree": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "part": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "dateOfBirth": "2003-12-17T17:00:00.000Z",
+      "idCard": "123456789",
+      "salary": "10",
+      "email": "admin@gmail.com",
+      "phone": "0901234567",
+      "address": "Huees",
+      "id": "ZJTQMGm"
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
     }
   ],
   "customer": [
     {
-      "id": "KH-0001",
-      "customerType": "Normal",
+      "idCustomer": "KH-0001",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      },
       "fullName": "Đoàn Thị Mai Khuê",
       "dateOfBirth": "2003-12-09T17:00:00.000Z",
       "idCard": "123456789",
       "email": "doanthimai23021992@gmail.com",
       "phone": "0901234567",
-      "address": "Đà Nẵng"
+      "address": "Đà nẵng",
+      "id": "01"
+    },
+    {
+      "idCustomer": "KH-0002",
+      "customerType": "1",
+      "fullName": "Nguyễn Văn Khánh",
+      "dateOfBirth": "1998-12-15T17:00:00.000Z",
+      "idCard": "123456789",
+      "email": "apprenticeship@gmail.com",
+      "phone": "0911234567",
+      "address": "Quảng Bình",
+      "id": "0p6-W3F"
+    },
+    {
+      "idCustomer": "KH-0003",
+      "customerType": "4",
+      "fullName": "Trần Văn Minh",
+      "dateOfBirth": "1997-12-09T17:00:00.000Z",
+      "idCard": "123456789",
+      "email": "apprenticeship@fpt.gmail.com",
+      "phone": "0901234567",
+      "address": "Hà nội",
+      "id": "-pwZItT"
+    },
+    {
+      "idCustomer": "KH-0001",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "fullName": "Nguyễn Văn A",
+      "dateOfBirth": "2003-12-25T17:00:00.000Z",
+      "idCard": "123456789",
+      "email": "apprenticeship@gmail.com",
+      "phone": "0901234567",
+      "address": "Hà Nội",
+      "id": "qtr7NhB"
+    },
+    {
+      "idCustomer": "KH-0003",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "fullName": "Đoàn Thị Mai",
+      "dateOfBirth": "2003-12-25T17:00:00.000Z",
+      "idCard": "123456789",
+      "email": "dnv@gmail.com",
+      "phone": "0901234567",
+      "address": "Hà Nội",
+      "id": "yoAhu4W"
     }
   ],
   "contract": [

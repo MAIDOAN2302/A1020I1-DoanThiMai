@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {EmployeeService} from "../../../service/employee.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {IEmployee} from "../../../models/employee";
+import {IPosition} from "../../../models/position";
+import {IPart} from "../../../models/part";
+import {IEducationDegree} from "../../../models/educationDegree";
+import {PartService} from "../../../service/part.service";
+import {PositionService} from "../../../service/position.service";
+import {EducationDegreeService} from "../../../service/education-degree.service";
 
 @Component({
   selector: 'app-employee-edit',
@@ -11,18 +18,36 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class EmployeeEditComponent implements OnInit {
 // @ts-ignore
   public formEditEmployee: FormGroup;
+  // @ts-ignore
+  public positions: IPosition[];
+  // @ts-ignore
+  public parts: IPart[];
+  // @ts-ignore
+  public educationDegrees: IEducationDegree[];
   public maxDate = new Date(2003,11,31);
   public minDate = new Date(1900,0,1);
   // @ts-ignore
   public employeeOfId;
   constructor(public formBuilder: FormBuilder,
               public employeeService: EmployeeService,
+              public partService: PartService,
+              public positionService: PositionService,
+              public educationDegreeService: EducationDegreeService,
               public router: Router,
               public activatedRouter: ActivatedRoute) { }
 
   ngOnInit(){
+    this.positionService.getAllPosition().subscribe(data=>{
+      this.positions = data;
+    });
+    this.educationDegreeService.getAllEducationDegree().subscribe(data=>{
+      this.educationDegrees = data;
+    });
+    this.partService.getAllPart().subscribe(data=>{
+      this.parts = data;
+    });
     this.formEditEmployee = this.formBuilder.group({
-      id: ['',[Validators.required]],
+      idEmployee: ['',[Validators.required,Validators.pattern(/^NV-\d{4}$/)]],
       fullName: ['',[Validators.required]],
       position: ['',[Validators.required]],
       educationDegree:['',[Validators.required]],
@@ -45,6 +70,10 @@ export class EmployeeEditComponent implements OnInit {
   editEmployee() {
     this.employeeService.editEmployee(this.formEditEmployee.value, this.employeeOfId).subscribe(data=>{
       this.router.navigateByUrl('employee-list');
-    })
-  }
+    });
+  };
+  // @ts-ignore
+  compareWith(c1, c2): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  };
 }

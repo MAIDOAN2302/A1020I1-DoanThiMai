@@ -2,9 +2,8 @@
   <h2>DANH SÁCH NHÂN VIÊN</h2>
   <div class="d-flex">
     <input class="form-control mr-2" type="text" style="width: 400px;height: 40px"
-           placeholder="Tìm kiếm theo tên nhân viên"  [(ngModel)]="term"/>
-    <button class="btn btn-outline-success" style="height: 40px">
-      <mat-icon>find_in_page</mat-icon></button>
+           placeholder="Tìm kiếm theo tên nhân viên" [(ngModel)]="nameSearch"/>
+    <button class="btn btn-outline-success" style="height: 40px" (click)="search()"> Search</button>
   </div>
 </div>
 <div class="row mt-3 px-3">
@@ -12,7 +11,7 @@
   <table class="table table-striped table-hover mt-3" style="font-size: 12px">
     <thead>
     <tr>
-      <th>ID</th>
+      <th>ID nhân viên</th>
       <th>Họ và tên</th>
       <th>Vị trí</th>
       <th>Trình độ</th>
@@ -29,7 +28,7 @@
     <tbody>
     <tr *ngFor="let employee of employees |filter:term
     |paginate: { itemsPerPage: 2, currentPage: p }">
-      <td>{{employee.id}}</td>
+      <td>{{employee.idEmployee}}</td>
       <td>{{employee.fullName}}</td>
       <td>{{employee.position}}</td>
       <td>{{employee.educationDegree}}</td>
@@ -42,9 +41,11 @@
       <td>{{employee.address}}</td>
       <td style="width: 12%">
         <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/employee-edit/'+employee.id]">
-          <mat-icon aria-hidden="false" aria-label="Example edit icon">edit</mat-icon></button>
+          <mat-icon aria-hidden="false" aria-label="Example edit icon">edit</mat-icon>
+        </button>
         <button class="btn btn-sm btn-danger" (click)="openDialog(employee.id)">
-          <mat-icon aria-hidden="false" aria-label="Example delete icon">delete_sweep</mat-icon></button>
+          <mat-icon aria-hidden="false" aria-label="Example delete icon">delete_sweep</mat-icon>
+        </button>
       </td>
     </tr>
     </tbody>

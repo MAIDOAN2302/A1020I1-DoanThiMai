@@ -2,19 +2,28 @@
 <form class="w-75 mx-auto mt-3" [formGroup]="formEditCustomer">
   <div class="form-row">
     <div class="form-group col-6">
-    <p>ID nhân viên</p>
-    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="id"/>
-    <p *ngIf="formEditCustomer.controls.id.errors?.required &&
-              formEditCustomer.controls.id.touched" class="text-danger">
-      Vui lòng nhập ID theo đúng định dạng</p>
+    <p>Mã số KH</p>
+    <input class="form-control" type="text" placeholder="KH-XXXX" formControlName="idCustomer"/>
+      <p *ngIf="formEditCustomer.controls.idCustomer.errors?.required &&
+              formEditCustomer.controls.idCustomer.touched" class="text-danger">
+        Vui lòng nhập ID theo đúng định dạng</p>
+      <p *ngIf="formEditCustomer.controls.idCustomer.errors?.pattern &&
+              formEditCustomer.controls.idCustomer.touched" class="text-danger">
+        Vui lòng nhập mã số KH theo đúng định dạng
+      </p>
   </div>
-  <div class="form-group col-6">
-    <p>ID nhân viên</p>
-    <input class="form-control" type="text" formControlName="customerType"/>
-    <p *ngIf="formEditCustomer.controls.id.errors?.required &&
-              formEditCustomer.controls.id.touched" class="text-danger">
-      Vui lòng nhập loại khách theo đúng định dạng</p>
-  </div>
+    <div class="form-group col-6">
+      <p>Loại khách hàng</p>
+      <select class="form-control" type="text" id="customerType"
+              formControlName="customerType"  [compareWith]="compareWith">
+        <option *ngFor="let customerType of customerTypes" [ngValue]="customerType">
+          {{customerType.name}}
+        </option>
+      </select>
+      <p *ngIf="formEditCustomer.controls.customerType.errors?.required &&
+              formEditCustomer.controls.customerType.touched" class="text-danger">
+        Vui lòng nhập loại khách</p>
+    </div>
   </div>
   <div class="form-row">
   <div class="form-group col-6">
