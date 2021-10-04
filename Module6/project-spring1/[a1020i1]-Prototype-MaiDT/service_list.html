@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DANH SÁCH DỊCH VỤ</title>
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&diplay=swap');
+    </style>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+<h1 class="container mt-5 text-center" style="color: darkblue">DANH SÁCH DỊCH VỤ</h1>
+<div class="container mt-3 d-flex justify-content-end">
+    <input type="text" class="btn btn-outline-success" placeholder="Tìm kiếm">
+    <button class=" ml-2 fas fa-search-plus btn btn-success rounded-circle"></button>
+</div>
+<div class="container">
+<button class="fas fa-plus-circle btn btn-success"> Thêm mới khách hàng</button>
+<table class="table table-striped table-hover container mt-3" id="tableService">
+    <thead style="background-color: #96ee4d">
+    <tr>
+        <th>STT</th>
+        <th>Mã dịch vụ</th>
+        <th>Tên dịch vụ</th>
+        <th>Số lượng</th>
+        <th>Đơn vị</th>
+        <th>Giá</th>
+        <th>Lựa chọn</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>SV0001</td>
+        <td>Nước uống</td>
+        <td class="text-center">2</td>
+        <td>cái</td>
+        <td>10.000VNĐ</td>
+        <td>
+            <button class="fas fa-pencil-alt mr-2 border-0 btn btn-info"></button>
+            <button type="button" class="fas fa-trash-alt border-0 btn btn-danger" data-toggle="modal"
+                    data-target="#exampleModal">
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>SV0002</td>
+        <td>Mỳ tôm</td>
+        <td class="text-center">2</td>
+        <td>cái</td>
+        <td>10.000VNĐ</td>
+        <td>
+            <button class="fas fa-pencil-alt mr-2 border-0 btn btn-info"></button>
+            <button type="button" class="fas fa-trash-alt border-0 btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>SV0003</td>
+        <td>Thẻ card</td>
+        <td class="text-center">2</td>
+        <td>cái</td>
+        <td>10.000VNĐ</td>
+        <td>
+            <button class="fas fa-pencil-alt mr-2 border-0 btn btn-info"></button>
+            <button type="button" class="fas fa-trash-alt border-0 btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="d-flex justify-content-end container">
+    <button class="mr-3 btn btn-warning">Lưu</button>
+    <button class="btn btn-secondary">Xoá</button>
+</div>
+<div class="container d-flex justify-content-end mt-3">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+    </ul>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xác nhận xoá dịch vụ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Bạn Có Muốn Xóa : {{Mã số dịch vụ}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Xoá</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bootstrap-4.6.0-dist/jquery/jquery-3.6.0.min.js"></script>
+<script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#tableService').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        });
+    });
+
+</script>
+</body>
+</html>
